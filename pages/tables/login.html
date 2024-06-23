@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdminLTE 3 | Log in</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+</head>
+<body class="hold-transition login-page" style="background-image: url('background.jpg');background-repeat: no-repeat;background-size: cover;background-attachment: fixed;background-position: top;">
+
+<div class="callout callout-warning">
+  <h5><i class="fas fa-info"></i> 通知:</h5>
+  1. 設備維修通知-臺北主節點光設備進行更換，預估於2024/06/19 01:00進行維護，預估影響至2024/06/19 03:00，影響範圍台北區網<br/>
+  2. 系統更版通知-整合式網管系統進行更版，預估於2024/06/19 01:00:00進行維護，預估影響至2024/06/19 03:00，影響範圍:客服人員
+</div>
+<div class="login-box">
+  <div class="login-logo">
+    <a href="../../index2.html"><b>整合式網管</b>系統</a>
+  </div>
+  <!-- /.login-logo -->
+  <div class="card">
+    <div class="card-body login-card-body">
+      <p class="login-box-msg">請登入後進行功能操作</p>
+
+      <form action="../../index3.html" method="post">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="帳號">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-user"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" class="form-control" placeholder="密碼">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+		<div class="input-group mb-3">
+          <input type="password" class="form-control" placeholder="圖形驗證碼">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-ticket-alt"></span>
+            </div>
+          </div>
+        </div>
+		<div class="input-group mb-3">
+		  <img src="captcha.png" style="width: 50%;height:80%">
+		</div>
+        <div class="row">
+          <div class="col-8">
+            <div class="icheck-primary">
+              <input type="checkbox" id="remember">
+              <label for="remember">
+                Remember Me
+              </label>
+            </div>
+          </div>
+          <!-- /.col -->
+          <div class="col-4">
+            <button type="submit" class="btn btn-primary btn-block">登入</button>
+          </div>
+          <!-- /.col -->
+        </div>
+      </form>
+      <!-- /.social-auth-links -->
+    </div>
+    <!-- /.login-card-body -->
+  </div>
+</div>
+<!-- /.login-box -->
+
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+</body>
+</html>
