@@ -59,7 +59,7 @@ $(function () {
       defaultPlot: {
                         attrs: {
                             fill: "#28a745"
-                            , opacity: 1
+                            , opacity: 3
                         }
                         , attrsHover: {
                             opacity: 1
@@ -91,6 +91,205 @@ $(function () {
                         }
                     }
 	            },
+			areas: {
+				//北台灣
+      "Taoyuan": {
+        attrs: {
+          fill: "#B3D4FC"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        }
+      },
+	  "Hsinchu": {
+        attrs: {
+          fill: "#B3D4FC"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        }
+      },
+	  "Hsinchu City": {
+        attrs: {
+          fill: "#B3D4FC"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        }
+      }, 
+	  "New Taipei City": {
+        attrs: {
+          fill: "#B3D4FC"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        }
+      },
+	  "Keelung City": {
+        attrs: {
+          fill: "#B3D4FC"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        }
+      },
+	  "Taipei City": {
+        attrs: {
+          fill: "#B3D4FC"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        }
+      },
+	  //中台灣
+	  "Miaoli": {
+        attrs: {
+          fill: "#C9E7B2"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        }
+      },
+	  "Taichung City": {
+        attrs: {
+          fill: "#C9E7B2"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        }
+      },
+	  "Nantou": {
+        attrs: {
+          fill: "#C9E7B2"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        }
+      },
+	  "Changhua": {
+        attrs: {
+          fill: "#C9E7B2"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        }
+      },
+	  "Yunlin": {
+        attrs: {
+          fill: "#C9E7B2"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        }
+      },
+	  //南臺灣
+	  "Chiayi": {
+        attrs: {
+          fill: "#FFF2A6"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        }
+      },
+	  "Tainan City": {
+        attrs: {
+          fill: "#FFF2A6"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        }
+      },
+	  "Kaohsiung City": {
+        attrs: {
+          fill: "#FFF2A6"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        }
+      },
+	  "Pingtung": {
+        attrs: {
+          fill: "#FFF2A6"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        }
+      },
+	  //東台灣
+	  "Yilan": {
+        attrs: {
+          fill: "#E2C8F1"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        }
+      },
+	  "Hualien": {
+        attrs: {
+          fill: "#E2C8F1"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        },
+		 eventHandlers: {
+                            click: function () {
+								
+                            },
+                            dblclick: function (e, id, mapElem, textElem) {
+								alert('B');
+							}
+		 }
+      },
+	  "Taitung": {
+        attrs: {
+          fill: "#E2C8F1"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        }
+      },
+	  //美國
+	  "NY": {
+        attrs: {
+          fill: "#FFEE99"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        }
+      },
+	  "NJ": {
+        attrs: {
+          fill: "#FFEE99"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        }
+      },
+	  "RI": {
+        attrs: {
+          fill: "#FFEE99"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        }
+      },
+	  "WI": {
+        attrs: {
+          fill: "#BBBB00"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        }
+      },
+	   "CA": {
+        attrs: {
+          fill: "#00AAAA"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        }
+      },
+    },
                 plots: {
 					// Plot positioned by x and y instead of latitude, longitude
                     'myplot1': {
