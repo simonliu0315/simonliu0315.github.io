@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>整合式網管系統 | 儀錶板</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <style type="text/css">
+    .bootstrap-switch .bootstrap-switch-focused
+    {
+        border-color: #66afe9; /*you can change this depending on your application's background color */
+  outline: 0 !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+    }
+  </style>
+</head>
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+<div class="wrapper">
+
+  <!-- Preloader -->
+  <div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__wobble" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+  </div>
+
+  <!-- Navbar -->
+  <!--nav class="main-header navbar navbar-expand navbar"-->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="index.html" class="nav-link"></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link"></a>
+      </li>
+    </ul>
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+	  <li class="nav-item" style=" margin-top: 3%;">
+	    <input type="checkbox" name="my-checkbox"  data-on-text="中" data-off-text="En" checked data-bootstrap-switch data-off-color="success" >
+	  </li>
+      <!-- Navbar Search -->
+      <li class="nav-item">
+        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+          <i class="fas fa-search"></i>
+        </a>
+        <div class="navbar-search-block">
+          <form class="form-inline">
+            <div class="input-group input-group-sm">
+              <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+              <div class="input-group-append">
+                <button class="btn btn-navbar" type="submit">
+                  <i class="fas fa-search"></i>
+                </button>
+                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+          <i class="fas fa-expand-arrows-alt"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+          <i class="fas fa-th-large"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="index.html" class="brand-link">
+      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">整合式網管系統</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- SidebarSearch Form -->
+      <div class="form-inline">
+        <div class="input-group" data-widget="sidebar-search">
+          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+		  <li class="nav-item">
+            <a href="./index.html" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              Home
+            </a>
+          </li>
+          <li class="nav-item menu-open">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Dashboard
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="./index.html" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Dashboard</p>
+				  <span class="badge badge-danger left">V</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./index5.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Dashboard(英文版)</p>
+				  <span class="badge badge-danger left">V</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./index6.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Dashboard(教育部)</p>
+				  <span class="badge badge-danger left">V</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                聯絡資料
+				<span class="badge badge-danger left">V</span>
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info left">5</span>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>維運團隊</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>GigaPoPs</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/tables/data7.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>連線單位</p>
+				  <span class="badge badge-danger left">V</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>VPLS VPN</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>國內外BGP Peering</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-chart-pie"></i>
+              <p>
+                設備資料
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>設備資料設定檔</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+                監控狀況
+                <i class="fas fa-angle-left right"></i>
+              </p>
+			  <span class="badge badge-danger left">V</span>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>電路狀態</p>
+				  <span class="badge badge-danger left">V</span>
+				  <i class="fas fa-angle-left right"></i>
+                  <span class="badge badge-info left">9</span>
+                </a>
+				<ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="pages/tables/data3.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        國內骨幹流量狀況
+                      </p>
+					  <span class="badge badge-danger left">V</span>
+                    </a>
+			      </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        國內骨幹界接介面狀況
+                      </p>
+                    </a>
+			      </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        國際電路流量狀況
+                      </p>
+                    </a>
+			      </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        國際電路界接介面狀況
+                      </p>
+                    </a>
+			      </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        國際電路界接介面WAN Port IP Ping 狀況
+                      </p>
+                    </a>
+			      </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        國科會線路狀況
+                      </p>
+                    </a>
+			      </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        資策會線路界接介面狀況
+                      </p>
+                    </a>
+			      </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        TWNIC DNS 代管 Server 界接介面狀況
+                      </p>
+                    </a>
+			      </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        國內骨幹介面品質
+                      </p>
+                    </a>
+			      </li>
+				</ul>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>設備狀態</p>
+				  <i class="fas fa-angle-left right"></i>
+                  <span class="badge badge-info left">6</span>
+                </a>
+				<ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        設備CPU狀況
+                      </p>
+                    </a>
+			      </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        設備Memory狀況
+                      </p>
+                    </a>
+			      </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        設備Power Supply狀況
+                      </p>
+                    </a>
+			      </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        骨幹設備IP Ping狀況
+                      </p>
+                    </a>
+			      </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        局端與納管設備OOB IP Ping 狀況
+                      </p>
+                    </a>
+			      </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        機房電源設備與溫控設備IP Ping 狀況
+                      </p>
+                    </a>
+			      </li>
+				</ul>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>VPLS VPN 狀態</p>
+				  <i class="fas fa-angle-left right"></i>
+                  <span class="badge badge-info left">2</span>
+                </a>
+				<ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        VPN Client 界接介面狀況
+                      </p>
+                    </a>
+			      </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        VPLS VPN Peer 狀況
+                      </p>
+                    </a>
+			      </li>
+				</ul>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>機房環境狀態</p>
+				  <i class="fas fa-angle-left right"></i>
+                  <span class="badge badge-info left">3</span>
+                </a>
+				<ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        機房溫度狀況
+                      </p>
+                    </a>
+			      </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        主節點SMR電壓與電流狀況
+                      </p>
+                    </a>
+			      </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        RPM總負載電流狀況
+                      </p>
+                    </a>
+			      </li>
+				</ul>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>連線單位狀態</p>
+				  <span class="badge badge-danger left">V</span>
+				  <i class="fas fa-angle-left right"></i>
+				  <span class="badge badge-info left">3</span>
+                </a>
+				<ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="pages/tables/data4.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        連線單位WAN Port Ping 狀況
+                      </p>
+					  <span class="badge badge-danger left">V</span>
+                    </a>
+			      </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        連線單位路由狀況
+                      </p>
+                    </a>
+			      </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        連線單位流量狀況
+                      </p>
+                    </a>
+			      </li>
+				</ul>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>BGP Peering 狀態</p>
+				  <i class="fas fa-angle-left right"></i>
+                  <span class="badge badge-info left">3</span>
+                </a>
+				<ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        Peering BGP 狀況
+                      </p>
+                    </a>
+			      </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        RR_BGP 狀況
+                      </p>
+                    </a>
+			      </li>				  
+				</ul>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>SSL VPN 狀態</p>
+				  <i class="fas fa-angle-left right"></i>
+                  <span class="badge badge-info left">1</span>
+                </a>
+				<ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        SSL VPN 狀況
+                      </p>
+                    </a>
+			      </li>
+				</ul>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                記錄查詢
+				<span class="badge badge-danger left">V</span>
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="pages/tables/data5.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>異常事件紀錄</p>
+				  <span class="badge badge-danger left">V</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>使用者系統操作紀錄</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>使用者登入紀錄</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                報表查詢
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>100G維運報表查詢</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>國際電路報表查詢</p>
+				  <i class="fas fa-angle-left right"></i>
+                  <span class="badge badge-info left">5</span>
+                </a>
+				<ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>連線單位最近三個月流出入比較圖(不含TWGate)(Top10)</p>
+                    </a>
+                  </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>美國電路-依照連線單位，最近一個月流出入圓餅圖(Top10)</p>
+                    </a>
+                  </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>美國電路各年度每月之流出入比較趨勢圖</p>
+                    </a>
+                  </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>連線單位歷年出入比較圖(不含TWGate)(Top10)</p>
+                    </a>
+                  </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>美國電路-依照連線單位，年度流出入圓餅圖(Top10)</p>
+                    </a>
+                  </li>
+				</ul>
+              </li>             
+            </ul>
+          </li>          
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-calendar-alt"></i>
+              <p>
+                監控項目管理
+				<span class="badge badge-danger left">V</span>
+				<span class="badge badge-info left">2</span>
+				<i class="fas fa-angle-left right"></i>
+              </p>
+			</a>
+			<ul class="nav nav-treeview">
+			  <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon far fa-image"></i>
+                  <p>
+                  資料管理
+                  </p>
+				  <span class="badge badge-danger left">V</span>
+			      <i class="fas fa-angle-left right"></i>
+                  <span class="badge badge-info left">6</span>
+                </a>
+			  <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>維運團隊管理</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>GigaPops管理</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/pages/tables/data6.html" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>連線單位管理</p>
+                  </a>
+                </li>
+			  <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>BGP Peering管理</p>
+                </a>
+              </li>
+			  <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>VPLS VPN管理</p>
+                </a>
+              </li>
+			  <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>電路介面管理</p>
+				  <span class="badge badge-danger left">V</span>
+				  <i class="fas fa-angle-left right"></i>
+                  <span class="badge badge-info left">3</span>
+                </a>
+				  <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                      <a href="pages/tables/data8.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>國內電路</p>
+					  <span class="badge badge-danger left">V</span>
+					  </a>
+					</li>
+					<li class="nav-item">
+                      <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>國際電路</p>
+					  </a>
+					</li>
+					<li class="nav-item">
+                      <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>資策會監控電路</p>
+					  </a>
+					</li>
+				  </ul>
+                 </li>
+			     <li class="nav-item">
+                    <a href="pages/tables/data.html" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>帳號管理</p>
+					<span class="badge badge-danger left">V</span>
+				    </a>
+			     </li>
+			     <li class="nav-item">
+                  <a href="pages/tables/data1.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>群組授權管理</p>
+				  <span class="badge badge-danger left">V</span>
+				  </a>
+				 </li>
+				 <li class="nav-item">
+                  <a href="pages/tables/data2.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>系統參數設定</p>
+				  <span class="badge badge-danger left">V</span>
+                  </a>
+                 </li>
+				
+		    </ul>
+			</li>
+			<li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-columns"></i>
+              <p>
+                告警管理
+              </p>
+			  <i class="fas fa-angle-left right"></i>
+              <span class="badge badge-info left">4</span>
+            </a>
+			<ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>連線單位</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>BGP Peering</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>事件類別</p>
+                </a>
+              </li>
+			  <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>設備類</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">監控儀錶板</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">監控儀錶板</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+
+        <!-- /.row -->
+
+        <!-- Main row -->
+        <div class="row">
+          <!-- Left col -->
+          <div class="col-md-8">
+            <!-- MAP & BOX PANE -->
+            <!-- /.card 1 -->     
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">TWAREN 400G 骨幹網路即時監控狀態圖(檢查時間: 2024/06/18 19:00:05) </h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+                <div class="d-md-flex">
+                  <div class="p-1 flex-fill" style="overflow: hidden">
+                    <!-- Map will be created here -->
+                    <div id="world-map-markers-2" style="height: 100%; overflow: hidden">
+                      <div class="map">
+					  </div>
+                    </div>
+					<!--div class="mapcontainer2">
+                      <div class="map">
+                      <span>Alternative content for the map</span>
+                      </div>
+					</div>
+					<div class="mapcontainer">
+                      <div class="map">
+                        <span>Alternative content for the map</span>
+                     </div>
+                    </div-->
+                  </div>
+                 
+                </div><!-- /.d-md-flex -->
+              </div>
+              <!-- /.card-body -->
+            </div>			
+			 <!-- /.card 2 -->     
+            <!-- /.row -->
+
+          
+            <!-- /.card -->
+          </div>
+		  <div class="col-md-4">
+            <!-- MAP & BOX PANE -->
+            <!-- /.card 1 -->     
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">未結案事件比例圖</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+				  <div class="btn-group">
+                    <button type="button" class="btn btn-tool dropdown-toggle" data-toggle="dropdown">
+                      <i class="fas fa-wrench"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" role="menu">
+                      <a href="#" class="dropdown-item">編輯圖表</a>
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+			   <div class="chart">
+                  <canvas id="barChart" style="min-height: 170px; height: 170px; max-height: 200px; max-width: 100%;"></canvas>
+                </div>
+			  </div>
+			</div>
+			<div class="card">
+              <div class="card-header">
+                <h3 class="card-title">設備存活狀態統計圖</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+				  <div class="btn-group">
+                    <button type="button" class="btn btn-tool dropdown-toggle" data-toggle="dropdown">
+                      <i class="fas fa-wrench"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" role="menu">
+                      <a href="#" class="dropdown-item">編輯圖表</a>
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+			    <div class="chart">
+                  <canvas id="stackedBarChart" style="min-height: 200px; height: 200px; max-height: 200px; max-width: 100%;"></canvas>
+                </div>
+			  </div>
+			</div>
+          </div>			
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+		<div class="row">
+          <!-- Left col -->
+          <div class="col-md-12">
+		    <!-- /.card 1 -->     
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">截至今日尚未結案事件單</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                    <th>序號</th>
+                    <th>事件編號</th>
+                    <th>事件類別</th>
+					<th>等級</th>
+                    <th>事件開始時間</th>
+                    <th>介接設備/單位</th>
+					<th>描述</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td style="background-color:#ffc107">1</td>
+                    <td style="background-color:#ffc107">1130101</td>
+                    <td style="background-color:#ffc107">Traffic</td>
+					<td style="background-color:#ffc107">
+					  <button type="button" class="btn btn-tool" title="warning" style="color:#ffff66">
+                        <i class="fas fa-flag-checkered"></i>
+                      </button>
+					</td>
+                    <td style="background-color:#ffc107">2024/06/14 10:05:01</td>
+                    <td style="background-color:#ffc107">TWAREN-TN-ASR001-01</td>
+					<td style="background-color:#ffc107">[to TWAREN-AC-AS002-01] in 0 Mbps, out 0Mbps</td>
+                  </tr>
+				  <tr>
+                    <td style="background-color:#ffc107">2</td>
+                    <td style="background-color:#ffc107">1130102</td>
+                    <td style="background-color:#ffc107">Traffic</td>
+					<td style="background-color:#ffc107">
+					  <button type="button" class="btn btn-tool" title="warning" style="color:#ffff66">
+                        <i class="fas fa-flag-checkered"></i>
+                      </button>
+					</td>
+                    <td style="background-color:#ffc107">2024/06/14 10:10:01</td>
+                    <td style="background-color:#ffc107">TWAREN-TN-ASR001-02</td>
+					<td style="background-color:#ffc107">[to TWAREN-AC-AS002-02] in 0 Mbps, out 0Mbps, in_high: 9000, in_low: 1e-05, in_avg:0</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+		  </div>
+		</div>
+		<!-- /.row -->
+		<div class="row">
+          <!-- Left col -->
+          <div class="col-md-12">
+		    <!-- /.card 1 -->     
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">外部監控事件告警列表</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                    <th>序號</th>
+                    <th>事件編號</th>
+                    <th>事件類別</th>
+					<th>等級</th>
+                    <th>事件開始時間</th>
+                    <th>告警設備</th>
+					<th>描述</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td style="background-color:#ffc107">1</td>
+                    <td style="background-color:#ffc107">1130101</td>
+                    <td style="background-color:#ffc107">Traffic</td>
+					<td style="background-color:#ffc107">
+					  <button type="button" class="btn btn-tool" title="warning" style="color:#ffff66">
+                        <i class="fas fa-flag-checkered"></i>
+                      </button>
+					</td>
+                    <td style="background-color:#ffc107">2024/06/14 12:05:01</td>
+                    <td style="background-color:#ffc107">Big Data PlantForm</td>
+					<td style="background-color:#ffc107">大數據資料平台連線Mail伺服器失敗</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+		  </div>
+		</div>
+		<!-- /.row -->
+      </div><!--/. container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2024 <a href="https://www.cht.com.tw">www.cht.com.tw</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 2.0.0-rc
+    </div>
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.js"></script>
+
+<!-- PAGE PLUGINS -->
+<!-- jQuery Mapael -->
+<script src="plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
+<!--script src="plugins/raphael/raphael.min.js"></script-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js" charset="utf-8"></script>
+<script src="plugins/jquery-mapael/jquery.mapael.min.js"></script>
+<script src="plugins/jquery-mapael/maps/usa_states.min.js"></script>
+<script src="plugins/jquery-mapael/maps/taiwan.min.js"></script>
+<script src="plugins/jquery-mapael/maps/france_departments.js" charset="utf-8"></script>
+<!-- ChartJS -->
+<script src="plugins/chart.js/Chart.min.js"></script>
+<script src="plugins/chart.js/chartjs-plugin-datalabels.js"></script>
+<!-- Bootstrap Switch -->
+<script src="plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="dist/js/demo.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="dist/js/pages/dashboard4.js"></script>
+</body>
+</html>
