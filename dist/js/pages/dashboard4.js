@@ -660,6 +660,21 @@ $(function () {
                             , attrsHover: {fill: "#ff0000", opacity: 1}
                         },
                     },
+					'myplot7': {
+                        x: 300,
+                        y: 750,
+						size: 24,
+						attrs: {
+                            fill: "#ff0000"
+                            , opacity: 0
+                        },
+                        text: {
+                            content: "東台灣地圖"
+                            , position: "right"
+                            , attrs: {"font-size": 24, fill: "#007bff", opacity: 1}
+                            , attrsHover: {fill: "#ff0000", opacity: 1}
+                        },
+                    },
 					'Taipei_1': {
 						type: "circle",
                         x: 370,
