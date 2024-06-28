@@ -26,6 +26,231 @@ $(function () {
    * ------------
    * Create a world map with markers
    */
+ 
+	 
+   function redraw() {
+	$('#world-map-markers-2').mapael({
+    map: {
+      name: 'taiwan3',
+      zoom: {
+        enabled: false,
+        maxLevel: 10,
+		init: {
+			   level: 8,
+               y: 15
+		}
+      },
+	  // Set default plots and areas style
+      defaultPlot: {
+                        attrs: {
+                            fill: "#28a745"
+                            , opacity: 3
+                        }
+                        , attrsHover: {
+                            opacity: 1
+                        }
+                        , text: {
+                            attrs: {
+                                fill: "#505444"
+                            }
+                            , attrsHover: {
+                                fill: "#000"
+                            }
+                        }
+      }, 
+	  defaultArea: {
+        attrs: {
+          fill: "#B3D4FC", 
+		  stroke: "#fff"
+        }, 
+		attrsHover: {
+          fill: "#a4e100"
+        }, 
+		text: {
+          attrs: {
+            fill: "#505444"
+          }, 
+		  attrsHover: {
+            fill: "#000"
+          }
+       }
+      },
+	},
+                plots: {
+					// Plot positioned by x and y instead of latitude, longitude
+                    'myplot1': {
+                        x: 350,
+                        y: 20,
+						size: 8,
+						attrs: {
+                            fill: "#ff0000"
+                            , opacity: 1
+                        },
+                        text: {
+                            content: "Critical Event"
+                            , position: "right"
+                            , attrs: {"font-size": 8, fill: "#ff0000", opacity: 1}
+                            , attrsHover: {fill: "#ff0000", opacity: 1}
+                        },
+                    },
+					 'myplot2': {
+                        x: 350,
+                        y: 35,
+						size: 8,
+						attrs: {
+                            fill: "#ffc107"
+                            , opacity: 1
+                        },
+                        text: {
+                            content: "Minor Event"
+                            , position: "right"
+                            , attrs: {"font-size": 8, fill: "#ffc107", opacity: 1}
+                            , attrsHover: {fill: "#ffc107", opacity: 1}
+                        },
+                    },
+					'myplot3': {
+                        x: 350,
+                        y: 50,
+						size: 8,
+						attrs: {
+                            fill: "#28a745"
+                            , opacity: 1
+                        },
+                        text: {
+                            content: "Normal Event"
+                            , position: "right"
+                            , attrs: {"font-size": 8, fill: "#28a745", opacity: 1}
+                            , attrsHover: {fill: "#28a745", opacity: 1}
+                        },
+                    },
+					'Taipei_0': {
+						type: "circle",
+                        x: 515,
+                        y: 65,
+						size: 12,
+                        text: {
+                            content: "0"
+                            , position: "inner"
+                            , attrs: {
+                                "font-size": 10
+                                , "font-weight": "bold"
+                                , fill: "#fff"
+                            },
+                            attrsHover: {
+                                "font-size": 10
+                                , "font-weight": "bold"
+                                , fill: "#fff"
+                            }
+                        },
+						
+					},
+					'Taipei_1': {
+						type: "circle",
+                        x: 515,
+                        y: 90,
+						size: 12,
+                        text: {
+                            content: "0"
+                            , position: "inner"
+                            , attrs: {
+                                "font-size": 10
+                                , "font-weight": "bold"
+                                , fill: "#fff"
+                            },
+                            attrsHover: {
+                                "font-size": 10
+                                , "font-weight": "bold"
+                                , fill: "#fff"
+                            }
+                        },
+						
+					},
+					'Taipei_2': {
+						type: "circle",
+                        x: 530,
+                        y: 80,
+						size: 12,
+                        text: {
+                            content: "0"
+                            , position: "inner"
+                            , attrs: {
+                                "font-size": 10
+                                , "font-weight": "bold"
+                                , fill: "#fff"
+                            },
+                            attrsHover: {
+                                "font-size": 10
+                                , "font-weight": "bold"
+                                , fill: "#fff"
+                            }
+                        },
+						
+					},
+					'Taipei_3': {
+						type: "circle",
+                        x: 490,
+                        y: 100,
+						size: 12,
+                        text: {
+                            content: "0"
+                            , position: "inner"
+                            , attrs: {
+                                "font-size": 10
+                                , "font-weight": "bold"
+                                , fill: "#fff"
+                            },
+                            attrsHover: {
+                                "font-size": 10
+                                , "font-weight": "bold"
+                                , fill: "#fff"
+                            }
+                        },
+						
+					},
+					'Tau': {
+						type: "circle",
+                        x: 450,
+                        y: 95,
+						size: 12,
+                        text: {
+                            content: "0"
+                            , position: "inner"
+                            , attrs: {
+                                "font-size": 10
+                                , "font-weight": "bold"
+                                , fill: "#fff"
+                            },
+                            attrsHover: {
+                                "font-size": 10
+                                , "font-weight": "bold"
+                                , fill: "#fff"
+                            }
+                        },
+					},
+					'hsi': {
+						type: "circle",
+                        x: 410,
+                        y: 140,
+						size: 12,
+                        text: {
+                            content: "0"
+                            , position: "inner"
+                            , attrs: {
+                                "font-size": 10
+                                , "font-weight": "bold"
+                                , fill: "#fff"
+                            },
+                            attrsHover: {
+                                "font-size": 10
+                                , "font-weight": "bold"
+                                , fill: "#fff"
+                            }
+                        },
+					},
+                }
+      
+    })
+   }
   $('#world-map-markers').mapael({
     map: {
       name: 'usa_states',
@@ -92,14 +317,22 @@ $(function () {
                     }
 	            },
 			areas: {
-				//北台灣
+	  //北台灣
       "Taoyuan": {
         attrs: {
           fill: "#B3D4FC"
         }
         , attrsHover: {
           fill: "#a4e100"
-        }
+        },
+		eventHandlers: {
+          click: function () {
+          
+		  },
+          dblclick: function (e, id, mapElem, textElem) {
+            redraw();
+          }			
+		}
       },
 	  "Hsinchu": {
         attrs: {
@@ -107,7 +340,15 @@ $(function () {
         }
         , attrsHover: {
           fill: "#a4e100"
-        }
+        },
+		eventHandlers: {
+          click: function () {
+          
+		  },
+          dblclick: function (e, id, mapElem, textElem) {
+            redraw();
+          }			
+		}
       },
 	  "Hsinchu City": {
         attrs: {
@@ -115,7 +356,15 @@ $(function () {
         }
         , attrsHover: {
           fill: "#a4e100"
-        }
+        },
+		eventHandlers: {
+          click: function () {
+          
+		  },
+          dblclick: function (e, id, mapElem, textElem) {
+            redraw();
+          }			
+		}
       }, 
 	  "New Taipei City": {
         attrs: {
@@ -123,7 +372,15 @@ $(function () {
         }
         , attrsHover: {
           fill: "#a4e100"
-        }
+        },
+		eventHandlers: {
+          click: function () {
+          
+		  },
+          dblclick: function (e, id, mapElem, textElem) {
+            redraw();
+          }			
+		}
       },
 	  "Keelung City": {
         attrs: {
@@ -131,7 +388,15 @@ $(function () {
         }
         , attrsHover: {
           fill: "#a4e100"
-        }
+        },
+		eventHandlers: {
+          click: function () {
+          
+		  },
+          dblclick: function (e, id, mapElem, textElem) {
+            redraw();
+          }			
+		}
       },
 	  "Taipei City": {
         attrs: {
@@ -139,7 +404,15 @@ $(function () {
         }
         , attrsHover: {
           fill: "#a4e100"
-        }
+        },
+		eventHandlers: {
+          click: function () {
+          
+		  },
+          dblclick: function (e, id, mapElem, textElem) {
+            redraw();
+          }			
+		}
       },
 	  //中台灣
 	  "Miaoli": {
@@ -236,7 +509,7 @@ $(function () {
 								
                             },
                             dblclick: function (e, id, mapElem, textElem) {
-								alert('B');
+								redraw();
 							}
 		 }
       },
@@ -335,6 +608,56 @@ $(function () {
                             , position: "right"
                             , attrs: {"font-size": 24, fill: "#28a745", opacity: 1}
                             , attrsHover: {fill: "#28a745", opacity: 1}
+                        },
+                    },
+					'myplot4': {
+                        x: 300,
+                        y: 600,
+						size: 24,
+						attrs: {
+                            fill: "#ff0000"
+                            , opacity: 0
+                        },
+                        text: {
+                            content: "北台灣地圖"
+                            , position: "right"
+                            , attrs: {"font-size": 24, fill: "#007bff", opacity: 1}
+                            , attrsHover: {fill: "#ff0000", opacity: 1}
+                        },
+						eventHandlers: {
+                          click: function () {
+                            redraw()
+		                  },
+		                }
+                    },
+					'myplot5': {
+                        x: 300,
+                        y: 650,
+						size: 24,
+						attrs: {
+                            fill: "#ff0000"
+                            , opacity: 0
+                        },
+                        text: {
+                            content: "中台灣地圖"
+                            , position: "right"
+                            , attrs: {"font-size": 24, fill: "#007bff", opacity: 1}
+                            , attrsHover: {fill: "#ff0000", opacity: 1}
+                        },
+                    },
+					'myplot6': {
+                        x: 300,
+                        y: 700,
+						size: 24,
+						attrs: {
+                            fill: "#ff0000"
+                            , opacity: 0
+                        },
+                        text: {
+                            content: "南台灣地圖"
+                            , position: "right"
+                            , attrs: {"font-size": 24, fill: "#007bff", opacity: 1}
+                            , attrsHover: {fill: "#ff0000", opacity: 1}
                         },
                     },
 					'Taipei_1': {
