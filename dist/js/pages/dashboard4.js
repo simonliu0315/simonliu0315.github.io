@@ -34,10 +34,10 @@ $(function () {
       name: 'taiwan3',
       zoom: {
         enabled: false,
-        maxLevel: 10,
+        maxLevel: 8,
 		init: {
-			   level: 8,
-               y: 15
+			   level: 7,
+               y: 0
 		}
       },
 	  // Set default plots and areas style
@@ -123,18 +123,41 @@ $(function () {
                             , attrsHover: {fill: "#28a745", opacity: 1}
                         },
                     },
+					'myplot4': {
+                        x: 600,
+                        y: 200,
+						size: 8,
+						attrs: {
+                            fill: "#ff0000"
+                            , opacity: 0
+                        },
+                        text: {
+                            content: "回上一層"
+                            , position: "right"
+                            , attrs: {"font-size": 8, fill: "#007bff", opacity: 1}
+                            , attrsHover: {fill: "#ff0000", opacity: 1}
+                        },
+						eventHandlers: {
+                          click: function () {
+                            backTo();
+		                  },
+                          dblclick: function (e, id, mapElem, textElem) {
+                          
+                          }			
+		                }
+                    },
 					'Taipei_0': {
 						type: "circle",
                         x: 515,
                         y: 65,
-						size: 12,
+						size: 14,
                         text: {
                             content: "0"
                             , position: "inner"
                             , attrs: {
                                 "font-size": 10
                                 , "font-weight": "bold"
-                                , fill: "#fff"
+                                , fill: "#000"
                             },
                             attrsHover: {
                                 "font-size": 10
@@ -148,14 +171,14 @@ $(function () {
 						type: "circle",
                         x: 515,
                         y: 90,
-						size: 12,
+						size: 14,
                         text: {
                             content: "0"
                             , position: "inner"
                             , attrs: {
                                 "font-size": 10
                                 , "font-weight": "bold"
-                                , fill: "#fff"
+                                , fill: "#000"
                             },
                             attrsHover: {
                                 "font-size": 10
@@ -169,14 +192,14 @@ $(function () {
 						type: "circle",
                         x: 530,
                         y: 80,
-						size: 12,
+						size: 14,
                         text: {
                             content: "0"
                             , position: "inner"
                             , attrs: {
                                 "font-size": 10
                                 , "font-weight": "bold"
-                                , fill: "#fff"
+                                , fill: "#000"
                             },
                             attrsHover: {
                                 "font-size": 10
@@ -186,18 +209,22 @@ $(function () {
                         },
 						
 					},
-					'Taipei_3': {
+					'Taipei Main Node': {
 						type: "circle",
                         x: 490,
                         y: 100,
-						size: 12,
+						size: 16,
+						attrs: {
+                            fill: "#ffc107"
+                            , opacity: 1
+                        },
                         text: {
-                            content: "0"
+                            content: "16"
                             , position: "inner"
                             , attrs: {
                                 "font-size": 10
                                 , "font-weight": "bold"
-                                , fill: "#fff"
+                                , fill: "#000"
                             },
                             attrsHover: {
                                 "font-size": 10
@@ -207,18 +234,22 @@ $(function () {
                         },
 						
 					},
-					'Tau': {
+					'Taoyuan': {
 						type: "circle",
                         x: 450,
                         y: 95,
-						size: 12,
+						size: 16,
+						attrs: {
+                            fill: "#ff0000"
+                            , opacity: 1
+                        },
                         text: {
-                            content: "0"
+                            content: "2"
                             , position: "inner"
                             , attrs: {
                                 "font-size": 10
                                 , "font-weight": "bold"
-                                , fill: "#fff"
+                                , fill: "#000"
                             },
                             attrsHover: {
                                 "font-size": 10
@@ -227,18 +258,18 @@ $(function () {
                             }
                         },
 					},
-					'hsi': {
+					'Hsinchu': {
 						type: "circle",
                         x: 410,
                         y: 140,
-						size: 12,
+						size: 14,
                         text: {
                             content: "0"
                             , position: "inner"
                             , attrs: {
                                 "font-size": 10
                                 , "font-weight": "bold"
-                                , fill: "#fff"
+                                , fill: "#000"
                             },
                             attrsHover: {
                                 "font-size": 10
@@ -247,7 +278,107 @@ $(function () {
                             }
                         },
 					},
-                }
+                },
+				// Links allow you to connect plots between them
+                links: {
+                    'link1': {
+                        factor: -0.2
+                        // The source and the destination of the link can be set with a latitude and a longitude or a x and a y ...
+                        //, between: [{  x: 0,y: 200,}, {x: 560, y: 280}]
+						, between: ['Taipei Main Node', 'Hsinchu']
+                        , attrs: {
+							"stroke": '#28a745',
+                            "stroke-width": 2,
+							"stroke-dasharray": "- ",
+                        }
+                        , tooltip: {content: "Link"}
+				    },
+					/*
+					'link2': {
+                        factor: 0.2
+                        // The source and the destination of the link can be set with a latitude and a longitude or a x and a y ...
+                        //, between: [{  x: 0,y: 200,}, {x: 560, y: 280}]
+						, between: ['Taipei Main Node', 'Hsinchu']
+                        , attrs: {
+							"stroke": '#28a745',
+                            "stroke-width": 2,
+							"stroke-dasharray": "- ",
+                        }
+                        , tooltip: {content: "Link"}
+				    },*/
+					'link3': {
+                        factor: 0.4
+                        // The source and the destination of the link can be set with a latitude and a longitude or a x and a y ...
+                        //, between: [{  x: 0,y: 200,}, {x: 560, y: 280}]
+						, between: ['Taipei_2', 'Hsinchu']
+                        , attrs: {
+							"stroke": '#28a745',
+                            "stroke-width": 2,
+							"stroke-dasharray": "- ",
+                        }
+                        , tooltip: {content: "Link"}
+				    },
+					'link4': {
+                        factor: 0.4
+                        // The source and the destination of the link can be set with a latitude and a longitude or a x and a y ...
+                        //, between: [{  x: 0,y: 200,}, {x: 560, y: 280}]
+						, between: ['Taipei Main Node', 'Taipei_2']
+                        , attrs: {
+							"stroke": '#28a745',
+                            "stroke-width": 2,
+							"stroke-dasharray": "- ",
+                        }
+                        , tooltip: {content: "Link"}
+				    },
+					'link5': {
+                        factor: 0.2
+                        // The source and the destination of the link can be set with a latitude and a longitude or a x and a y ...
+                        //, between: [{  x: 0,y: 200,}, {x: 560, y: 280}]
+						, between: ['Taipei_1', 'Taipei_2']
+                        , attrs: {
+							"stroke": '#28a745',
+                            "stroke-width": 2,
+							"stroke-dasharray": "- ",
+                        }
+                        , tooltip: {content: "Link"}
+				    },
+					'link6': {
+                        factor: -0.2
+                        // The source and the destination of the link can be set with a latitude and a longitude or a x and a y ...
+                        //, between: [{  x: 0,y: 200,}, {x: 560, y: 280}]
+						, between: ['Taipei_0', 'Taipei Main Node']
+                        , attrs: {
+							"stroke": '#28a745',
+                            "stroke-width": 2,
+							"stroke-dasharray": "- ",
+                        }
+                        , tooltip: {content: "Link"}
+				    },
+					'link7': {
+                        factor: 0.2
+                        // The source and the destination of the link can be set with a latitude and a longitude or a x and a y ...
+                        //, between: [{  x: 0,y: 200,}, {x: 560, y: 280}]
+						, between: ['Taipei_0', 'Taipei_2']
+                        , attrs: {
+							"stroke": '#28a745',
+                            "stroke-width": 2,
+							"stroke-dasharray": "- ",
+                        }
+                        , tooltip: {content: "Link"}
+				    },
+					'link8': {
+                        factor: -0.2
+                        // The source and the destination of the link can be set with a latitude and a longitude or a x and a y ...
+                        //, between: [{  x: 0,y: 200,}, {x: 560, y: 280}]
+						, between: ['Taoyuan', 'Hsinchu']
+                        , attrs: {
+							"stroke": '#28a745',
+                            "stroke-width": 2,
+							"stroke-dasharray": "- ",
+                        }
+                        , tooltip: {content: "Link"}
+				    },
+				}
       
     })
    }
@@ -1447,7 +1578,1182 @@ $(function () {
                     },
 				}
   });
-  
+  function backTo() {
+	  $('#world-map-markers-2').mapael({
+    map: {
+      name: 'taiwan',
+      zoom: {
+        enabled: true,
+        maxLevel: 10
+      },
+	  // Set default plots and areas style
+      defaultPlot: {
+                        attrs: {
+                            fill: "#28a745"
+                            , opacity: 3
+                        }
+                        , attrsHover: {
+                            opacity: 1
+                        }
+                        , text: {
+                            attrs: {
+                                fill: "#505444"
+                            }
+                            , attrsHover: {
+                                fill: "#000"
+                            }
+                        }
+                    }, 
+					defaultArea: {
+                        attrs: {
+                            fill: "#b3b0ae"
+                            , stroke: "#fff"
+                        }
+                        , attrsHover: {
+                            fill: "#a4e100"
+                        }
+                        , text: {
+                            attrs: {
+                                fill: "#505444"
+                            }
+                            , attrsHover: {
+                                fill: "#000"
+                            }
+                        }
+                    }
+	            },
+			areas: {
+	  //北台灣
+      "Taoyuan": {
+        attrs: {
+          fill: "#B3D4FC"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        },
+		eventHandlers: {
+          click: function () {
+          
+		  },
+          dblclick: function (e, id, mapElem, textElem) {
+            redraw();
+          }			
+		}
+      },
+	  "Hsinchu": {
+        attrs: {
+          fill: "#B3D4FC"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        },
+		eventHandlers: {
+          click: function () {
+          
+		  },
+          dblclick: function (e, id, mapElem, textElem) {
+            redraw();
+          }			
+		}
+      },
+	  "Hsinchu City": {
+        attrs: {
+          fill: "#B3D4FC"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        },
+		eventHandlers: {
+          click: function () {
+          
+		  },
+          dblclick: function (e, id, mapElem, textElem) {
+            redraw();
+          }			
+		}
+      }, 
+	  "New Taipei City": {
+        attrs: {
+          fill: "#B3D4FC"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        },
+		eventHandlers: {
+          click: function () {
+          
+		  },
+          dblclick: function (e, id, mapElem, textElem) {
+            redraw();
+          }			
+		}
+      },
+	  "Keelung City": {
+        attrs: {
+          fill: "#B3D4FC"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        },
+		eventHandlers: {
+          click: function () {
+          
+		  },
+          dblclick: function (e, id, mapElem, textElem) {
+            redraw();
+          }			
+		}
+      },
+	  "Taipei City": {
+        attrs: {
+          fill: "#B3D4FC"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        },
+		eventHandlers: {
+          click: function () {
+          
+		  },
+          dblclick: function (e, id, mapElem, textElem) {
+            redraw();
+          }			
+		}
+      },
+	  //中台灣
+	  "Miaoli": {
+        attrs: {
+          fill: "#C9E7B2"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        }
+      },
+	  "Taichung City": {
+        attrs: {
+          fill: "#C9E7B2"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        }
+      },
+	  "Nantou": {
+        attrs: {
+          fill: "#C9E7B2"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        }
+      },
+	  "Changhua": {
+        attrs: {
+          fill: "#C9E7B2"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        }
+      },
+	  "Yunlin": {
+        attrs: {
+          fill: "#C9E7B2"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        }
+      },
+	  //南臺灣
+	  "Chiayi": {
+        attrs: {
+          fill: "#FFF2A6"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        }
+      },
+	  "Tainan City": {
+        attrs: {
+          fill: "#FFF2A6"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        }
+      },
+	  "Kaohsiung City": {
+        attrs: {
+          fill: "#FFF2A6"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        }
+      },
+	  "Pingtung": {
+        attrs: {
+          fill: "#FFF2A6"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        }
+      },
+	  //東台灣
+	  "Yilan": {
+        attrs: {
+          fill: "#E2C8F1"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        }
+      },
+	  "Hualien": {
+        attrs: {
+          fill: "#E2C8F1"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        },
+		 eventHandlers: {
+                            click: function () {
+								
+                            },
+                            dblclick: function (e, id, mapElem, textElem) {
+								redraw();
+							}
+		 }
+      },
+	  "Taitung": {
+        attrs: {
+          fill: "#E2C8F1"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        }
+      },
+	  //美國
+	  "NY": {
+        attrs: {
+          fill: "#FFEE99"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        }
+      },
+	  "NJ": {
+        attrs: {
+          fill: "#FFEE99"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        }
+      },
+	  "RI": {
+        attrs: {
+          fill: "#FFEE99"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        }
+      },
+	  "WI": {
+        attrs: {
+          fill: "#BBBB00"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        }
+      },
+	   "CA": {
+        attrs: {
+          fill: "#00AAAA"
+        }
+        , attrsHover: {
+          fill: "#a4e100"
+        }
+      },
+    },
+                plots: {
+					// Plot positioned by x and y instead of latitude, longitude
+                    'myplot1': {
+                        x: 70,
+                        y: 20,
+						size: 24,
+						attrs: {
+                            fill: "#ff0000"
+                            , opacity: 1
+                        },
+                        text: {
+                            content: "Critical Event"
+                            , position: "right"
+                            , attrs: {"font-size": 24, fill: "#ff0000", opacity: 1}
+                            , attrsHover: {fill: "#ff0000", opacity: 1}
+                        },
+                    },
+					 'myplot2': {
+                        x: 70,
+                        y: 70,
+						size: 24,
+						attrs: {
+                            fill: "#ffc107"
+                            , opacity: 1
+                        },
+                        text: {
+                            content: "Minor Event"
+                            , position: "right"
+                            , attrs: {"font-size": 24, fill: "#ffc107", opacity: 1}
+                            , attrsHover: {fill: "#ffc107", opacity: 1}
+                        },
+                    },
+					'myplot3': {
+                        x: 70,
+                        y: 120,
+						size: 24,
+						attrs: {
+                            fill: "#28a745"
+                            , opacity: 1
+                        },
+                        text: {
+                            content: "Normal Event"
+                            , position: "right"
+                            , attrs: {"font-size": 24, fill: "#28a745", opacity: 1}
+                            , attrsHover: {fill: "#28a745", opacity: 1}
+                        },
+                    },
+					'myplot4': {
+                        x: 300,
+                        y: 600,
+						size: 24,
+						attrs: {
+                            fill: "#ff0000"
+                            , opacity: 0
+                        },
+                        text: {
+                            content: "北台灣地圖"
+                            , position: "right"
+                            , attrs: {"font-size": 24, fill: "#007bff", opacity: 1}
+                            , attrsHover: {fill: "#ff0000", opacity: 1}
+                        },
+						eventHandlers: {
+                          click: function () {
+                            redraw()
+		                  },
+		                }
+                    },
+					'myplot5': {
+                        x: 300,
+                        y: 650,
+						size: 24,
+						attrs: {
+                            fill: "#ff0000"
+                            , opacity: 0
+                        },
+                        text: {
+                            content: "中台灣地圖"
+                            , position: "right"
+                            , attrs: {"font-size": 24, fill: "#007bff", opacity: 1}
+                            , attrsHover: {fill: "#ff0000", opacity: 1}
+                        },
+                    },
+					'myplot6': {
+                        x: 300,
+                        y: 700,
+						size: 24,
+						attrs: {
+                            fill: "#ff0000"
+                            , opacity: 0
+                        },
+                        text: {
+                            content: "南台灣地圖"
+                            , position: "right"
+                            , attrs: {"font-size": 24, fill: "#007bff", opacity: 1}
+                            , attrsHover: {fill: "#ff0000", opacity: 1}
+                        },
+                    },
+					'myplot7': {
+                        x: 300,
+                        y: 750,
+						size: 24,
+						attrs: {
+                            fill: "#ff0000"
+                            , opacity: 0
+                        },
+                        text: {
+                            content: "東台灣地圖"
+                            , position: "right"
+                            , attrs: {"font-size": 24, fill: "#007bff", opacity: 1}
+                            , attrsHover: {fill: "#ff0000", opacity: 1}
+                        },
+                    },
+					'Taipei_1': {
+						type: "circle",
+                        x: 370,
+                        y: 100,
+						size: 35,
+                        text: {
+                            content: "0"
+                            , position: "inner"
+                            , attrs: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#000"
+                            },
+                            attrsHover: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#fff"
+                            }
+                        },
+					},
+					'Taipei_2': {
+						type: "circle",
+                        x: 410,
+                        y: 110,
+						size: 35,
+                        text: {
+                            content: "0"
+                            , position: "inner"
+                            , attrs: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#000"
+                            },
+                            attrsHover: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#fff"
+                            }
+                        },
+					},
+					'Taipei_3': {
+						type: "circle",
+                        x: 330,
+                        y: 80,
+						size: 35,
+                        text: {
+                            content: "0"
+                            , position: "inner"
+                            , attrs: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#000"
+                            },
+                            attrsHover: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#fff"
+                            }
+                        },
+					},
+					'Taipei_4': {
+						type: "circle",
+                        x: 330,
+                        y: 140,
+						size: 35,
+                        text: {
+                            content: "0"
+                            , position: "inner"
+                            , attrs: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#000"
+                            },
+                            attrsHover: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#fff"
+                            }
+                        },
+					},
+					'Taipei Main Node': {
+						type: "circle",
+                        x: 370,
+                        y: 140,
+						size: 50,
+						attrs: {
+                            fill: "#ffc107"
+                            , opacity: 1
+                        },
+                        text: {
+                            content: "16"
+                            , position: "inner"
+                            , attrs: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#000"
+                            },
+                            attrsHover: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#fff"
+                            }
+                        },
+					},
+					'Taoyuan': {
+						type: "circle",
+                        x: 290,
+                        y: 130,
+						size: 50,
+						attrs: {
+                            fill: "#ff0000"
+                            , opacity: 1
+                        },
+                        text: {
+                            content: "2"
+                            , position: "inner"
+                            , attrs: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#000"
+                            },
+                            attrsHover: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#fff"
+                            }
+                        },
+					},
+					'Hsinchu': {
+						type: "circle",
+                        x: 250,
+                        y: 160,
+						size: 35,
+                        text: {
+                            content: "0"
+                            , position: "inner"
+                            , attrs: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#000"
+                            },
+                            attrsHover: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#fff"
+                            }
+                        },
+					},
+					'Hsinchu Main Node': {
+						type: "circle",
+                        x: 290,
+                        y: 180,
+						size: 50,
+						attrs: {
+                            fill: "#ffc107"
+                            , opacity: 1
+                        },
+                        text: {
+                            content: "30"
+                            , position: "inner"
+                            , attrs: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#000"
+                            },
+                            attrsHover: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#fff"
+                            }
+                        },
+					},
+					'Taichung City Main Node': {
+						type: "circle",
+                        x: 190,
+                        y: 270,
+						size: 50,
+						attrs: {
+                            fill: "#ffc107"
+                            , opacity: 1
+                        },
+                        text: {
+                            content: "16"
+                            , position: "inner"
+                            , attrs: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#000"
+                            },
+                            attrsHover: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#fff"
+                            }
+                        },
+					},
+					'Taichung City': {
+						type: "circle",
+                        x: 210,
+                        y: 300,
+						size: 35,
+                        text: {
+                            content: "0"
+                            , position: "inner"
+                            , attrs: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#000"
+                            },
+                            attrsHover: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#fff"
+                            }
+                        },
+					},
+					'Nantou': {
+						type: "circle",
+                        x: 250,
+                        y: 350,
+						size: 35,
+                        text: {
+                            content: "0"
+                            , position: "inner"
+                            , attrs: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#000"
+                            },
+                            attrsHover: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#fff"
+                            }
+                        },
+					},
+					'Chiayi': {
+						type: "circle",
+                        x: 170,
+                        y: 410,
+						size: 35,
+                        text: {
+                            content: "0"
+                            , position: "inner"
+                            , attrs: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#000"
+                            },
+                            attrsHover: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#fff"
+                            }
+                        },
+					},
+					'Tainan City Main Node': {
+						type: "circle",
+                        x: 140,
+                        y: 500,
+						size: 50,
+						attrs: {
+                            fill: "#ffc107"
+                            , opacity: 1
+                        },
+                        text: {
+                            content: "3"
+                            , position: "inner"
+                            , attrs: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#000"
+                            },
+                            attrsHover: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#fff"
+                            }
+                        },
+					},
+					'Tainan City': {
+						type: "circle",
+                        x: 110,
+                        y: 530,
+						size: 35,
+                        text: {
+                            content: "0"
+                            , position: "inner"
+                            , attrs: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#000"
+                            },
+                            attrsHover: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#fff"
+                            }
+                        },
+					},
+					'Kaohsiung City': {
+						type: "circle",
+                        x: 120,
+                        y: 610,
+						size: 35,
+                        text: {
+                            content: "0"
+                            , position: "inner"
+                            , attrs: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#000"
+                            },
+                            attrsHover: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#fff"
+                            }
+                        },
+					},
+					'Yilan': {
+						type: "circle",
+                        x: 400,
+                        y: 170,
+						size: 35,
+                        text: {
+                            content: "0"
+                            , position: "inner"
+                            , attrs: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#000"
+                            },
+                            attrsHover: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#fff"
+                            }
+                        },
+					},
+					'Hualien': {
+						type: "circle",
+                        x: 350,
+                        y: 350,
+						size: 35,
+                        text: {
+                            content: "0"
+                            , position: "inner"
+                            , attrs: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#000"
+                            },
+                            attrsHover: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#fff"
+                            }
+                        },
+					},
+					/*
+					'Taitung': {
+						type: "circle",
+                        x: 260,
+                        y: 600,
+						size: 35,
+                        text: {
+                            content: "0"
+                            , position: "inner"
+                            , attrs: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#000"
+                            },
+                            attrsHover: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#fff"
+                            }
+                        },
+					},*/
+					'California': {
+						type: "circle",
+                        x: 600,
+                        y: 350,
+						size: 50,
+						attrs: {
+                            fill: "#ff0000"
+                            , opacity: 1
+                        },
+                        text: {
+                            content: "2"
+                            , position: "inner"
+                            , attrs: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#000"
+                            },
+                            attrsHover: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#000"
+                            }
+						}
+					},
+					'Wisconsin': {
+						type: "circle",
+                        x: 1100,
+                        y: 180,
+						size: 50,
+						attrs: {
+                            fill: "#ffc107"
+                            , opacity: 1
+                        },
+                        text: {
+                            content: "2"
+                            , position: "inner"
+                            , attrs: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#000"
+                            },
+                            attrsHover: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#fff"
+                            }
+						}
+					},
+					'New York': {
+						type: "circle",
+                        x: 1350,
+                        y: 180,
+						size: 50,
+						attrs: {
+                            fill: "#ffc107"
+                            , opacity: 1
+                        },
+                        text: {
+                            content: "3"
+                            , position: "inner"
+                            , attrs: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#000"
+                            },
+                            attrsHover: {
+                                "font-size": 16
+                                , "font-weight": "bold"
+                                , fill: "#fff"
+                            }
+						}
+					}
+                },
+				// Links allow you to connect plots between them
+                links: {
+                    'link1': {
+                        factor: -0.2
+                        // The source and the destination of the link can be set with a latitude and a longitude or a x and a y ...
+                        //, between: [{  x: 0,y: 200,}, {x: 560, y: 280}]
+						, between: ['Taipei Main Node', 'California']
+                        , attrs: {
+							"stroke": '#28a745',
+                            "stroke-width": 6,
+							"stroke-dasharray": "- ",
+                        }
+                        , tooltip: {content: "Link"}
+                    },
+					'link2': {
+                        factor: -0.2
+                        // The source and the destination of the link can be set with a latitude and a longitude or a x and a y ...
+                        //, between: [{  x: 0,y: 200,}, {x: 560, y: 280}]
+						, between: ['California', 'Wisconsin']
+                        , attrs: {
+							"stroke": '#28a745',
+                            "stroke-width": 6,
+							"stroke-dasharray": "- ",
+                        }
+                        , tooltip: {content: "Link"}
+                    },
+					'link3': {
+                        factor: 0.2
+                        // The source and the destination of the link can be set with a latitude and a longitude or a x and a y ...
+                        //, between: [{  x: 0,y: 200,}, {x: 560, y: 280}]
+						, between: ['California', 'New York']
+                        , attrs: {
+							"stroke": '#28a745',
+                            "stroke-width": 6,
+							"stroke-dasharray": "- ",
+                        }
+                        , tooltip: {content: "Link"}
+                    },
+					'link4': {
+                        factor: -0.2
+                        // The source and the destination of the link can be set with a latitude and a longitude or a x and a y ...
+                        //, between: [{  x: 0,y: 200,}, {x: 560, y: 280}]
+						, between: ['Tainan City Main Node', 'Taichung City Main Node']
+                        , attrs: {
+							"stroke": '#28a745',
+                            "stroke-width": 6,
+							"stroke-dasharray": "- ",
+                        }
+                        , tooltip: {content: "Link"}
+                    },
+					'link4_1': {
+                        factor: -0.2
+                        // The source and the destination of the link can be set with a latitude and a longitude or a x and a y ...
+                        //, between: [{  x: 0,y: 200,}, {x: 560, y: 280}]
+						, between: ['Tainan City Main Node', 'Hsinchu Main Node']
+                        , attrs: {
+							"stroke": '#28a745',
+                            "stroke-width": 6,
+							"stroke-dasharray": "- ",
+                        }
+                        , tooltip: {content: "Link"}
+                    },
+					'link4_2': {
+                        factor: -0.2
+                        // The source and the destination of the link can be set with a latitude and a longitude or a x and a y ...
+                        //, between: [{  x: 0,y: 200,}, {x: 560, y: 280}]
+						, between: ['Tainan City Main Node', 'Hsinchu Main Node']
+                        , attrs: {
+							"stroke": '#28a745',
+                            "stroke-width": 6,
+							"stroke-dasharray": "- ",
+                        }
+                        , tooltip: {content: "Link"}
+                    },
+					'link4_3': {
+                        factor: 0.4
+                        // The source and the destination of the link can be set with a latitude and a longitude or a x and a y ...
+                        //, between: [{  x: 0,y: 200,}, {x: 560, y: 280}]
+						, between: ['Hsinchu Main Node', 'Tainan City Main Node',]
+                        , attrs: {
+							"stroke": '#28a745',
+                            "stroke-width": 6,
+							"stroke-dasharray": "- ",
+                        }
+                        , tooltip: {content: "Link"}
+                    },
+					'link5': {
+                        factor: -0.2
+                        // The source and the destination of the link can be set with a latitude and a longitude or a x and a y ...
+                        //, between: [{  x: 0,y: 200,}, {x: 560, y: 280}]
+						, between: ['Taichung City Main Node', 'Taipei Main Node']
+                        , attrs: {
+							"stroke": '#28a745',
+                            "stroke-width": 6,
+							"stroke-dasharray": "- ",
+                        }
+                        , tooltip: {content: "Link"}
+                    },
+					'link6': {
+                        factor: -0.2
+                        // The source and the destination of the link can be set with a latitude and a longitude or a x and a y ...
+                        //, between: [{  x: 0,y: 200,}, {x: 560, y: 280}]
+						, between: ['Hsinchu Main Node', 'Taipei Main Node']
+                        , attrs: {
+							"stroke": '#28a745',
+                            "stroke-width": 6,
+							"stroke-dasharray": "- ",
+                        }
+                        , tooltip: {content: "Link"}
+                    },
+					/*
+					'link7': {
+                        factor: -0.2
+                        // The source and the destination of the link can be set with a latitude and a longitude or a x and a y ...
+                        //, between: [{  x: 0,y: 200,}, {x: 560, y: 280}]
+						, between: ['Taitung', 'Tainan City Main Node']
+                        , attrs: {
+							"stroke": '#28a745',
+                            "stroke-width": 6,
+							"stroke-dasharray": "- ",
+                        }
+                        , tooltip: {content: "Link"}
+                    },*/
+					'link8': {
+                        factor: -0.2
+                        // The source and the destination of the link can be set with a latitude and a longitude or a x and a y ...
+                        //, between: [{  x: 0,y: 200,}, {x: 560, y: 280}]
+						, between: ['Kaohsiung City', 'Tainan City Main Node']
+                        , attrs: {
+							"stroke": '#28a745',
+                            "stroke-width": 6,
+							"stroke-dasharray": "- ",
+                        }
+                        , tooltip: {content: "Link"}
+                    },
+					'link9': {
+                        factor: -0.2
+                        // The source and the destination of the link can be set with a latitude and a longitude or a x and a y ...
+                        //, between: [{  x: 0,y: 200,}, {x: 560, y: 280}]
+						, between: ['Tainan City', 'Tainan City Main Node']
+                        , attrs: {
+							"stroke": '#28a745',
+                            "stroke-width": 6,
+							"stroke-dasharray": "- ",
+                        }
+                        , tooltip: {content: "Link"}
+                    },
+					'link10': {
+                        factor: -0.2
+                        // The source and the destination of the link can be set with a latitude and a longitude or a x and a y ...
+                        //, between: [{  x: 0,y: 200,}, {x: 560, y: 280}]
+						, between: ['Chiayi', 'Tainan City Main Node']
+                        , attrs: {
+							"stroke": '#28a745',
+                            "stroke-width": 6,
+							"stroke-dasharray": "- ",
+                        }
+                        , tooltip: {content: "Link"}
+                    },
+					'link11': {
+                        factor: -0.2
+                        // The source and the destination of the link can be set with a latitude and a longitude or a x and a y ...
+                        //, between: [{  x: 0,y: 200,}, {x: 560, y: 280}]
+						, between: ['Chiayi', 'Hsinchu Main Node']
+                        , attrs: {
+							"stroke": '#28a745',
+                            "stroke-width": 6,
+							"stroke-dasharray": "- ",
+                        }
+                        , tooltip: {content: "Link"}
+                    },
+					'link12': {
+                        factor: -0.2
+                        // The source and the destination of the link can be set with a latitude and a longitude or a x and a y ...
+                        //, between: [{  x: 0,y: 200,}, {x: 560, y: 280}]
+						, between: ['Taichung City', 'Taichung City Main Node']
+                        , attrs: {
+							"stroke": '#28a745',
+                            "stroke-width": 6,
+							"stroke-dasharray": "- ",
+                        }
+                        , tooltip: {content: "Link"}
+                    },
+					'link13': {
+                        factor: -0.2
+                        // The source and the destination of the link can be set with a latitude and a longitude or a x and a y ...
+                        //, between: [{  x: 0,y: 200,}, {x: 560, y: 280}]
+						, between: ['Nantou', 'Taichung City Main Node']
+                        , attrs: {
+							"stroke": '#28a745',
+                            "stroke-width": 6,
+							"stroke-dasharray": "- ",
+                        }
+                        , tooltip: {content: "Link"}
+                    },
+					'link14': {
+                        factor: -0.2
+                        // The source and the destination of the link can be set with a latitude and a longitude or a x and a y ...
+                        //, between: [{  x: 0,y: 200,}, {x: 560, y: 280}]
+						, between: ['Hsinchu', 'Hsinchu Main Node']
+                        , attrs: {
+							"stroke": '#28a745',
+                            "stroke-width": 6,
+							"stroke-dasharray": "- ",
+                        }
+                        , tooltip: {content: "Link"}
+                    },
+					'link15': {
+                        factor: -0.2
+                        // The source and the destination of the link can be set with a latitude and a longitude or a x and a y ...
+                        //, between: [{  x: 0,y: 200,}, {x: 560, y: 280}]
+						, between: ['Taoyuan', 'Taipei Main Node']
+                        , attrs: {
+							"stroke": '#28a745',
+                            "stroke-width": 6,
+							"stroke-dasharray": "- ",
+                        }
+                        , tooltip: {content: "Link"}
+                    },
+					'link16': {
+                        factor: -0.2
+                        // The source and the destination of the link can be set with a latitude and a longitude or a x and a y ...
+                        //, between: [{  x: 0,y: 200,}, {x: 560, y: 280}]
+						, between: ['Taipei_1', 'Taipei Main Node']
+                        , attrs: {
+							"stroke": '#28a745',
+                            "stroke-width": 6,
+							"stroke-dasharray": "- ",
+                        }
+                        , tooltip: {content: "Link"}
+                    },
+					'link17': {
+                        factor: -0.2
+                        // The source and the destination of the link can be set with a latitude and a longitude or a x and a y ...
+                        //, between: [{  x: 0,y: 200,}, {x: 560, y: 280}]
+						, between: ['Taipei_2', 'Taipei Main Node']
+                        , attrs: {
+							"stroke": '#28a745',
+                            "stroke-width": 6,
+							"stroke-dasharray": "- ",
+                        }
+                        , tooltip: {content: "Link"}
+                    },
+					'link18': {
+                        factor: -0.2
+                        // The source and the destination of the link can be set with a latitude and a longitude or a x and a y ...
+                        //, between: [{  x: 0,y: 200,}, {x: 560, y: 280}]
+						, between: ['Taipei_3', 'Taipei Main Node']
+                        , attrs: {
+							"stroke": '#28a745',
+                            "stroke-width": 6,
+							"stroke-dasharray": "- ",
+                        }
+                        , tooltip: {content: "Link"}
+                    },
+					'link19': {
+                        factor: -0.2
+                        // The source and the destination of the link can be set with a latitude and a longitude or a x and a y ...
+                        //, between: [{  x: 0,y: 200,}, {x: 560, y: 280}]
+						, between: ['Taipei_4', 'Taipei Main Node']
+                        , attrs: {
+							"stroke": '#28a745',
+                            "stroke-width": 6,
+							"stroke-dasharray": "- ",
+                        }
+                        , tooltip: {content: "Link"}
+                    },
+					'link20': {
+                        factor: -0.2
+                        // The source and the destination of the link can be set with a latitude and a longitude or a x and a y ...
+                        //, between: [{  x: 0,y: 200,}, {x: 560, y: 280}]
+						, between: ['Hualien', 'Taipei Main Node']
+                        , attrs: {
+							"stroke": '#28a745',
+                            "stroke-width": 6,
+							"stroke-dasharray": "- ",
+                        }
+                        , tooltip: {content: "Link"}
+                    },
+					'link21': {
+                        factor: -0.2
+                        // The source and the destination of the link can be set with a latitude and a longitude or a x and a y ...
+                        //, between: [{  x: 0,y: 200,}, {x: 560, y: 280}]
+						, between: ['Yilan', 'Taipei Main Node']
+                        , attrs: {
+							"stroke": '#28a745',
+                            "stroke-width": 6,
+							"stroke-dasharray": "- ",
+                        }
+                        , tooltip: {content: "Link"}
+                    },
+					/*
+					'link22': {
+                        factor: 0.4
+                        // The source and the destination of the link can be set with a latitude and a longitude or a x and a y ...
+                        //, between: [{  x: 0,y: 200,}, {x: 560, y: 280}]
+						, between: ['Taitung', 'Taipei Main Node']
+                        , attrs: {
+							"stroke": '#28a745',
+                            "stroke-width": 6,
+							"stroke-dasharray": "- ",
+                        }
+                        , tooltip: {content: "Link"}
+                    },*/
+					'link23': {
+                        factor: 0.4
+                        // The source and the destination of the link can be set with a latitude and a longitude or a x and a y ...
+                        //, between: [{  x: 0,y: 200,}, {x: 560, y: 280}]
+						, between: ['Hualien', 'Tainan City Main Node']
+                        , attrs: {
+							"stroke": '#28a745',
+                            "stroke-width": 6,
+							"stroke-dasharray": "- ",
+                        }
+                        , tooltip: {content: "Link"}
+                    },
+				}
+  });
+  }
   $(".mapcontainer2").mapael({
                 map: {
                     name: "taiwan"
