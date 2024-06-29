@@ -118,7 +118,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../../index.html" class="nav-link active">
+                <a href="../../index1.html" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Dashboard</p>
 				  <span class="badge badge-danger left">V</span>
@@ -959,6 +959,8 @@
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
 <!-- Page specific script -->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 <script>
   $(function () {
     $("#example1").DataTable({
@@ -1117,6 +1119,11 @@
 	$("input[data-bootstrap-switch]").each(function(){
       $(this).bootstrapSwitch('state', $(this).prop('checked'));
     })
+  });
+  
+  axios.get('https://api.kcg.gov.tw/api/service/Get/b4dd9c40-9027-4125-8666-06bef1756092')
+    .then(function(response){
+    console.log(response.data);
   });
 </script>
 </body>

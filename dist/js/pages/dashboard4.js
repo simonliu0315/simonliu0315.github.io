@@ -742,8 +742,8 @@ $(function () {
                         },
                     },
 					'myplot4': {
-                        x: 300,
-                        y: 600,
+                        x: 400,
+                        y: 500,
 						size: 24,
 						attrs: {
                             fill: "#ff0000"
@@ -762,8 +762,8 @@ $(function () {
 		                }
                     },
 					'myplot5': {
-                        x: 300,
-                        y: 650,
+                        x: 400,
+                        y: 550,
 						size: 24,
 						attrs: {
                             fill: "#ff0000"
@@ -777,8 +777,8 @@ $(function () {
                         },
                     },
 					'myplot6': {
-                        x: 300,
-                        y: 700,
+                        x: 400,
+                        y: 600,
 						size: 24,
 						attrs: {
                             fill: "#ff0000"
@@ -792,8 +792,8 @@ $(function () {
                         },
                     },
 					'myplot7': {
-                        x: 300,
-                        y: 750,
+                        x: 400,
+                        y: 650,
 						size: 24,
 						attrs: {
                             fill: "#ff0000"
@@ -1917,8 +1917,8 @@ $(function () {
                         },
                     },
 					'myplot4': {
-                        x: 300,
-                        y: 600,
+                        x: 400,
+                        y: 500,
 						size: 24,
 						attrs: {
                             fill: "#ff0000"
@@ -1937,8 +1937,8 @@ $(function () {
 		                }
                     },
 					'myplot5': {
-                        x: 300,
-                        y: 650,
+                        x: 400,
+                        y: 550,
 						size: 24,
 						attrs: {
                             fill: "#ff0000"
@@ -1952,8 +1952,8 @@ $(function () {
                         },
                     },
 					'myplot6': {
-                        x: 300,
-                        y: 700,
+                        x: 400,
+                        y: 600,
 						size: 24,
 						attrs: {
                             fill: "#ff0000"
@@ -1967,8 +1967,8 @@ $(function () {
                         },
                     },
 					'myplot7': {
-                        x: 300,
-                        y: 750,
+                        x: 400,
+                        y: 650,
 						size: 24,
 						attrs: {
                             fill: "#ff0000"
