@@ -1148,10 +1148,50 @@
       $(this).bootstrapSwitch('state', $(this).prop('checked'));
     })
   });
-  
-  axios.get('https://api.kcg.gov.tw/api/service/Get/b4dd9c40-9027-4125-8666-06bef1756092')
+  var endDate =  Date.now();
+  console.log(endDate/1000);
+  var endTime = endDate/1000;
+  var  startDate = new Date();
+  startDate.setDate(startDate.getDate() - 1);
+  console.log(startDate.getTime()/ 1000);
+  var startTime = startDate.getTime()/ 1000;
+  axios.get('http://localhost:9090/api/v1/query_range?query=avg_over_time%28rate%28windows_net_bytes_received_total%7Bnic%3D%27Intel_R__Wi_Fi_6_AX201_160MHz%27%7D%5B5m%5D%29%5B5m%3A5m%5D%29&start='+startTime+'&end='+endTime+'&step=300')
     .then(function(response){
-    console.log(response.data);
+	console.log(response);
+	if (response.status == 200) {
+	  console.log(response.data.data.result[0].metric);
+	  console.log(response.data.data.result[0].values[1]);
+	  console.log('1->' + response.data.data.result[0].values[response.data.data.result[0].values.length - 2][1]);
+	  console.log('1->' + response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1]);
+	  var sparkline1 = new Sparkline($('#sparkline-1')[0], { width: 100, height: 30, lineColor: '#92c1dc', endColor: '#92c1dc' })
+	  sparkline1.draw([response.data.data.result[0].values[response.data.data.result[0].values.length - 8][1], 
+	                   response.data.data.result[0].values[response.data.data.result[0].values.length - 7][1],
+					   response.data.data.result[0].values[response.data.data.result[0].values.length - 6][1],
+					   response.data.data.result[0].values[response.data.data.result[0].values.length - 5][1],
+					   response.data.data.result[0].values[response.data.data.result[0].values.length - 4][1],
+					   response.data.data.result[0].values[response.data.data.result[0].values.length - 3][1],
+					   response.data.data.result[0].values[response.data.data.result[0].values.length - 2][1],
+					   response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1]])
+	}     
+  });
+  axios.get('http://localhost:9090/api/v1/query_range?query=avg_over_time%28rate%28windows_net_bytes_sent_total%7Bnic%3D%27Intel_R__Wi_Fi_6_AX201_160MHz%27%7D%5B5m%5D%29%5B5m%3A5m%5D%29&start='+startTime+'&end='+endTime+'&step=300')
+    .then(function(response){
+	console.log(response);
+	if (response.status == 200) {
+	  console.log(response.data.data.result[0].metric);
+	  console.log(response.data.data.result[0].values[1]);
+	  console.log('2->' + response.data.data.result[0].values[response.data.data.result[0].values.length - 2][1]);
+	  console.log('2->' + response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1]);
+	  var sparkline2 = new Sparkline($('#sparkline-2')[0], { width: 100, height: 30, lineColor: '#f56954', endColor: '#f56954' })
+	  sparkline2.draw([response.data.data.result[0].values[response.data.data.result[0].values.length - 8][1], 
+	                   response.data.data.result[0].values[response.data.data.result[0].values.length - 7][1],
+					   response.data.data.result[0].values[response.data.data.result[0].values.length - 6][1],
+					   response.data.data.result[0].values[response.data.data.result[0].values.length - 5][1],
+					   response.data.data.result[0].values[response.data.data.result[0].values.length - 4][1],
+					   response.data.data.result[0].values[response.data.data.result[0].values.length - 3][1],
+					   response.data.data.result[0].values[response.data.data.result[0].values.length - 2][1],
+					   response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1]])
+	}     
   });
 </script>
 </body>
