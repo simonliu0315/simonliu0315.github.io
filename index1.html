@@ -1102,7 +1102,7 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
+                <table id="example2" class="table table-bordered table-striped">
                   <thead>
                   <tr>
                     <th>序號</th>
@@ -1212,7 +1212,14 @@
        },
 	   "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-	});
+	$("#example2").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false, "searching": false,
+	  "language": {
+        "url": 'https://cdn.datatables.net/plug-ins/2.0.8/i18n/zh-HANT.json'
+       },
+	   "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+  });
 </script>
 </body>
 </html>
