@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdminLTE 3 | DataTables</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+  <!-- Navbar -->
+  <!--nav class="main-header navbar navbar-expand navbar"-->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="../../index.html" class="nav-link"></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link"></a>
+      </li>
+    </ul>
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+	  <li class="nav-item" style=" margin-top: 3%;">
+	    <input type="checkbox" name="my-checkbox"  data-on-text="中" data-off-text="En" checked data-bootstrap-switch data-off-color="success" >
+	  </li>
+      <!-- Navbar Search -->
+      <li class="nav-item">
+        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+          <i class="fas fa-search"></i>
+        </a>
+        <div class="navbar-search-block">
+          <form class="form-inline">
+            <div class="input-group input-group-sm">
+              <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+              <div class="input-group-append">
+                <button class="btn btn-navbar" type="submit">
+                  <i class="fas fa-search"></i>
+                </button>
+                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+          <i class="fas fa-expand-arrows-alt"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+          <i class="fas fa-th-large"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="../../index.html" class="brand-link">
+      <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">整合式網管系統</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- SidebarSearch Form -->
+      <div class="form-inline">
+        <div class="input-group" data-widget="sidebar-search">
+          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+		  <li class="nav-item">
+            <a href="./index.html" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              Home
+            </a>
+          </li>
+          <li class="nav-item menu-open">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Dashboard
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="../../index1.html" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Dashboard</p>
+				  <span class="badge badge-danger left">V</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../../index5.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Dashboard(英文版)</p>
+				  <span class="badge badge-danger left">V</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../../index6.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Dashboard(教育部)</p>
+				  <span class="badge badge-danger left">V</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                聯絡資料
+				<span class="badge badge-danger left">V</span>
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info left">5</span>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>維運團隊</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>GigaPoPs</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../../pages/tables/data7.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>連線單位</p>
+				  <span class="badge badge-danger left">V</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>VPLS VPN</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>國內外BGP Peering</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-chart-pie"></i>
+              <p>
+                設備資料
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>設備資料設定檔</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+                監控狀況
+                <i class="fas fa-angle-left right"></i>
+              </p>
+			  <span class="badge badge-danger left">V</span>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>電路狀態</p>
+				  <span class="badge badge-danger left">V</span>
+				  <i class="fas fa-angle-left right"></i>
+                  <span class="badge badge-info left">9</span>
+                </a>
+				<ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="../../pages/tables/data3.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        國內骨幹流量狀況
+                      </p>
+					  <span class="badge badge-danger left">V</span>
+                    </a>
+			      </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        國內骨幹界接介面狀況
+                      </p>
+                    </a>
+			      </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        國際電路流量狀況
+                      </p>
+                    </a>
+			      </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        國際電路界接介面狀況
+                      </p>
+                    </a>
+			      </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        國際電路界接介面WAN Port IP Ping 狀況
+                      </p>
+                    </a>
+			      </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        國科會線路狀況
+                      </p>
+                    </a>
+			      </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        資策會線路界接介面狀況
+                      </p>
+                    </a>
+			      </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        TWNIC DNS 代管 Server 界接介面狀況
+                      </p>
+                    </a>
+			      </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        國內骨幹介面品質
+                      </p>
+                    </a>
+			      </li>
+				</ul>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>設備狀態</p>
+				  <i class="fas fa-angle-left right"></i>
+                  <span class="badge badge-info left">6</span>
+                </a>
+				<ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        設備CPU狀況
+                      </p>
+                    </a>
+			      </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        設備Memory狀況
+                      </p>
+                    </a>
+			      </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        設備Power Supply狀況
+                      </p>
+                    </a>
+			      </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        骨幹設備IP Ping狀況
+                      </p>
+                    </a>
+			      </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        局端與納管設備OOB IP Ping 狀況
+                      </p>
+                    </a>
+			      </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        機房電源設備與溫控設備IP Ping 狀況
+                      </p>
+                    </a>
+			      </li>
+				</ul>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>VPLS VPN 狀態</p>
+				  <i class="fas fa-angle-left right"></i>
+                  <span class="badge badge-info left">2</span>
+                </a>
+				<ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        VPN Client 界接介面狀況
+                      </p>
+                    </a>
+			      </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        VPLS VPN Peer 狀況
+                      </p>
+                    </a>
+			      </li>
+				</ul>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>機房環境狀態</p>
+				  <i class="fas fa-angle-left right"></i>
+                  <span class="badge badge-info left">3</span>
+                </a>
+				<ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        機房溫度狀況
+                      </p>
+                    </a>
+			      </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        主節點SMR電壓與電流狀況
+                      </p>
+                    </a>
+			      </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        RPM總負載電流狀況
+                      </p>
+                    </a>
+			      </li>
+				</ul>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>連線單位狀態</p>
+				  <span class="badge badge-danger left">V</span>
+				  <i class="fas fa-angle-left right"></i>
+				  <span class="badge badge-info left">3</span>
+                </a>
+				<ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="../../pages/tables/data4.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        連線單位WAN Port Ping 狀況
+                      </p>
+					  <span class="badge badge-danger left">V</span>
+                    </a>
+			      </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        連線單位路由狀況
+                      </p>
+                    </a>
+			      </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        連線單位流量狀況
+                      </p>
+                    </a>
+			      </li>
+				</ul>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>BGP Peering 狀態</p>
+				  <i class="fas fa-angle-left right"></i>
+                  <span class="badge badge-info left">3</span>
+                </a>
+				<ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        Peering BGP 狀況
+                      </p>
+                    </a>
+			      </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        RR_BGP 狀況
+                      </p>
+                    </a>
+			      </li>				  
+				</ul>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>SSL VPN 狀態</p>
+				  <i class="fas fa-angle-left right"></i>
+                  <span class="badge badge-info left">1</span>
+                </a>
+				<ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        SSL VPN 狀況
+                      </p>
+                    </a>
+			      </li>
+				</ul>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                記錄查詢
+				<span class="badge badge-danger left">V</span>
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="../../pages/tables/data5.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>異常事件紀錄</p>
+				  <span class="badge badge-danger left">V</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>使用者系統操作紀錄</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>使用者登入紀錄</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                報表查詢
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>100G維運報表查詢</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>國際電路報表查詢</p>
+				  <i class="fas fa-angle-left right"></i>
+                  <span class="badge badge-info left">5</span>
+                </a>
+				<ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>連線單位最近三個月流出入比較圖(不含TWGate)(Top10)</p>
+                    </a>
+                  </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>美國電路-依照連線單位，最近一個月流出入圓餅圖(Top10)</p>
+                    </a>
+                  </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>美國電路各年度每月之流出入比較趨勢圖</p>
+                    </a>
+                  </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>連線單位歷年出入比較圖(不含TWGate)(Top10)</p>
+                    </a>
+                  </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>美國電路-依照連線單位，年度流出入圓餅圖(Top10)</p>
+                    </a>
+                  </li>
+				</ul>
+              </li>             
+            </ul>
+          </li>          
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-calendar-alt"></i>
+              <p>
+                監控項目管理
+				<span class="badge badge-danger left">V</span>
+                <span class="badge badge-info left">2</span>
+				<i class="fas fa-angle-left right"></i>
+              </p>
+			</a>
+			<ul class="nav nav-treeview">
+			  <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon far fa-image"></i>
+                  <p>
+                  資料管理
+                  </p>
+				  <span class="badge badge-danger left">V</span>
+			      <i class="fas fa-angle-left right"></i>
+                  <span class="badge badge-info left">6</span>
+                </a>
+			  <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>維運團隊管理</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>GigaPops管理</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="../../pages/tables/data6.html" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>連線單位管理</p>
+                  </a>
+                </li>
+			  <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>BGP Peering管理</p>
+                </a>
+              </li>
+			  <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>VPLS VPN管理</p>
+                </a>
+              </li>
+			  <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>電路介面管理</p>
+				  <span class="badge badge-danger left">V</span>
+				  <i class="fas fa-angle-left right"></i>
+                  <span class="badge badge-info left">3</span>
+                </a>
+				  <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                      <a href="../../pages/tables/data8.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>國內電路</p>
+					  <span class="badge badge-danger left">V</span>
+					  </a>
+					</li>
+					<li class="nav-item">
+                      <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>國際電路</p>
+					  </a>
+					</li>
+					<li class="nav-item">
+                      <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>資策會監控電路</p>
+					  </a>
+					</li>
+				  </ul>
+                 </li>
+			     <li class="nav-item">
+                    <a href="../../pages/tables/data.html" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>帳號管理</p>
+					<span class="badge badge-danger left">V</span>
+				    </a>
+			     </li>
+			     <li class="nav-item">
+                  <a href="../../pages/tables/data1.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>群組授權管理</p>
+				  <span class="badge badge-danger left">V</span>
+				  </a>
+				 </li>
+				 <li class="nav-item">
+                  <a href="../../pages/tables/data2.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>系統參數設定</p>
+				  <span class="badge badge-danger left">V</span>
+                  </a>
+                 </li>
+				
+		    </ul>
+			</li>
+			<li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-columns"></i>
+              <p>
+                告警管理
+              </p>
+			  <i class="fas fa-angle-left right"></i>
+              <span class="badge badge-info left">4</span>
+            </a>
+			<ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>連線單位</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>BGP Peering</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>事件類別</p>
+                </a>
+              </li>
+			  <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>設備類</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>我的電腦</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">我的電腦狀況</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+		  <!-- DONUT CHART -->
+            <!-- /.card -->
+			<div class="card">
+              <div class="card-header">
+                <h3 class="card-title">CPU狀態</h3>
+				 <div class="card-tools">
+				   <div class="btn-group">
+				      <button type="button" class="btn btn-tool">
+                        <i class="fa fa-recycle"></i>
+                      </button>
+                      <button type="button" class="btn btn-tool dropdown-toggle" data-toggle="dropdown">
+                        <i class="fas fa-download"></i>
+                      </button>
+                      <div class="dropdown-menu dropdown-menu-right" role="menu">
+                        <a href="#" class="dropdown-item">EXCEL</a>
+						<a href="#" class="dropdown-item">CSV</a>
+						<a href="#" class="dropdown-item">PDF</a>
+                      </div>
+                    </div>
+				  </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                    <th>編號</th>
+                    <th>設備</th>
+                    <th>檢查時間</th>
+					<th>CPU使用量<br/>(每5分鐘平均值)</th>
+					<th>備註</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+				    <td>1</td>
+                    <td id="cpu_background" style="background-color:#28a745;">My Acer NB</td>
+                    <td id="checktime0">2024/06/14 10:05:01</td>
+                    <td>
+					<div class="progress progress-xs progress-striped active">
+                      <div id="cpu0" class="progress-bar bg-success" style="width: 90%"></div>
+                    </div>
+					<small id="cpuPercent" class="text-success mr-1">
+                      <i class="fas fa-arrow-up"></i>
+                      4%　　　　
+                    </small>
+					<span id="cpu1" class="badge bg-success float-right">90%</span>
+					</td>
+					<td></td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">流量狀態</h3>
+				 <div class="card-tools">
+				   <div class="btn-group">
+				      <button type="button" class="btn btn-tool">
+                        <i class="fa fa-recycle"></i>
+                      </button>
+                      <button type="button" class="btn btn-tool dropdown-toggle" data-toggle="dropdown">
+                        <i class="fas fa-download"></i>
+                      </button>
+                      <div class="dropdown-menu dropdown-menu-right" role="menu">
+                        <a href="#" class="dropdown-item">EXCEL</a>
+						<a href="#" class="dropdown-item">CSV</a>
+						<a href="#" class="dropdown-item">PDF</a>
+                      </div>
+                    </div>
+				  </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                    <th>編號</th>
+                    <th>設備</th>
+                    <th>介面</th>
+                    <th>介面描述</th>
+                    <th>檢查時間</th>
+					<th>Input使用量<br/>(每5分鐘平均值)</th>
+					<th>Output使用量<br/>(每5分鐘平均值)</th>
+					<th>備註</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+				    <td>1</td>
+                    <td style="background-color:#28a745;">My Acer NB</td>
+                    <td style="background-color:#28a745">G/0/0/1/7</td>
+                    <td style="background-color:#28a745">Intel_R__Wi_Fi_6_AX201_160MHz</td>
+                    <td id="checktime">2024/06/14 10:05:01</td>
+                    <td> <span id="flowInput">1234(Mbps)</span>
+					<small id="flowInputPercent" class="text-success mr-1">
+                      <i class="fas fa-arrow-up"></i>
+                      4%
+                    </small>
+					<div class="col-4 text-center">
+                      <div id="sparkline-1"></div>
+                    </div>
+					</td>
+					<td><span id="flowOutput">5678(Mbps)</span>
+					<small id="flowOutputPercent" class="text-danger mr-1">
+                      <i class="fas fa-arrow-down"></i>
+                      2%
+                    </small>
+					<div class="col-4 text-center">
+                      <div id="sparkline-2"></div>
+                    </div>
+					</td>
+					<td></td>
+                  </tr>				  
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2024 <a href="https://www.cht.com.tw">www.cht.com.tw</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 2.0.0-rc
+    </div>
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap Switch -->
+<script src="../../plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+<!-- ChartJS -->
+<!--script src="../../plugins/chart.js/Chart.min.js"></script-->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+<!-- Sparkline -->
+<script src="../../plugins/sparklines/sparkline.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="../../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="../../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="../../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="../../plugins/jszip/jszip.min.js"></script>
+<script src="../../plugins/pdfmake/pdfmake.min.js"></script>
+<script src="../../plugins/pdfmake/vfs_fonts.js"></script>
+<script src="../../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="../../plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+<!-- Page specific script -->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+	  "language": {
+        "url": 'https://cdn.datatables.net/plug-ins/2.0.8/i18n/zh-HANT.json'
+       },
+	   "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": true,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+	  "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],	 
+    }).buttons().container().appendTo('#example2_wrapper .col-md-6:eq(0)');
+	
+	 //-------------
+    //- DONUT CHART -
+    //-------------
+    // Get context with jQuery - using jQuery's .get() method.
+    
+    var donutOptions     = {
+      maintainAspectRatio : false,
+      responsive : true,
+    }
+    //Create pie or douhnut chart
+    // You can switch between pie and douhnut using the method below.
+   
+	//INITIALIZE SPARKLINE CHARTS
+    var sparkline1 = new Sparkline($('#sparkline-1')[0], { width: 100, height: 30, lineColor: '#92c1dc', endColor: '#92c1dc' })
+	sparkline1.draw([931, 1027, 819, 930, 1021, 1000, 1200, 920, 927])
+	var sparkline2 = new Sparkline($('#sparkline-2')[0], { width: 100, height: 30, lineColor: '#f56954', endColor: '#f56954' })
+	sparkline2.draw([927, 931, 1027, 819, 930, 1021, 1000, 1200, 920])
+	
+	
+	
+	
+	var areaChartData = {
+      labels  : ['00:00', '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00' ],
+      datasets: [
+        {
+          label               : '異常數',
+          backgroundColor     : 'rgba(255, 0, 0, 1)',
+          borderColor         : 'rgba(255, 0, 0, 1)',
+          pointRadius         : true,
+          pointColor          : 'rgba(210, 214, 222, 1)',
+          pointStrokeColor    : '#c1c7d1',
+          pointHighlightFill  : '#fff',
+          pointHighlightStroke: 'rgba(220,220,220,1)',
+          data                : [17, 18, 15, 23, 20, 19, 19, 18, 17, 20, 19, 17]
+        },
+		{
+          label               : '同期異常數',
+          backgroundColor     : 'rgba(210, 214, 222, 1)',
+          borderColor         : 'rgba(210, 214, 222, 1)',
+          pointRadius         : false,
+          pointColor          : 'rgba(210, 214, 222, 1)',
+          pointStrokeColor    : '#c1c7d1',
+          pointHighlightFill  : '#fff',
+          pointHighlightStroke: 'rgba(220,220,220,1)',
+          data                : [18, 18, 16, 24, 26, 20, 20, 19, 18, 21, 22, 23]
+        },
+      ]
+    }
+
+    var areaChartOptions = {
+	  plugins: {
+        datalabels: {
+          align: function(context) {
+        	var index = context.dataIndex;
+            var value = context.dataset.data[index];
+            var invert = Math.abs(value) <= 1;
+            return value < 1 ? 'end' : 'start'
+          },
+		  display: 'auto',     
+          anchor: 'end',
+          backgroundColor: null,
+          borderColor: null,
+          borderRadius: 4,
+          borderWidth: 1,
+          color: '#223388',
+          font: {
+            size: 11,
+            weight: 600
+          },
+          offset: 4,
+          padding: 0,
+          formatter: function(value) {
+        	return Math.round(value * 10) / 10
+          }
+        }
+      },
+      maintainAspectRatio : false,
+      responsive : true,
+      legend: {
+        display: true
+      },
+      scales: {
+        xAxes: [{
+          gridLines : {
+            display : false,
+          }
+        }],
+        yAxes: [{
+          gridLines : {
+            display : true,
+          }
+        }]
+      },
+	  title: {
+		display: true,
+		text: '異常數趨勢圖'
+	  }
+    }
+	//-------------
+    //- LINE CHART -
+    //--------------
+   
+    var lineChartOptions = $.extend(true, {}, areaChartOptions)
+    var lineChartData = $.extend(true, {}, areaChartData)
+    lineChartData.datasets[0].fill = false;
+	lineChartData.datasets[1].fill = false;
+    lineChartOptions.datasetFill = false
+
+   
+	
+	$("input[data-bootstrap-switch]").each(function(){
+      $(this).bootstrapSwitch('state', $(this).prop('checked'));
+    })
+  });
+  //var endDate =  Date.now();
+  var endDate = new Date();
+  endDate.setDate(endDate.getDate() + 1);
+  console.log(endDate.getTime()/ 1000);
+  var endTime = endDate.getTime()/ 1000;
+  //console.log(endDate/1000);
+  //endTime = endDate/1000;
+  var  startDate = new Date( Date.now() - 1000 * 3600);
+  startDate.setDate(startDate.getDate());
+  console.log(startDate.getTime()/ 1000);
+  var startTime = startDate.getTime()/ 1000;
+  
+  axios.get('http://localhost:9090/api/v1/query_range?query=100+-+%28avg+by+%28instance%29+%28irate%28windows_cpu_time_total%7Bmode%3D%22idle%22%2C+instance%3D~%22localhost%3A9182%22%7D%5B1m%5D%29%29+*+100%29&start=' + startTime +'&end=' + endTime + '&step=300')
+    .then(function(response){
+	console.log(response);
+	if (response.status == 200) {
+	  console.log(response.data.data.result[0].metric);
+	  console.log(response.data.data.result[0].values[1]);	  
+	  console.log('0->' + response.data.data.result[0].values[response.data.data.result[0].values.length - 2][1]);
+	  console.log('0->' + response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1]);
+	  
+	  let cpu = response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1];
+	  let checktime = response.data.data.result[0].values[response.data.data.result[0].values.length - 1][0];
+	  var date = new Date(checktime * 1000);
+	  var hours = date.getHours();
+      // Minutes part from the timestamp
+      var minutes = "0" + date.getMinutes();
+
+      // Seconds part from the timestamp
+      var seconds = "0" + date.getSeconds();
+	  $("#cpu0").attr("style", "width:" + Math.round(cpu) + "%");
+	  $("#cpu1").html(Math.round(cpu) + "%");
+	  $("#checktime0").html(date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + date.getDate() + "<br/> " +hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2))
+	  //$("#flowInput").text((response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1] / 1024).toFixed(4) + " (Mbps)");
+	  
+	  if ((response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1] - response.data.data.result[0].values[response.data.data.result[0].values.length - 2][1]) > 0) {
+	    $("#cpuPercent").html("<i class='fas fa-arrow-up'></i> " + Math.abs(Math.round(
+	      (((response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1] - 
+	      response.data.data.result[0].values[response.data.data.result[0].values.length - 2][1]) / 
+	      response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1]) * 100))) + "%"
+		)
+		$("#cpuPercent").attr("class","text-success mr-1");
+	  } else {
+	    $("#cpuPercent").html("<i class='fas fa-arrow-down'></i> " + Math.abs(Math.round(
+	      (((response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1] - 
+	      response.data.data.result[0].values[response.data.data.result[0].values.length - 2][1]) / 
+	      response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1]) * 100))) + "%"
+		)
+		$("#cpuPercent").attr("class","text-danger mr-1");
+	  }
+	}     
+  });
+  
+  let receiver_url = 'http://localhost:9090/api/v1/query_range?query=+%28avg+by+%28instance%29+%28irate%28windows_net_bytes_received_total%7Bnic%3D%27Intel_R__Wi_Fi_6_AX201_160MHz%27%7D%5B5m%5D%29%29+%2F1024%29&start=' + startTime + '&end=' + endTime + '&step=10'
+  receiver_url = 'http://localhost:9090/api/v1/query_range?query=avg_over_time%28rate%28windows_net_bytes_received_total%7Bnic%3D%27Intel_R__Wi_Fi_6_AX201_160MHz%27%7D%5B5m%5D%29%5B5m%3A5m%5D%29&start='+startTime+'&end='+endTime+'&step=300'
+  axios.get(receiver_url)
+    .then(function(response){
+	console.log(response);
+	if (response.status == 200) {
+	  console.log(response.data.data.result[0].metric);
+	  console.log(response.data.data.result[0].values[1]);
+	  console.log('1->' + response.data.data.result[0].values[response.data.data.result[0].values.length - 3][1]);
+	  console.log('1->' + response.data.data.result[0].values[response.data.data.result[0].values.length - 2][1]);
+	  console.log('1->' + response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1]);
+	  var sparkline1 = new Sparkline($('#sparkline-1')[0], { width: 100, height: 30, lineColor: '#92c1dc', endColor: '#92c1dc' })
+	  sparkline1.draw([response.data.data.result[0].values[response.data.data.result[0].values.length - 8][1], 
+	                   response.data.data.result[0].values[response.data.data.result[0].values.length - 7][1],
+					   response.data.data.result[0].values[response.data.data.result[0].values.length - 6][1],
+					   response.data.data.result[0].values[response.data.data.result[0].values.length - 5][1],
+					   response.data.data.result[0].values[response.data.data.result[0].values.length - 4][1],
+					   response.data.data.result[0].values[response.data.data.result[0].values.length - 3][1],
+					   response.data.data.result[0].values[response.data.data.result[0].values.length - 2][1],
+					   response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1]])
+	  
+	  let checktime = response.data.data.result[0].values[response.data.data.result[0].values.length - 2][0];
+	  var date = new Date(checktime * 1000);
+	  var hours = date.getHours();
+      // Minutes part from the timestamp
+      var minutes = "0" + date.getMinutes();
+
+      // Seconds part from the timestamp
+      var seconds = "0" + date.getSeconds();
+	  
+	  $("#checktime").html(date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + date.getDate() + "<br/> " +hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2))
+	  $("#flowInput").text((response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1] / 1024).toFixed(4) + " (Mbps)");
+	  
+	  if ((response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1] - 
+	  response.data.data.result[0].values[response.data.data.result[0].values.length - 2][1]) > 0) {
+	  //<i class="fas fa-arrow-up"></i>
+	  $("#flowInputPercent").html("<i class='fas fa-arrow-up'></i> " + Math.abs(Math.round(
+	    (((response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1] - 
+	    response.data.data.result[0].values[response.data.data.result[0].values.length - 2][1]) / 
+	    response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1]) * 100))) + "%");
+	  $("#flowInputPercent").attr("class","text-success mr-1");
+	  } else {
+	  $("#flowInputPercent").html("<i class='fas fa-arrow-down'></i> " + Math.abs(Math.round(
+	    (((response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1] - 
+	    response.data.data.result[0].values[response.data.data.result[0].values.length - 2][1]) / 
+	    response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1]) * 100))) + "%");
+	  $("#flowInputPercent").attr("class","text-danger mr-1");
+	  }
+	 
+	}     
+  });
+  let sent_url = 'http://localhost:9090/api/v1/query_range?query=+%28avg+by+%28instance%29+%28irate%28windows_net_bytes_sent_total%7Bnic%3D%27Intel_R__Wi_Fi_6_AX201_160MHz%27%7D%5B5m%5D%29%29+%2F1024%29&start=' + startTime + '&end=' + endTime + '&step=10'
+  sent_url = 'http://localhost:9090/api/v1/query_range?query=avg_over_time%28rate%28windows_net_bytes_sent_total%7Bnic%3D%27Intel_R__Wi_Fi_6_AX201_160MHz%27%7D%5B5m%5D%29%5B5m%3A5m%5D%29&start='+startTime+'&end='+endTime+'&step=300'
+  axios.get(sent_url)
+    .then(function(response){
+	console.log(response);
+	if (response.status == 200) {
+	  console.log(response.data.data.result[0].metric);
+	  console.log(response.data.data.result[0].values[1]);
+	  console.log('2->' + response.data.data.result[0].values[response.data.data.result[0].values.length - 3][1]);
+	  console.log('2->' + response.data.data.result[0].values[response.data.data.result[0].values.length - 2][1]);
+	  console.log('2->' + response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1]);
+	  var sparkline2 = new Sparkline($('#sparkline-2')[0], { width: 100, height: 30, lineColor: '#f56954', endColor: '#f56954' })
+	  sparkline2.draw([response.data.data.result[0].values[response.data.data.result[0].values.length - 8][1], 
+	                   response.data.data.result[0].values[response.data.data.result[0].values.length - 7][1],
+					   response.data.data.result[0].values[response.data.data.result[0].values.length - 6][1],
+					   response.data.data.result[0].values[response.data.data.result[0].values.length - 5][1],
+					   response.data.data.result[0].values[response.data.data.result[0].values.length - 4][1],
+					   response.data.data.result[0].values[response.data.data.result[0].values.length - 3][1],
+					   response.data.data.result[0].values[response.data.data.result[0].values.length - 2][1],
+					   response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1]])
+	  
+	  $("#flowOutput").text((response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1] / 1024).toFixed(4) + " (Mbps)");
+	  
+	  if ((response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1] - 
+	  response.data.data.result[0].values[response.data.data.result[0].values.length - 2][1]) > 0) {
+	  //<i class="fas fa-arrow-up"></i>
+	  $("#flowOutputPercent").html("<i class='fas fa-arrow-up'></i> " + Math.abs(Math.round(
+	    (((response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1] - 
+	    response.data.data.result[0].values[response.data.data.result[0].values.length - 2][1]) / 
+	    response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1]) * 100))) + "%");
+	  $("#flowOutputPercent").attr("class","text-success mr-1");
+	  } else {
+	  $("#flowOutputPercent").html("<i class='fas fa-arrow-down'></i> " + Math.abs(Math.round(
+	    (((response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1] - 
+	    response.data.data.result[0].values[response.data.data.result[0].values.length - 2][1]) / 
+	    response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1]) * 100))) + "%");
+	  $("#flowOutputPercent").attr("class","text-danger mr-1");
+	  }
+	}     
+  });
+  axios.get("http://localhost:8081/alerting/getalert")
+    .then(function(response){
+	if (response.status == 200) {
+	  console.log("getalert:" + response.data)
+	  if (response.data == "1") {
+	    $("#cpu_background").attr("style", "background-color:#f56954");
+	  } else {
+	    $("#cpu_background").attr("style", "background-color:#28a745");
+	  }
+	}
+	
+  });
+</script>
+</body>
+</html>
