@@ -1,0 +1,19 @@
+.card-info:not(.card-outline)>.card-header {
+	background-color: #fff;
+}
+.bg-gradient-info>.card-header .btn-tool, 
+.bg-info>.card-header .btn-tool, 
+.card-info:not(.card-outline)>.card-header .btn-tool {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.bg-gradient-info>.card-header .btn-tool:hover, 
+.bg-info>.card-header .btn-tool:hover, 
+.card-info:not(.card-outline)>.card-header .btn-tool:hover {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.card-info:not(.card-outline)>.card-header, 
+.card-info:not(.card-outline)>.card-header a {
+	color: rgba(0, 0, 0, 0.8);
+}
