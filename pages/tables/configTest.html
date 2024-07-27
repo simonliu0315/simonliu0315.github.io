@@ -745,7 +745,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">我的電腦狀況</li>
+              <li class="breadcrumb-item active">告警設定</li>
             </ol>
           </div>
         </div>
@@ -761,7 +761,7 @@
             <!-- /.card -->
 			<div class="card">
               <div class="card-header">
-                <h3 class="card-title">CPU狀態</h3>
+                <h3 class="card-title">設備告警管理</h3>
 				 <div class="card-tools">
 				   <div class="btn-group">
 				      <button type="button" class="btn btn-tool">
@@ -784,148 +784,34 @@
                   <thead>
                   <tr>
                     <th>編號</th>
-                    <th>設備</th>
-                    <th>檢查時間</th>
-					<th>CPU使用量<br/>(每5分鐘平均值)</th>
-					<th>備註</th>
+                    <th>設備名稱</th>
+                    <th>是否告警</th>
+					<th>CPU使用率</th>
+					<th>記憶體使用率</th>
+					<th>溫度高門檻值</th>
+					<th>溫度低門檻值</th>
+					<th>動作</th>
                   </tr>
                   </thead>
                   <tbody>
                   <tr>
 				    <td>1</td>
-                    <td id="cpu_background" style="background-color:#28a745;">My Acer NB</td>
-                    <td id="checktime0">2024/06/14 10:05:01</td>
+                    <td id="cpu_background">My Acer NB</td>
+                    <td id="checktime0">是</td>
                     <td>
-					<div class="progress progress-xs progress-striped active">
-                      <div id="cpu0" class="progress-bar bg-success" style="width: 90%"></div>
-                    </div>
-					<small id="cpuPercent" class="text-success mr-1">
-                      <i class="fas fa-arrow-up"></i>
-                      4%　　　　
-                    </small>
-					<span id="cpu1" class="badge bg-success float-right">90%</span>
+					  <input id="cpu" name="cpu" value="30"/>%
 					</td>
-					<td></td>
-                  </tr>
-                  </tbody>
-                </table>
-              </div>
-              <!-- /.card-body -->
-            </div>
-			<div class="card">
-              <div class="card-header">
-                <h3 class="card-title">記憶體狀態</h3>
-				 <div class="card-tools">
-				   <div class="btn-group">
-				      <button type="button" class="btn btn-tool">
-                        <i class="fa fa-recycle"></i>
-                      </button>
-                      <button type="button" class="btn btn-tool dropdown-toggle" data-toggle="dropdown">
-                        <i class="fas fa-download"></i>
-                      </button>
-                      <div class="dropdown-menu dropdown-menu-right" role="menu">
-                        <a href="#" class="dropdown-item">EXCEL</a>
-						<a href="#" class="dropdown-item">CSV</a>
-						<a href="#" class="dropdown-item">PDF</a>
-                      </div>
-                    </div>
-				  </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <table id="example3" class="table table-bordered table-striped">
-                  <thead>
-                  <tr>
-                    <th>編號</th>
-                    <th>設備</th>
-                    <th>檢查時間</th>
-					<th>記憶體使用率(MB)</th>
-					<th>備註</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-				    <td>1</td>
-                    <td id="cpu_background" style="background-color:#28a745;">My Acer NB</td>
-                    <td id="checktime3">2024/06/14 10:05:01</td>
-                    <td>
-					<div class="progress progress-xs progress-striped active">
-                      <div id="memory" class="progress-bar bg-success" style="width: 90%"></div>
-                    </div>
-					<small id="memoryPercent" class="text-success mr-1">
-                      <i class="fas fa-arrow-up"></i>
-                      4%　　　　
-                    </small>
-					<span id="memory1" class="badge bg-success float-right">90%</span>
+					<td>
+					  <input id="memory" name="memory" value="70"/>%
 					</td>
-					<td></td>
-                  </tr>
-                  </tbody>
-                </table>
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">流量狀態</h3>
-				 <div class="card-tools">
-				   <div class="btn-group">
-				      <button type="button" class="btn btn-tool">
-                        <i class="fa fa-recycle"></i>
-                      </button>
-                      <button type="button" class="btn btn-tool dropdown-toggle" data-toggle="dropdown">
-                        <i class="fas fa-download"></i>
-                      </button>
-                      <div class="dropdown-menu dropdown-menu-right" role="menu">
-                        <a href="#" class="dropdown-item">EXCEL</a>
-						<a href="#" class="dropdown-item">CSV</a>
-						<a href="#" class="dropdown-item">PDF</a>
-                      </div>
-                    </div>
-				  </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <table id="example2" class="table table-bordered table-striped">
-                  <thead>
-                  <tr>
-                    <th>編號</th>
-                    <th>設備</th>
-                    <th>介面</th>
-                    <th>介面描述</th>
-                    <th>檢查時間</th>
-					<th>Input使用量<br/>(每5分鐘平均值)</th>
-					<th>Output使用量<br/>(每5分鐘平均值)</th>
-					<th>備註</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-				    <td>1</td>
-                    <td style="background-color:#28a745;">My Acer NB</td>
-                    <td style="background-color:#28a745">G/0/0/1/7</td>
-                    <td style="background-color:#28a745">Intel_R__Wi_Fi_6_AX201_160MHz</td>
-                    <td id="checktime">2024/06/14 10:05:01</td>
-                    <td> <span id="flowInput">1234(Mbps)</span>
-					<small id="flowInputPercent" class="text-success mr-1">
-                      <i class="fas fa-arrow-up"></i>
-                      4%
-                    </small>
-					<div class="col-4 text-center">
-                      <div id="sparkline-1"></div>
-                    </div>
+					<td>
+					  <input id="temporHigh" name="temporHigh" value="80"/>C
 					</td>
-					<td><span id="flowOutput">5678(Mbps)</span>
-					<small id="flowOutputPercent" class="text-danger mr-1">
-                      <i class="fas fa-arrow-down"></i>
-                      2%
-                    </small>
-					<div class="col-4 text-center">
-                      <div id="sparkline-2"></div>
-                    </div>
+					<td>
+					  <input id="temporLow" name="temporLow" value="20"/>C
 					</td>
-					<td></td>
-                  </tr>				  
+					<td><button class="btn btn-success" onclick="setting()">更新</td>
+                  </tr>
                   </tbody>
                 </table>
               </div>
@@ -1012,19 +898,7 @@
       "responsive": true,
 	  "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],	 
     }).buttons().container().appendTo('#example2_wrapper .col-md-6:eq(0)');
-	 $('#example3').DataTable({
-      "paging": true,
-	  "language": {
-        "url": 'https://cdn.datatables.net/plug-ins/2.0.8/i18n/zh-HANT.json'
-       },
-      "lengthChange": false,
-      "searching": true,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-	  "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],	 
-    }).buttons().container().appendTo('#example2_wrapper .col-md-6:eq(0)');
+	
 	 //-------------
     //- DONUT CHART -
     //-------------
@@ -1139,203 +1013,26 @@
       $(this).bootstrapSwitch('state', $(this).prop('checked'));
     })
   });
-  //var endDate =  Date.now();
-  var endDate = new Date();
-  endDate.setDate(endDate.getDate() + 1);
-  console.log(endDate.getTime()/ 1000);
-  var endTime = endDate.getTime()/ 1000;
-  //console.log(endDate/1000);
-  //endTime = endDate/1000;
-  var  startDate = new Date( Date.now() - 1000 * 3600);
-  startDate.setDate(startDate.getDate());
-  console.log(startDate.getTime()/ 1000);
-  var startTime = startDate.getTime()/ 1000;
   
-  axios.get('http://localhost:9090/api/v1/query_range?query=100+-+%28avg+by+%28instance%29+%28irate%28windows_cpu_time_total%7Bmode%3D%22idle%22%2C+instance%3D~%22localhost%3A9182%22%7D%5B1m%5D%29%29+*+100%29&start=' + startTime +'&end=' + endTime + '&step=300')
+  function setting() {
+   axios.get("http://localhost:8081/alerting/setting/cpu/" +　$("#cpu").val())
     .then(function(response){
-	console.log(response);
-	if (response.status == 200) {
-	  console.log(response.data.data.result[0].metric);
-	  console.log(response.data.data.result[0].values[1]);	  
-	  console.log('0->' + response.data.data.result[0].values[response.data.data.result[0].values.length - 2][1]);
-	  console.log('0->' + response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1]);
-	  
-	  let cpu = response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1];
-	  let checktime = response.data.data.result[0].values[response.data.data.result[0].values.length - 1][0];
-	  var date = new Date(checktime * 1000);
-	  var hours = date.getHours();
-      // Minutes part from the timestamp
-      var minutes = "0" + date.getMinutes();
-
-      // Seconds part from the timestamp
-      var seconds = "0" + date.getSeconds();
-	  $("#cpu0").attr("style", "width:" + Math.round(cpu) + "%");
-	  $("#cpu1").html(Math.round(cpu) + "%");
-	  $("#checktime0").html(date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + date.getDate() + "<br/> " +hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2))
-	  //$("#flowInput").text((response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1] / 1024).toFixed(4) + " (Mbps)");
-	  
-	  if ((response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1] - response.data.data.result[0].values[response.data.data.result[0].values.length - 2][1]) > 0) {
-	    $("#cpuPercent").html("<i class='fas fa-arrow-up'></i> " + Math.abs(Math.round(
-	      (((response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1] - 
-	      response.data.data.result[0].values[response.data.data.result[0].values.length - 2][1]) / 
-	      response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1]) * 100))) + "%"
-		)
-		$("#cpuPercent").attr("class","text-success mr-1");
-	  } else {
-	    $("#cpuPercent").html("<i class='fas fa-arrow-down'></i> " + Math.abs(Math.round(
-	      (((response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1] - 
-	      response.data.data.result[0].values[response.data.data.result[0].values.length - 2][1]) / 
-	      response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1]) * 100))) + "%"
-		)
-		$("#cpuPercent").attr("class","text-danger mr-1");
-	  }
-	}     
-  });
-  
-  axios.get('http://localhost:9090/api/v1/query_range?query=100.0+-+100+*+avg_over_time%28windows_os_physical_memory_free_bytes%5B5m%5D%29+%2F+avg_over_time%28windows_cs_physical_memory_bytes%5B5m%5D%29&start=' + startTime +'&end=' + endTime + '&step=300')
-    .then(function(response){
-	console.log(response);
-	if (response.status == 200) {
-	  console.log(response.data.data.result[0].metric);
-	  console.log(response.data.data.result[0].values[1]);	  
-	  console.log('0->' + response.data.data.result[0].values[response.data.data.result[0].values.length - 2][1]);
-	  console.log('0->' + response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1]);
-	  
-	  let cpu = response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1];
-	  let checktime = response.data.data.result[0].values[response.data.data.result[0].values.length - 1][0];
-	  var date = new Date(checktime * 1000);
-	  var hours = date.getHours();
-      // Minutes part from the timestamp
-      var minutes = "0" + date.getMinutes();
-
-      // Seconds part from the timestamp
-      var seconds = "0" + date.getSeconds();
-	  $("#memory").attr("style", "width:" + Math.round(cpu) + "%");
-	  $("#memory1").html(Math.round(cpu) + "%");
-	  $("#checktime3").html(date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + date.getDate() + "<br/> " +hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2))
-	  //$("#flowInput").text((response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1] / 1024).toFixed(4) + " (Mbps)");
-	  
-	  if ((response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1] - response.data.data.result[0].values[response.data.data.result[0].values.length - 2][1]) > 0) {
-	    $("#memoryPercent").html("<i class='fas fa-arrow-up'></i> " + Math.abs(Math.round(
-	      (((response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1] - 
-	      response.data.data.result[0].values[response.data.data.result[0].values.length - 2][1]) / 
-	      response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1]) * 100))) + "%"
-		)
-		$("#memoryPercent").attr("class","text-success mr-1");
-	  } else {
-	    $("#memoryPercent").html("<i class='fas fa-arrow-down'></i> " + Math.abs(Math.round(
-	      (((response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1] - 
-	      response.data.data.result[0].values[response.data.data.result[0].values.length - 2][1]) / 
-	      response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1]) * 100))) + "%"
-		)
-		$("#memoryPercent").attr("class","text-danger mr-1");
-	  }
-	}     
-  });
-  
-  let receiver_url = 'http://localhost:9090/api/v1/query_range?query=+%28avg+by+%28instance%29+%28irate%28windows_net_bytes_received_total%7Bnic%3D%27Intel_R__Wi_Fi_6_AX201_160MHz%27%7D%5B5m%5D%29%29+%2F1024%29&start=' + startTime + '&end=' + endTime + '&step=10'
-  receiver_url = 'http://localhost:9090/api/v1/query_range?query=avg_over_time%28rate%28windows_net_bytes_received_total%7Bnic%3D%27Intel_R__Wi_Fi_6_AX201_160MHz%27%7D%5B5m%5D%29%5B5m%3A5m%5D%29&start='+startTime+'&end='+endTime+'&step=300'
-  axios.get(receiver_url)
-    .then(function(response){
-	console.log(response);
-	if (response.status == 200) {
-	  console.log(response.data.data.result[0].metric);
-	  console.log(response.data.data.result[0].values[1]);
-	  console.log('1->' + response.data.data.result[0].values[response.data.data.result[0].values.length - 3][1]);
-	  console.log('1->' + response.data.data.result[0].values[response.data.data.result[0].values.length - 2][1]);
-	  console.log('1->' + response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1]);
-	  var sparkline1 = new Sparkline($('#sparkline-1')[0], { width: 100, height: 30, lineColor: '#92c1dc', endColor: '#92c1dc' })
-	  sparkline1.draw([response.data.data.result[0].values[response.data.data.result[0].values.length - 8][1], 
-	                   response.data.data.result[0].values[response.data.data.result[0].values.length - 7][1],
-					   response.data.data.result[0].values[response.data.data.result[0].values.length - 6][1],
-					   response.data.data.result[0].values[response.data.data.result[0].values.length - 5][1],
-					   response.data.data.result[0].values[response.data.data.result[0].values.length - 4][1],
-					   response.data.data.result[0].values[response.data.data.result[0].values.length - 3][1],
-					   response.data.data.result[0].values[response.data.data.result[0].values.length - 2][1],
-					   response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1]])
-	  
-	  let checktime = response.data.data.result[0].values[response.data.data.result[0].values.length - 2][0];
-	  var date = new Date(checktime * 1000);
-	  var hours = date.getHours();
-      // Minutes part from the timestamp
-      var minutes = "0" + date.getMinutes();
-
-      // Seconds part from the timestamp
-      var seconds = "0" + date.getSeconds();
-	  
-	  $("#checktime").html(date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + date.getDate() + "<br/> " +hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2))
-	  $("#flowInput").text((response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1] / 1024).toFixed(4) + " (Mbps)");
-	  
-	  if ((response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1] - 
-	  response.data.data.result[0].values[response.data.data.result[0].values.length - 2][1]) > 0) {
-	  //<i class="fas fa-arrow-up"></i>
-	  $("#flowInputPercent").html("<i class='fas fa-arrow-up'></i> " + Math.abs(Math.round(
-	    (((response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1] - 
-	    response.data.data.result[0].values[response.data.data.result[0].values.length - 2][1]) / 
-	    response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1]) * 100))) + "%");
-	  $("#flowInputPercent").attr("class","text-success mr-1");
-	  } else {
-	  $("#flowInputPercent").html("<i class='fas fa-arrow-down'></i> " + Math.abs(Math.round(
-	    (((response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1] - 
-	    response.data.data.result[0].values[response.data.data.result[0].values.length - 2][1]) / 
-	    response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1]) * 100))) + "%");
-	  $("#flowInputPercent").attr("class","text-danger mr-1");
-	  }
-	 
-	}     
-  });
-  let sent_url = 'http://localhost:9090/api/v1/query_range?query=+%28avg+by+%28instance%29+%28irate%28windows_net_bytes_sent_total%7Bnic%3D%27Intel_R__Wi_Fi_6_AX201_160MHz%27%7D%5B5m%5D%29%29+%2F1024%29&start=' + startTime + '&end=' + endTime + '&step=10'
-  sent_url = 'http://localhost:9090/api/v1/query_range?query=avg_over_time%28rate%28windows_net_bytes_sent_total%7Bnic%3D%27Intel_R__Wi_Fi_6_AX201_160MHz%27%7D%5B5m%5D%29%5B5m%3A5m%5D%29&start='+startTime+'&end='+endTime+'&step=300'
-  axios.get(sent_url)
-    .then(function(response){
-	console.log(response);
-	if (response.status == 200) {
-	  console.log(response.data.data.result[0].metric);
-	  console.log(response.data.data.result[0].values[1]);
-	  console.log('2->' + response.data.data.result[0].values[response.data.data.result[0].values.length - 3][1]);
-	  console.log('2->' + response.data.data.result[0].values[response.data.data.result[0].values.length - 2][1]);
-	  console.log('2->' + response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1]);
-	  var sparkline2 = new Sparkline($('#sparkline-2')[0], { width: 100, height: 30, lineColor: '#f56954', endColor: '#f56954' })
-	  sparkline2.draw([response.data.data.result[0].values[response.data.data.result[0].values.length - 8][1], 
-	                   response.data.data.result[0].values[response.data.data.result[0].values.length - 7][1],
-					   response.data.data.result[0].values[response.data.data.result[0].values.length - 6][1],
-					   response.data.data.result[0].values[response.data.data.result[0].values.length - 5][1],
-					   response.data.data.result[0].values[response.data.data.result[0].values.length - 4][1],
-					   response.data.data.result[0].values[response.data.data.result[0].values.length - 3][1],
-					   response.data.data.result[0].values[response.data.data.result[0].values.length - 2][1],
-					   response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1]])
-	  
-	  $("#flowOutput").text((response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1] / 1024).toFixed(4) + " (Mbps)");
-	  
-	  if ((response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1] - 
-	  response.data.data.result[0].values[response.data.data.result[0].values.length - 2][1]) > 0) {
-	  //<i class="fas fa-arrow-up"></i>
-	  $("#flowOutputPercent").html("<i class='fas fa-arrow-up'></i> " + Math.abs(Math.round(
-	    (((response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1] - 
-	    response.data.data.result[0].values[response.data.data.result[0].values.length - 2][1]) / 
-	    response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1]) * 100))) + "%");
-	  $("#flowOutputPercent").attr("class","text-success mr-1");
-	  } else {
-	  $("#flowOutputPercent").html("<i class='fas fa-arrow-down'></i> " + Math.abs(Math.round(
-	    (((response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1] - 
-	    response.data.data.result[0].values[response.data.data.result[0].values.length - 2][1]) / 
-	    response.data.data.result[0].values[response.data.data.result[0].values.length - 1][1]) * 100))) + "%");
-	  $("#flowOutputPercent").attr("class","text-danger mr-1");
-	  }
-	}     
-  });
-  axios.get("http://localhost:8081/alerting/getalert")
-    .then(function(response){
-	if (response.status == 200) {
-	  console.log("getalert:" + response.data)
-	  if (response.data == "1") {
-	    $("#cpu_background").attr("style", "background-color:#f56954");
-	  } else {
-	    $("#cpu_background").attr("style", "background-color:#28a745");
-	  }
-	}
+	  if (response.status == 200) {
+	    console.log(response)
+		axios.get("http://localhost:8081/alerting/setting/memory/" +　$("#memory").val());
+		alert("設定完成");
+		axios.post("http://localhost:9090/-/reload")
+        .then(function(response){
+	      if (response.status == 200) {
+	        console.log(response)
+			
+	      }	
+        });
+	  }	
+    });
 	
-  });
+  }
+  
 </script>
 </body>
 </html>

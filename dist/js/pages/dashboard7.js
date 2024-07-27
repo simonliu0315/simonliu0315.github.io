@@ -3085,18 +3085,18 @@ var areaChartData = {
       ]
     }
 var areaChartData2 = {
-      labels  : [['骨幹設備', ''],['局端設備',''], ['機房電源設備','與溫控設備']],
+      labels  : [['骨幹設備', ''],['局端設備',''], ['機房電源設備','與溫控設備'],['Router', ''], ['Switch', ''], ['OLA', ''], ['ROADM', ''], ['PRM', ''], ['SMR', '']],
       datasets: [
         {
           label               : 'UP',
-          backgroundColor     : '#A1FC88',
-          borderColor         : '#A1FC88',
+          backgroundColor     : '#9bfd7c',
+          borderColor         : '#9bfd7c',
           pointRadius          : false,
-          pointColor          : '#3b8bba',
+          pointColor          : '#9bfd7c',
           pointStrokeColor    : 'rgba(60,141,188,1)',
           pointHighlightFill  : '#fff',
           pointHighlightStroke: 'rgba(60,141,188,1)',
-          data                : [113, 140, 124]
+          data                : [113, 140, 124, 100, 101, 30, 132, 50, 67]
         },
         {
           label               : 'Down',
@@ -3107,14 +3107,14 @@ var areaChartData2 = {
           pointStrokeColor    : '#c1c7d1',
           pointHighlightFill  : '#fff',
           pointHighlightStroke: 'rgba(220,220,220,1)',
-          data                : [10, 14, 20]
+          data                : [10, 14, 20, 20, 40, 23, 50, 43, 45]
         },
       ]
     }
 //-------------
 //- BAR CHART -
 //-------------
-    var barChartCanvas = $('#barChart').get(0).getContext('2d')
+    //var barChartCanvas = $('#barChart').get(0).getContext('2d')
     var barChartData = $.extend(true, {}, areaChartData)
 	var barChartData2 = $.extend(true, {}, areaChartData2)
     var temp0 = areaChartData.datasets[0]
@@ -3167,7 +3167,7 @@ var areaChartData2 = {
 	}
   }
 }
-    new Chart(barChartCanvas, barChartOptions2);
+    //new Chart(barChartCanvas, barChartOptions2);
 //---------------------
     //- STACKED BAR CHART -
     //---------------------
