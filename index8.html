@@ -797,7 +797,7 @@
 		  </div>
 		</div>
         <div class="row">
-          <div class="col-lg-2 col-3">
+          <div class="col-lg-2 col-6 col-sm-6">
             <!-- small card -->
             <div class="small-box bg-danger">
               <div class="inner">
@@ -813,7 +813,7 @@
             </div>
           </div>
           <!-- ./col -->
-          <div class="col-lg-2 col-3">
+          <div class="col-lg-2 col-6 col-sm-6">
             <!-- small card -->
             <div class="small-box bg-danger">
               <div class="inner">
@@ -829,7 +829,7 @@
               </a>
             </div>
           </div>
-		  <div class="col-lg-2 col-3">
+		  <div class="col-lg-2 col-6 col-sm-6">
             <!-- small card -->
             <div class="small-box bg-success">
               <div class="inner">
@@ -846,7 +846,7 @@
             </div>
           </div>
           <!-- ./col -->
-          <div class="col-lg-2 col-3">
+          <div class="col-lg-2 col-6 col-sm-6">
             <!-- small card -->
             <div class="small-box bg-warning">
               <div class="inner">
@@ -912,7 +912,7 @@
                   <div class="col-sm-3 col-6">
                     <div class="description-block border-right">
                       <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 1%</span>
-                      <h5 class="description-header">5</h5>
+                      <h5 class="description-header text-danger">5</h5>
                       <span class="description-text"><i class="icon fas fa-exclamation-circle" style="color:#dc3545"></i>Critical Event</span>
                     </div>
                     <!-- /.description-block -->
@@ -921,7 +921,7 @@
                   <div class="col-sm-3 col-6">
                     <div class="description-block border-right">
                       <span class="description-percentage text-danger"><i class="fas fa-caret-down"></i> 2%</span>
-                      <h5 class="description-header">50</h5>
+                      <h5 class="description-header text-warning">50</h5>
                       <span class="description-text"><i class="icon fas fa-exclamation-triangle" style="color:#ffc107"></i>Minor Event</span>
                     </div>
                     <!-- /.description-block -->
@@ -930,7 +930,7 @@
                   <div class="col-sm-3 col-6">
                     <div class="description-block border-right">
                       <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 0%</span>
-                      <h5 class="description-header">0</h5>
+                      <h5 class="description-header text-success">0</h5>
                       <span class="description-text"><i class="icon fas fa-check" style="color:#28a745"><span class="btn-tool"></span></i>Normal Event</span>
                     </div>
                     <!-- /.description-block -->
@@ -1435,8 +1435,7 @@
                     <tr>
                       <th style="width: 20%">節點/區網</th>
                       <th style="width: 30%">設備</th>
-					  <th style="width: 25%">CPU</th>
-					  <th style="width: 25%">Memory</th>
+					  <th style="width: 50%">CPU/Memory</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -1445,7 +1444,7 @@
                       <td>TWAREN-TRCT-ASR9006-01 Gi0/1/7<br/><div style="font-size:14px">TWAREN-TRTC-ASR9006-01 to III Cisco-3650#1</div></td>
 					  <td>
 					    <div class="row">
-					      <div class="col-md-12">
+					      <div class="col-md-6">
 					      50% 
 					        <small class="text-success mr-1">
                               <i class="fas fa-arrow-up"></i>
@@ -1455,11 +1454,7 @@
                               <canvas id="areaChart1" style="min-height: 100px; height: 100px; max-height: 100px; max-width: 100%;"></canvas>
                             </div>
 						  </div>
-                        </div>
-					  </td>
-                      <td>
-					    <div class="row">
-					      <div class="col-md-12">
+						  <div class="col-md-6">
 					      10% (3.2GB/32GB)
 					        <small class="text-success mr-1">
                               <i class="fas fa-arrow-up"></i>
@@ -1469,15 +1464,15 @@
                               <canvas id="areaChart2" style="min-height: 100px; height: 100px; max-height: 100px; max-width: 100%;"></canvas>
                             </div>
 						  </div>
-                        </div>						
-					  </td>					
+                        </div>
+					  </td>
 					</tr>
 					<tr>
                       <td>教育部節點</td>
                       <td>TWAREN-TRCT-ASR9006-02 Gi0/1/16<br/><div style="font-size:14px">TWAREN-TRTC-ASR9006-02 to III Cisco-3650#2</div></td>
 					  <td>
 					    <div class="row">
-					      <div class="col-md-12">
+					      <div class="col-md-6">
 					      25% 
 					        <small class="text-danger mr-1">
                               <i class="fas fa-arrow-down"></i>
@@ -1487,11 +1482,7 @@
                               <canvas id="areaChart3" style="min-height: 100px; height: 100px; max-height: 100px; max-width: 100%;"></canvas>
                             </div>
 						  </div>
-                        </div>
-					  </td>
-                      <td>
-					    <div class="row">
-					      <div class="col-md-12">
+						  <div class="col-md-6">
 					      34% (10.2GB/32GB)
 					        <small class="text-success mr-1">
                               <i class="fas fa-arrow-up"></i>
@@ -1501,7 +1492,7 @@
                               <canvas id="areaChart4" style="min-height: 100px; height: 100px; max-height: 100px; max-width: 100%;"></canvas>
                             </div>
 						  </div>
-                        </div>						
+                        </div>
 					  </td>
 					</tr>
 					<tr>
@@ -1509,7 +1500,7 @@
                       <td>TWAREN-TRCT-ASR9006-01 Hun0/0/1.0<br/><div style="font-size:14px">TWAREN-TRCT-ASR9006-01 to III Cisco-3650#2</div></td>
 					  <td>
 					    <div class="row">
-					      <div class="col-md-12">
+					      <div class="col-md-6">
 					      35% 
 					        <small class="text-success mr-1">
                               <i class="fas fa-arrow-up"></i>
@@ -1519,11 +1510,7 @@
                               <canvas id="areaChart5" style="min-height: 100px; height: 100px; max-height: 100px; max-width: 100%;"></canvas>
                             </div>
 						  </div>
-                        </div>
-					  </td>
-                      <td>
-					    <div class="row">
-					      <div class="col-md-12">
+						  <div class="col-md-6">
 					      45% (30.4GB/64GB)
 					        <small class="text-success mr-1">
                               <i class="fas fa-arrow-up"></i>
@@ -1533,7 +1520,7 @@
                               <canvas id="areaChart6" style="min-height: 100px; height: 100px; max-height: 100px; max-width: 100%;"></canvas>
                             </div>
 						  </div>
-                        </div>						
+                        </div>
 					  </td>
 					</tr>
 					<tr>
@@ -1541,7 +1528,7 @@
                       <td>TWAREN-TRCT-ASR9006-02 Eth1/20<br/><div style="font-size:14px">TWAREN-TRTC-ASR9006-02 to III Cisco-3650#2</div></td>
 					  <td>
 					    <div class="row">
-					      <div class="col-md-12">
+					      <div class="col-md-6">
 					      56% 
 					        <small class="text-danger mr-1">
                               <i class="fas fa-arrow-down"></i>
@@ -1551,11 +1538,7 @@
                               <canvas id="areaChart7" style="min-height: 100px; height: 100px; max-height: 100px; max-width: 100%;"></canvas>
                             </div>
 						  </div>
-                        </div>
-					  </td>
-                      <td>
-					    <div class="row">
-					      <div class="col-md-12">
+						  <div class="col-md-6">
 					      76% (50.1GB/64GB)
 					        <small class="text-success mr-1">
                               <i class="fas fa-arrow-up"></i>
@@ -1565,15 +1548,15 @@
                               <canvas id="areaChart8" style="min-height: 100px; height: 100px; max-height: 100px; max-width: 100%;"></canvas>
                             </div>
 						  </div>
-                        </div>						
+                        </div>
 					  </td>
 					</tr>
 					<tr>
-                      <td>教育部節點</td>
+                      <td>教育部節點<i class="icon fas fa-exclamation-circle" style="color:#dc3545"></i></td>
                       <td>TWAREN-TRCT-ASR9006-02 Eth1/23<br/><div style="font-size:14px">TWAREN-TRTC-ASR9006-02 to III Cisco-3650#2</div></td>
 					  <td>
 					    <div class="row">
-					      <div class="col-md-12">
+					      <div class="col-md-6">
 					      87% 
 					        <small class="text-danger mr-1">
                               <i class="fas fa-arrow-down"></i>
@@ -1583,11 +1566,7 @@
                               <canvas id="areaChart9" style="min-height: 100px; height: 100px; max-height: 100px; max-width: 100%;"></canvas>
                             </div>
 						  </div>
-                        </div>
-					  </td>
-                      <td>
-					    <div class="row">
-					      <div class="col-md-12">
+						  <div class="col-md-6">
 					      66% (23.1GB/32GB)
 					        <small class="text-success mr-1">
                               <i class="fas fa-arrow-up"></i>
@@ -1597,7 +1576,7 @@
                               <canvas id="areaChart10" style="min-height: 100px; height: 100px; max-height: 100px; max-width: 100%;"></canvas>
                             </div>
 						  </div>
-                        </div>						
+                        </div>
 					  </td>
 					</tr>
                   </tbody>
@@ -2152,8 +2131,8 @@
       datasets: [
         {
           label               : 'Memory',
-          backgroundColor     : 'rgba(60,141,188,0.3)',
-          borderColor         : 'rgba(60,141,188,0.8)',
+          backgroundColor     : 'rgba(245,105,84,0.3)',
+          borderColor         : 'rgba(245,105,84,0.8)',
           pointRadius          : false,
           pointColor          : '#3b8bba',
           pointStrokeColor    : 'rgba(60,141,188,1)',
