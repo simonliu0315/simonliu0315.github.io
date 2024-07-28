@@ -1941,16 +1941,16 @@ body {
     })
     /* END JQUERY KNOB */
 	//INITIALIZE SPARKLINE CHARTS
-    var sparkline1 = new Sparkline($('#sparkline-1')[0], { width: 120, height: 40, lineColor: '#92c1dc', endColor: '#92c1dc', averageLine: true })
-    var sparkline2 = new Sparkline($('#sparkline-2')[0], { width: 120, height: 40, lineColor: '#f56954', endColor: '#f56954', averageLine: true })
-    var sparkline3 = new Sparkline($('#sparkline-3')[0], { width: 120, height: 40, lineColor: '#92c1dc', endColor: '#92c1dc', averageLine: true })
-	var sparkline4 = new Sparkline($('#sparkline-4')[0], { width: 120, height: 40, lineColor: '#92c1dc', endColor: '#92c1dc', averageLine: true })
-	var sparkline5 = new Sparkline($('#sparkline-5')[0], { width: 120, height: 40, lineColor: '#92c1dc', endColor: '#92c1dc', averageLine: true })
-	var sparkline6 = new Sparkline($('#sparkline-6')[0], { width: 120, height: 40, lineColor: '#92c1dc', endColor: '#92c1dc', averageLine: true })
-	var sparkline7 = new Sparkline($('#sparkline-7')[0], { width: 120, height: 40, lineColor: '#92c1dc', endColor: '#92c1dc', averageLine: true })
-	var sparkline8 = new Sparkline($('#sparkline-8')[0], { width: 120, height: 40, lineColor: '#92c1dc', endColor: '#92c1dc', averageLine: true })
-	var sparkline9 = new Sparkline($('#sparkline-9')[0], { width: 120, height: 40, lineColor: '#92c1dc', endColor: '#92c1dc', averageLine: true })
-	var sparkline10 = new Sparkline($('#sparkline-10')[0], { width: 120, height: 40, lineColor: '#92c1dc', endColor: '#92c1dc', averageLine: true })
+    var sparkline1 = new Sparkline($('#sparkline-1')[0], { width: 120, height: 40, lineColor: '#92c1dc', endColor: '#92c1dc', averageLine: true, tooltip: function(value, index, collection){ return value + ' Gbps';} })
+    var sparkline2 = new Sparkline($('#sparkline-2')[0], { width: 120, height: 40, lineColor: '#f56954', endColor: '#f56954', averageLine: true, tooltip: function(value, index, collection){ return value + ' Gbps';} })
+    var sparkline3 = new Sparkline($('#sparkline-3')[0], { width: 120, height: 40, lineColor: '#92c1dc', endColor: '#92c1dc', averageLine: true, tooltip: function(value, index, collection){ return value + ' Gbps';} })
+	var sparkline4 = new Sparkline($('#sparkline-4')[0], { width: 120, height: 40, lineColor: '#92c1dc', endColor: '#92c1dc', averageLine: true, tooltip: function(value, index, collection){ return value + ' Gbps';} })
+	var sparkline5 = new Sparkline($('#sparkline-5')[0], { width: 120, height: 40, lineColor: '#92c1dc', endColor: '#92c1dc', averageLine: true, tooltip: function(value, index, collection){ return value + ' Gbps';} })
+	var sparkline6 = new Sparkline($('#sparkline-6')[0], { width: 120, height: 40, lineColor: '#92c1dc', endColor: '#92c1dc', averageLine: true, tooltip: function(value, index, collection){ return value + ' Gbps';} })
+	var sparkline7 = new Sparkline($('#sparkline-7')[0], { width: 120, height: 40, lineColor: '#92c1dc', endColor: '#92c1dc', averageLine: true, tooltip: function(value, index, collection){ return value + ' Gbps';} })
+	var sparkline8 = new Sparkline($('#sparkline-8')[0], { width: 120, height: 40, lineColor: '#92c1dc', endColor: '#92c1dc', averageLine: true, tooltip: function(value, index, collection){ return value + ' Gbps';} })
+	var sparkline9 = new Sparkline($('#sparkline-9')[0], { width: 120, height: 40, lineColor: '#92c1dc', endColor: '#92c1dc', averageLine: true, tooltip: function(value, index, collection){ return value + ' Gbps';} })
+	var sparkline10 = new Sparkline($('#sparkline-10')[0], { width: 120, height: 40, lineColor: '#92c1dc', endColor: '#92c1dc', averageLine: true, tooltip: function(value, index, collection){ return value + ' Gbps';}})
 
     sparkline1.draw([1000, 1200, 920, 927, 931, 1027, 819, 930, 1021,1000, 1200, 920, 927, 931, 1027, 819, 930, 1021,
 	1000, 1200, 920, 927, 931, 1027, 819, 930, 1021, 1000, 1200, 920, 927, 931, 1027, 819, 930, 1021,
