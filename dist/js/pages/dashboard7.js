@@ -3089,9 +3089,9 @@ var areaChartData2 = {
       datasets: [
         {
           label               : 'UP',
-          backgroundColor     : '#9bfd7c',
-          borderColor         : '#9bfd7c',
-          pointRadius          : false,
+          backgroundColor     : 'rgba(0, 165, 114, 0.6)',
+          borderColor         : 'rgba(0, 165, 114, 0.6)',
+          pointRadius          : true,
           pointColor          : '#9bfd7c',
           pointStrokeColor    : 'rgba(60,141,188,1)',
           pointHighlightFill  : '#fff',
@@ -3100,8 +3100,8 @@ var areaChartData2 = {
         },
         {
           label               : 'Down',
-          backgroundColor     : '#FA5C5C',
-          borderColor         : '#FA5C5C',
+          backgroundColor     : 'rgba(241, 69, 69, 0.6)',
+          borderColor         : 'rgba(241, 69, 69, 0.6)',
           pointRadius         : false,
           pointColor          : 'rgba(210, 214, 222, 1)',
           pointStrokeColor    : '#c1c7d1',
