@@ -3188,7 +3188,10 @@ var areaChartData2 = {
           stacked: true,
         }],
         yAxes: [{
-          stacked: true
+          stacked: true,
+		  gridLines: {
+            display: false,
+          },
         }]
       },
 	  title: {

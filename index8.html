@@ -896,10 +896,11 @@ body {
                 <div class="d-md-flex">
                   <div class="p-1 flex-fill" style="overflow: hidden">
                     <!-- Map will be created here -->
-                    <div id="world-map-markers-2" style="height: 100%; overflow: hidden">
+                    <!--div id="world-map-markers-2" style="height: 100%; overflow: hidden">
                       <div class="map">
 					  </div>
-                    </div>
+                    </div-->
+					<img id="mapclick" src="dist/img/eyesee_nw.png" style="width:90%" onclick="mapclick()"/>
 					<!--div class="mapcontainer2">
                       <div class="map">
                       <span>Alternative content for the map</span>
@@ -2473,6 +2474,9 @@ body {
       options: areaChartOptions
     })
   });
+  function mapclick() {
+    $('#mapclick').attr("src", "dist/img/eyesee_nw2.png");
+  }
 </script>
 </body>
 </html>
