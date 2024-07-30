@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>整合式網管系統 | 儀錶板</title>
 
+
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
@@ -17,6 +18,7 @@
   <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="dist/css/custom.css">
   <style type="text/css">
     .bootstrap-switch .bootstrap-switch-focused
     {
@@ -25,6 +27,22 @@
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
     }
+body {
+  font-size: 80%;
+  font-family:Microsoft JhengHei;
+}
+
+.card-deck {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  margin-right: 0px;
+  margin-left:  0px;
+}
+#knob {
+  font-size:20px;
+}
+
   </style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
@@ -32,12 +50,13 @@
 
   <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__wobble" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+    <img class="animation__wobble" src="dist/img/NCHCLogo.png" alt="NCHCLogo" height="60" width="60">
   </div>
 
   <!-- Navbar -->
   <!--nav class="main-header navbar navbar-expand navbar"-->
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+  <!--nav class="main-header navbar navbar-expand navbar-white navbar-light" style="background: linear-gradient(to right, #c5d5fa, #c3dc99);"-->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light" style="background: linear-gradient(to right, #fff, #C6AC77);">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
@@ -95,7 +114,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index.html" class="brand-link">
-      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src="dist/img/NCHCLogo.png" alt="NCHC Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">整合式網管系統</span>
     </a>
 
@@ -118,12 +137,12 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-		  <li class="nav-item">
+		  <!--li class="nav-item">
             <a href="./index.html" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               Home
             </a>
-          </li>
+          </li-->
           <li class="nav-item menu-open">
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -752,16 +771,16 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <div class="content-header">
+    <div class="content-header" style="padding: 0px .5rem;">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">監控儀錶板</h1>
+            <h5 class="m-0"><img src="dist/img/NCHCLogo.png" alt="NCHC Logo" class="brand-image img-circle elevation-3" width="30px" height="30px" style="opacity: .8"> TWAREN監控儀錶板</h5>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">監控儀錶板</li>
+              <li class="breadcrumb-item active">TWAREN監控儀錶板</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -772,17 +791,97 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
+	    <div class="row">
+		  <div class="col-12">
+		  <div class="callout callout-warning" style="padding-bottom: 0rem;">
+                  <h5>通知</h5>
+                  <p>
+				   <marquee width="80%" direction="up" height="30px" scrolldelay =200>
+                    1. 設備維修通知-臺北主節點光設備進行更換，預估於2024/06/19 01:00進行維護，預估影響至2024/06/19 03:00，影響範圍台北區網<br/>
+                    2. 系統更版通知-整合式網管系統進行更版，預估於2024/06/19 01:00:00進行維護，預估影響至2024/06/19 03:00，影響範圍:客服人員
+                   </marquee>
+				  </p>
+          </div>
+		  </div>
+		</div>
+        <div class="row">
+          <div class="col-lg-2 col-6 col-sm-6">
+            <!-- small card -->
+            <!--div class="small-box bg-danger"-->
+			<div class="small-box" style="background-color: rgba(241, 69, 69, 0.6)">
+              <div class="inner">
+                <h3>15 <span style="font-size: 20px">件</span></h3>
+                <p style="font-size: 26px">嚴重事件</p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-exclamation-circle"></i>
+              </div>
+              <a href="#" class="small-box-footer">
+                查看更多 <i class="fas fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-2 col-6 col-sm-6">
+            <!-- small card -->
+            <div class="small-box" style="background-color: rgba(241, 69, 69, 0.6)">
+              <div class="inner">
+                <h3>2 <span style="font-size: 20px">失聯設備</span><sub style="font-size: 20px">/40</sub></h3>
 
+                <p style="font-size: 26px">國內骨幹</p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-server"></i>
+              </div>
+              <a href="#" class="small-box-footer">
+                查看更多 <i class="fas fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+		  <div class="col-lg-2 col-6 col-sm-6">
+            <!-- small card -->
+            <div class="small-box" style="background-color: rgba(0, 165, 114, 0.6)">
+              <div class="inner">
+                <h3>0 <span style="font-size: 20px">失聯設備</span><sub style="font-size: 20px">/10</sub></h3>
+
+                <p style="font-size: 26px">國際骨幹</p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-microchip"></i>
+              </div>
+              <a href="#" class="small-box-footer">
+                查看更多 <i class="fas fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-2 col-6 col-sm-6">
+            <!-- small card -->
+            <div class="small-box" style="background-color: rgba(247, 207, 7, 0.8)">
+              <div class="inner">
+                <h3>1 <span style="font-size: 20px">失聯設備</span><sub style="font-size: 20px">/15</sub></h3>
+                <p style="font-size: 26px">軟體資源</p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-podcast"></i>
+              </div>
+              <a href="#" class="small-box-footer">
+                查看更多 <i class="fas fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+          <!-- ./col -->
+        </div>
         <!-- /.row -->
 
         <!-- Main row -->
         <div class="row">
           <!-- Left col -->
-          <div class="col-md-8">
+          <div class="col-md-6 card-deck">
             <!-- MAP & BOX PANE -->
             <!-- /.card 1 -->     
-            <div class="card card-info">
-              <div class="card-header">
+            <div class="card card-info" style=" margin-bottom: 10px;">
+              <div class="card-header bg-white">
                 <h3 class="card-title">TWAREN 400G 骨幹網路即時監控狀態圖(檢查時間: 2024/06/18 19:00:05) </h3>
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -796,12 +895,14 @@
               <!-- /.card-header -->
               <div class="card-body p-0">
                 <div class="d-md-flex">
-                  <div class="p-1 flex-fill" style="overflow: hidden">
+                  <!--div class="p-1 flex-fill" style="overflow: hidden"-->
+				  <div class="p-1 flex-fill">
                     <!-- Map will be created here -->
-                    <div id="world-map-markers-2" style="height: 100%; overflow: hidden">
+                    <!--div id="world-map-markers-2" style="height: 100%; overflow: hidden">
                       <div class="map">
 					  </div>
-                    </div>
+                    </div-->
+					<img id="mapclick" src="dist/img/eyesee_nw.png" style="width:90%; height:120%" onclick="mapclick()"/>
 					<!--div class="mapcontainer2">
                       <div class="map">
                       <span>Alternative content for the map</span>
@@ -817,6 +918,47 @@
                 </div><!-- /.d-md-flex -->
               </div>
               <!-- /.card-body -->
+			  <div class="card-footer">
+                <div class="row">
+                  <div class="col-sm-3 col-6">
+                    <div class="description-block border-right">
+                      <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 1%</span>
+                      <h5 class="description-header text-danger" style="font-size:18px">5<small class="text-dark mr-1">件</small></h5>
+                      <span class="description-text"><i class="icon fas fa-exclamation-circle" style="color:#dc3545"></i>Critical Event</span>
+                    </div>
+                    <!-- /.description-block -->
+                  </div>
+                  <!-- /.col -->
+                  <div class="col-sm-3 col-6">
+                    <div class="description-block border-right">
+                      <span class="description-percentage text-danger"><i class="fas fa-caret-down"></i> 2%</span>
+                      <h5 class="description-header text-warning" style="font-size:18px">50<small class="text-dark mr-1">件</small></h5>
+                      <span class="description-text"><i class="icon fas fa-exclamation-triangle" style="color:#ffc107"></i>Minor Event</span>
+                    </div>
+                    <!-- /.description-block -->
+                  </div>
+                  <!-- /.col -->
+                  <div class="col-sm-3 col-6">
+                    <div class="description-block border-right">
+                      <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 0%</span>
+                      <h5 class="description-header text-success" style="font-size:18px">0<small class="text-dark mr-1">件</small></h5>
+                      <span class="description-text"><i class="icon fas fa-check" style="color:#28a745"><span class="btn-tool"></span></i>Normal Event</span>
+                    </div>
+                    <!-- /.description-block -->
+                  </div>
+                  <!-- /.col -->
+                  <div class="col-sm-3 col-6">
+                    <div class="description-block">
+                      <span class="description-percentage text-danger"><i class="fas fa-caret-down"></i> 1%</span>
+                      <h5 class="description-header" style="font-size:18px">55<small class="text-dark mr-1">件</small></h5>
+                      <span class="description-text">Total Event</span>
+                    </div>
+                    <!-- /.description-block -->
+                  </div>
+                </div>
+                <!-- /.row -->
+              </div>
+              <!-- /.card-footer -->
             </div>			
 			 <!-- /.card 2 -->     
             <!-- /.row -->
@@ -824,12 +966,12 @@
           
             <!-- /.card -->
           </div>
-		  <div class="col-md-4">
+		  <div class="col-md-6 card-deck">
             <!-- MAP & BOX PANE -->
             <!-- /.card 1 -->     
-            <div class="card card-info">
+            <div class="card card-info" style=" margin-bottom: 10px;">
               <div class="card-header">
-                <h3 class="card-title">未結案事件比例圖</h3>
+                <h3 class="card-title">主節點/區網中心流量</h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -850,12 +992,816 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body p-0">
-			   <div class="chart">
-                  <canvas id="barChart" style="min-height: 170px; height: 170px; max-height: 200px; max-width: 100%;"></canvas>
-                </div>
+			    <table class="table">
+                  <thead>
+                    <tr>
+                      <th style="width: 140px">節點</th>
+                      <th style="width: 130px">區網中心</th>
+                      <th>總流量</th>
+					  <th>流入</th>
+					  <th>流出</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>教育部節點</td>
+                      <td></td>
+					  <td>90 Gbps 
+                        <input type="text" id="knob" class="knob" value="22" data-skin="tron" data-thickness="0.2"
+                           data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+                           data-fgColor="#39CCCC" data-readonly="true"/>
+					  </td>
+					  <td>30 Gbps
+					    <input type="text" class="knob" value="7" data-skin="tron" data-thickness="0.2"
+                           data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+                           data-fgColor="#00c0ef" data-readonly="true"/>
+					  </td>
+					  <td>60 Gbps
+					    <input type="text" class="knob" value="15" data-skin="tron" data-thickness="0.2"
+                           data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+                           data-fgColor="#932ab6" data-readonly="true"/>
+					  </td>
+					</tr>
+					<tr data-widget="expandable-table" aria-expanded="false">
+                      <td>台北主節點 <i class="fas fa-sort-down"></i>
+				      </td>
+                      <td></td>
+					  <td>60 Gbps 
+                          <input type="text" class="knob" value="22" data-skin="tron" data-thickness="0.2"
+                           data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+                           data-fgColor="#39CCCC" data-readonly="true"/>
+					  </td>
+					  <td>30 Gbps
+					    <input type="text" class="knob" value="17" data-skin="tron" data-thickness="0.2"
+                           data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+                           data-fgColor="#00c0ef" data-readonly="true"/>
+					  </td>
+					  <td>30 Gbps
+					    <input type="text" class="knob" value="27" data-skin="tron" data-thickness="0.2"
+                           data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+                           data-fgColor="#932ab6" data-readonly="true"/>
+					  </td>
+					</tr>
+					<tr class="expandable-body">
+                      <td colspan="5">
+                        <p>
+                          <table class="table">
+						    <tbody>
+						    <tr>
+							  <td style="width: 130px"></td>
+							  <td style="width: 130px">臺北區網中心I</td>
+							  <td>60 Gbps 
+								<input type="text" class="knob" value="15" data-skin="tron" data-thickness="0.2"
+								data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+								data-fgColor="#39CCCC" data-readonly="true"/>
+							  </td>
+							  <td>30 Gbps
+								<input type="text" class="knob" value="26" data-skin="tron" data-thickness="0.2"
+								data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+								data-fgColor="#00c0ef" data-readonly="true"/>
+							  </td>
+							  <td>30 Gbps
+								<input type="text" class="knob" value="28" data-skin="tron" data-thickness="0.2"
+								data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+								data-fgColor="#932ab6" data-readonly="true"/>
+							  </td>
+							</tr>
+							<tr>
+							  <td style="width: 130px"></td>
+							  <td style="width: 130px">臺北區網中心II</td>
+							  <td>60 Gbps 
+								<input type="text" class="knob" value="15" data-skin="tron" data-thickness="0.2"
+								data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+								data-fgColor="#39CCCC" data-readonly="true"/>
+							  </td>
+							  <td>30 Gbps
+								<input type="text" class="knob" value="7" data-skin="tron" data-thickness="0.2"
+								data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+								data-fgColor="#00c0ef" data-readonly="true"/>
+							  </td>
+							  <td>30 Gbps
+								<input type="text" class="knob" value="7" data-skin="tron" data-thickness="0.2"
+								data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+								data-fgColor="#932ab6" data-readonly="true"/>
+							  </td>
+							</tr>
+							<tr>
+							  <td style="width: 130px"></td>
+							  <td style="width: 130px">桃園區網中心</td>
+							  <td>60 Gbps 
+								<input type="text" class="knob" value="15" data-skin="tron" data-thickness="0.2"
+								data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+								data-fgColor="#39CCCC" data-readonly="true"/>
+							  </td>
+							  <td>30 Gbps
+								<input type="text" class="knob" value="7.5" data-skin="tron" data-thickness="0.2"
+								data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+								data-fgColor="#00c0ef" data-readonly="true"/>
+							  </td>
+							  <td>30 Gbps
+								<input type="text" class="knob" value="7" data-skin="tron" data-thickness="0.2"
+								data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+								data-fgColor="#932ab6" data-readonly="true"/>
+							  </td>
+							</tr>
+							<tr>
+							  <td style="width: 130px"></td>
+							  <td style="width: 130px">宜蘭區網中心</td>
+							  <td>60 Gbps 
+								<input type="text" class="knob" value="15" data-skin="tron" data-thickness="0.2"
+								data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+								data-fgColor="#39CCCC" data-readonly="true"/>
+							  </td>
+							  <td>30 Gbps
+								<input type="text" class="knob" value="7" data-skin="tron" data-thickness="0.2"
+								data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+								data-fgColor="#00c0ef" data-readonly="true"/>
+							  </td>
+							  <td>30 Gbps
+								<input type="text" class="knob" value="7" data-skin="tron" data-thickness="0.2"
+								data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+								data-fgColor="#932ab6" data-readonly="true"/>
+							  </td>
+							</tr>
+							<tr>
+							  <td style="width: 130px"></td>
+							  <td style="width: 130px">台東區網中心</td>
+							  <td>60 Gbps 
+								<input type="text" class="knob" value="15" data-skin="tron" data-thickness="0.2"
+								data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+								data-fgColor="#39CCCC" data-readonly="true"/>
+							  </td>
+							  <td>30 Gbps
+								<input type="text" class="knob" value="7" data-skin="tron" data-thickness="0.2"
+								data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+								data-fgColor="#00c0ef" data-readonly="true"/>
+							  </td>
+							  <td>30 Gbps
+								<input type="text" class="knob" value="7" data-skin="tron" data-thickness="0.2"
+								data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+								data-fgColor="#932ab6" data-readonly="true"/>
+							  </td>
+							</tr>
+							</tbody>
+						  </table>
+                        </p>
+                      </td>
+                    </tr>
+					<tr data-widget="expandable-table" aria-expanded="false">
+                      <td>新竹主節點<i class="fas fa-sort-down"></i></td>
+                      <td></td>
+					  <td>58 Gbps 
+                          <input type="text" class="knob" value="31" data-skin="tron" data-thickness="0.2"
+                           data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+                           data-fgColor="#39CCCC" data-readonly="true"/>
+					  </td>
+					  <td>20 Gbps
+					    <input type="text" class="knob" value="35" data-skin="tron" data-thickness="0.2"
+                           data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+                           data-fgColor="#00c0ef" data-readonly="true"/>
+					  </td>
+					  <td>38 Gbps
+					    <input type="text" class="knob" value="27" data-skin="tron" data-thickness="0.2"
+                           data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+                           data-fgColor="#932ab6" data-readonly="true"/>
+					  </td>
+					</tr>
+					<tr class="expandable-body">
+                      <td colspan="5">
+                        <p>
+                          <table class="table">
+						    <tbody>
+						    <tr>
+							  <td style="width: 130px"></td>
+							  <td style="width: 130px">桃園區網中心</td>
+							  <td>60 Gbps 
+								<input type="text" class="knob" value="15" data-skin="tron" data-thickness="0.2"
+								data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+								data-fgColor="#39CCCC" data-readonly="true"/>
+							  </td>
+							  <td>30 Gbps
+								<input type="text" class="knob" value="7" data-skin="tron" data-thickness="0.2"
+								data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+								data-fgColor="#00c0ef" data-readonly="true"/>
+							  </td>
+							  <td>30 Gbps
+								<input type="text" class="knob" value="7" data-skin="tron" data-thickness="0.2"
+								data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+								data-fgColor="#932ab6" data-readonly="true"/>
+							  </td>
+							</tr>
+							<tr>
+							  <td style="width: 130px"></td>
+							  <td style="width: 130px">新竹區網中心</td>
+							  <td>60 Gbps 
+								<input type="text" class="knob" value="15" data-skin="tron" data-thickness="0.2"
+								data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+								data-fgColor="#39CCCC" data-readonly="true"/>
+							  </td>
+							  <td>30 Gbps
+								<input type="text" class="knob" value="7" data-skin="tron" data-thickness="0.2"
+								data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+								data-fgColor="#00c0ef" data-readonly="true"/>
+							  </td>
+							  <td>30 Gbps
+								<input type="text" class="knob" value="7" data-skin="tron" data-thickness="0.2"
+								data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+								data-fgColor="#932ab6" data-readonly="true"/>
+							  </td>
+							</tr>
+							<tr>
+							  <td style="width: 130px"></td>
+							  <td style="width: 130px">竹苗區網中心</td>
+							  <td>60 Gbps 
+								<input type="text" class="knob" value="15" data-skin="tron" data-thickness="0.2"
+								data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+								data-fgColor="#39CCCC" data-readonly="true"/>
+							  </td>
+							  <td>30 Gbps
+								<input type="text" class="knob" value="7" data-skin="tron" data-thickness="0.2"
+								data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+								data-fgColor="#00c0ef" data-readonly="true"/>
+							  </td>
+							  <td>30 Gbps
+								<input type="text" class="knob" value="7" data-skin="tron" data-thickness="0.2"
+								data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+								data-fgColor="#932ab6" data-readonly="true"/>
+							  </td>
+							</tr>
+							</tbody>
+						  </table>
+                        </p>
+                      </td>
+                    </tr>
+					<tr data-widget="expandable-table" aria-expanded="false">
+                      <td>台中主節點<i class="fas fa-sort-down"></i></td>
+                      <td></td>
+					  <td>56 Gbps 
+                          <input type="text" class="knob" value="16" data-skin="tron" data-thickness="0.2"
+                           data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+                           data-fgColor="#39CCCC" data-readonly="true"/>
+					  </td>
+					  <td>36 Gbps
+					    <input type="text" class="knob" value="10" data-skin="tron" data-thickness="0.2"
+                           data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+                           data-fgColor="#00c0ef" data-readonly="true"/>
+					  </td>
+					  <td>20 Gbps
+					    <input type="text" class="knob" value="22" data-skin="tron" data-thickness="0.2"
+                           data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+                           data-fgColor="#932ab6" data-readonly="true"/>
+					  </td>
+					</tr>
+					<tr class="expandable-body">
+                      <td colspan="5">
+                        <p>
+                          <table class="table">
+						    <tbody>
+						    <tr>
+							  <td style="width: 130px"></td>
+							  <td style="width: 130px">臺中區網中心</td>
+							  <td>60 Gbps 
+								<input type="text" class="knob" value="15" data-skin="tron" data-thickness="0.2"
+								data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+								data-fgColor="#39CCCC" data-readonly="true"/>
+							  </td>
+							  <td>30 Gbps
+								<input type="text" class="knob" value="7" data-skin="tron" data-thickness="0.2"
+								data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+								data-fgColor="#00c0ef" data-readonly="true"/>
+							  </td>
+							  <td>30 Gbps
+								<input type="text" class="knob" value="7" data-skin="tron" data-thickness="0.2"
+								data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+								data-fgColor="#932ab6" data-readonly="true"/>
+							  </td>
+							</tr>
+							<tr>
+							  <td style="width: 130px"></td>
+							  <td style="width: 130px">南投區網中心</td>
+							  <td>60 Gbps 
+								<input type="text" class="knob" value="15" data-skin="tron" data-thickness="0.2"
+								data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+								data-fgColor="#39CCCC" data-readonly="true"/>
+							  </td>
+							  <td>30 Gbps
+								<input type="text" class="knob" value="7" data-skin="tron" data-thickness="0.2"
+								data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+								data-fgColor="#00c0ef" data-readonly="true"/>
+							  </td>
+							  <td>30 Gbps
+								<input type="text" class="knob" value="7" data-skin="tron" data-thickness="0.2"
+								data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+								data-fgColor="#932ab6" data-readonly="true"/>
+							  </td>
+							</tr>
+							<tr>
+							  <td style="width: 130px"></td>
+							  <td style="width: 130px">雲嘉區網中心</td>
+							  <td>60 Gbps 
+								<input type="text" class="knob" value="15" data-skin="tron" data-thickness="0.2"
+								data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+								data-fgColor="#39CCCC" data-readonly="true"/>
+							  </td>
+							  <td>30 Gbps
+								<input type="text" class="knob" value="7" data-skin="tron" data-thickness="0.2"
+								data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+								data-fgColor="#00c0ef" data-readonly="true"/>
+							  </td>
+							  <td>30 Gbps
+								<input type="text" class="knob" value="7" data-skin="tron" data-thickness="0.2"
+								data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+								data-fgColor="#932ab6" data-readonly="true"/>
+							  </td>
+							</tr>
+							</tbody>
+						  </table>
+                        </p>
+                      </td>
+                    </tr>
+					<tr data-widget="expandable-table" aria-expanded="false">
+                      <td>台南主節點<i class="fas fa-sort-down"></i></td>
+                      <td></td>
+					  <td>65 Gbps 
+                          <input type="text" class="knob" value="33" data-skin="tron" data-thickness="0.2"
+                           data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+                           data-fgColor="#39CCCC" data-readonly="true"/>
+					  </td>
+					  <td>25 Gbps
+					    <input type="text" class="knob" value="32" data-skin="tron" data-thickness="0.2"
+                           data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+                           data-fgColor="#00c0ef" data-readonly="true"/>
+					  </td>
+					  <td>40 Gbps
+					    <input type="text" class="knob" value="10" data-skin="tron" data-thickness="0.2"
+                           data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+                           data-fgColor="#932ab6" data-readonly="true"/>
+					  </td>
+                    </tr>
+					<tr class="expandable-body">
+                      <td colspan="5">
+                        <p>
+                          <table class="table">
+						    <tbody>
+						    <tr>
+							  <td style="width: 130px"></td>
+							  <td style="width: 130px">臺南區網中心</td>
+							  <td>60 Gbps 
+								<input type="text" class="knob" value="15" data-skin="tron" data-thickness="0.2"
+								data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+								data-fgColor="#39CCCC" data-readonly="true"/>
+							  </td>
+							  <td>30 Gbps
+								<input type="text" class="knob" value="7" data-skin="tron" data-thickness="0.2"
+								data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+								data-fgColor="#00c0ef" data-readonly="true"/>
+							  </td>
+							  <td>30 Gbps
+								<input type="text" class="knob" value="7" data-skin="tron" data-thickness="0.2"
+								data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+								data-fgColor="#932ab6" data-readonly="true"/>
+							  </td>
+							</tr>
+							<tr>
+							  <td style="width: 130px"></td>
+							  <td style="width: 130px">高屏澎區網中心</td>
+							  <td>60 Gbps 
+								<input type="text" class="knob" value="15" data-skin="tron" data-thickness="0.2"
+								data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+								data-fgColor="#39CCCC" data-readonly="true"/>
+							  </td>
+							  <td>30 Gbps
+								<input type="text" class="knob" value="7" data-skin="tron" data-thickness="0.2"
+								data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+								data-fgColor="#00c0ef" data-readonly="true"/>
+							  </td>
+							  <td>30 Gbps
+								<input type="text" class="knob" value="7" data-skin="tron" data-thickness="0.2"
+								data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+								data-fgColor="#932ab6" data-readonly="true"/>
+							  </td>
+							</tr>
+							</tbody>
+						  </table>
+                        </p>
+                      </td>
+                    </tr>
+					<tr>
+                      <td>中研院節點<i class="fas fa-sort-down"></i></td>
+                      <td></td>
+					  <td>65 Gbps 
+                          <input type="text" class="knob" value="16" data-skin="tron" data-thickness="0.2"
+                           data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+                           data-fgColor="#39CCCC" data-readonly="true" />
+					  </td>
+					  <td>25 Gbps
+					    <input type="text" class="knob" value="6" data-skin="tron" data-thickness="0.2"
+                           data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+                           data-fgColor="#00c0ef" data-readonly="true"/>
+					  </td>
+					  <td>40 Gbps
+					    <input type="text" class="knob" value="10" data-skin="tron" data-thickness="0.2"
+                           data-angleArc="250" data-angleOffset="-125" data-width="50" data-height="40"
+                           data-fgColor="#932ab6" data-readonly="true"/>
+					  </td>
+                    </tr>
+                  </tbody>
+                </table>
 			  </div>
 			</div>
-			<div class="card card-info">
+          </div>	
+        </div>		  
+		<div class="row">
+          <!-- /.col -->
+		  <div class="col-md-6 card-deck">
+            <!-- MAP & BOX PANE -->
+            <!-- /.card 1 -->     
+            <div class="card card-info" style=" margin-bottom: 10px;">
+              <div class="card-header">
+                <h3 class="card-title">主節點/區網中心設備流量</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+				  <div class="btn-group">
+                    <button type="button" class="btn btn-tool dropdown-toggle" data-toggle="dropdown">
+                      <i class="fas fa-wrench"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" role="menu">
+                      <a href="#" class="dropdown-item">編輯圖表</a>
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+			    <div class="row">
+			      <div class="col-md-3 float-right">
+				    <div class="form-inline col-sm-3"> 
+                      <select name="unit" class="form-control"  id="unit" >
+                        <option value="全部">全部</option>
+                        <option value="教育部節點">教育部節點</option>
+                      </select>    
+                    </div>
+				  </div>
+				  <div class="col-md-6 float-right">
+			      <ul class="pagination pagination-sm">
+                    <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+					<li class="page-item"><a class="page-link" href="#">4</a></li>
+					<li class="page-item"><a class="page-link" href="#">5</a></li>
+                    <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+                  </ul>
+				  </div>
+				</div>
+			    <table class="table">
+                  <thead>
+                    <tr>
+                      <th style="width: 15%">節點/區網</th>
+                      <th style="width: 30%">設備</th>
+					  <th style="width: 55%">流量</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>教育部節點<i class="icon fas fa-exclamation-circle" style="color:#dc3545"></i></td>
+                      <td>TWAREN-TRCT-ASR9006-01 Gi0/1/7<br/><div style="font-size:14px">TWAREN-TRTC-ASR9006-01 to III Cisco-3650#1</div></td>
+					  <td>
+					    <div class="row">
+					    <div class="col-md-6">
+					    流入 30.14 Gbps
+					    <small class="text-success mr-1">
+                          <i class="fas fa-arrow-up"></i>
+                          1%　　
+                        </small>
+					      <div id="sparkline-1"></div>
+						</div>
+						<div class="col-md-6">
+					     <span style="background-color: rgba(241, 69, 69, 0.6);">流出 2.04 Gbps</span>
+					     <small class="text-danger mr-1">
+                          <i class="fas fa-arrow-down"></i>
+                          40%
+                        </small>  
+					      <div id="sparkline-2"></div>
+                        </div>	
+                        </div>						
+					  </td>
+					</tr>
+					<tr>
+                      <td>教育部節點</td>
+                      <td>TWAREN-TRCT-ASR9006-02 Gi0/1/16<br/><div style="font-size:14px">TWAREN-TRTC-ASR9006-02 to III Cisco-3650#2</div></td>
+					  <td>
+					    <div class="row">
+						  <div class="col-md-6">
+					      流入 28.01 Gbps
+					        <small class="text-success mr-1">
+                              <i class="fas fa-arrow-up"></i>
+                              3%　　
+                            </small>
+					        <div id="sparkline-3"></div>
+						  </div>
+						  <div class="col-md-6">
+					      流出 43.23 Gbps
+					        <small class="text-success mr-1">
+                              <i class="fas fa-arrow-up"></i>
+                              2%　　
+                            </small>  
+					        <div id="sparkline-4"></div>
+                          </div>
+                        </div>						
+					  </td>
+					</tr>
+					<tr>
+                      <td>教育部節點</td>
+                      <td>TWAREN-TRCT-ASR9006-01 Hun0/0/1.0<br/><div style="font-size:14px">TWAREN-TRCT-ASR9006-01 to III Cisco-3650#2</div></td>
+					  <td>
+					    <div class="row">
+						  <div class="col-md-6">
+					      流入 28.01 Gbps
+					        <small class="text-success mr-1">
+                              <i class="fas fa-arrow-up"></i>
+                              3%　　
+                            </small>
+					        <div id="sparkline-5"></div>
+						  </div>
+						  <div class="col-md-6">
+					      流出 43.23 Gbps
+					        <small class="text-success mr-1">
+                              <i class="fas fa-arrow-up"></i>
+                              2%　　
+                            </small>  
+					        <div id="sparkline-6"></div>
+                          </div>
+                        </div>						
+					  </td>
+					</tr>
+					<tr>
+                      <td>教育部節點</td>
+                      <td>TWAREN-TRCT-ASR9006-02 Eth1/20<br/><div style="font-size:14px">TWAREN-TRTC-ASR9006-02 to III Cisco-3650#2</div></td>
+					  <td>
+					    <div class="row">
+						  <div class="col-md-6">
+					      流入 28.01 Gbps
+					        <small class="text-success mr-1">
+                              <i class="fas fa-arrow-up"></i>
+                              3%　　
+                            </small>
+					        <div id="sparkline-7"></div>
+						  </div>
+						  <div class="col-md-6">
+					      流出 43.23 Gbps
+					        <small class="text-success mr-1">
+                              <i class="fas fa-arrow-up"></i>
+                              2%　　
+                            </small>  
+					        <div id="sparkline-8"></div>
+                          </div>
+                        </div>						
+					  </td>
+					</tr>
+					<tr>
+                      <td>教育部節點</td>
+                      <td>TWAREN-TRCT-ASR9006-02 Eth1/23<br/><div style="font-size:14px">TWAREN-TRTC-ASR9006-02 to III Cisco-3650#2</div></td>
+					  <td>
+					    <div class="row">
+						  <div class="col-md-6">
+					      流入 28.01 Gbps
+					        <small class="text-success mr-1">
+                              <i class="fas fa-arrow-up"></i>
+                              3%　　
+                            </small>
+					        <div id="sparkline-9"></div>
+						  </div>
+						  <div class="col-md-6">
+					      流出 43.23 Gbps
+					        <small class="text-success mr-1">
+                              <i class="fas fa-arrow-up"></i>
+                              2%　　
+                            </small>  
+					        <div id="sparkline-10"></div>
+                          </div>
+                        </div>						
+					  </td>
+					</tr>
+                  </tbody>
+                </table>
+			  </div>
+			</div>
+          </div>			
+          <!-- /.col -->
+		  <div class="col-md-6 card-deck">
+            <!-- MAP & BOX PANE -->
+            <!-- /.card 1 -->     
+            <div class="card card-info" style=" margin-bottom: 10px;">
+              <div class="card-header">
+                <h3 class="card-title"> <i class="fas fa-television"></i>主節點/區網中心設備狀態</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+				  <div class="btn-group">
+                    <button type="button" class="btn btn-tool dropdown-toggle" data-toggle="dropdown">
+                      <i class="fas fa-wrench"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" role="menu">
+                      <a href="#" class="dropdown-item">編輯圖表</a>
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+			    <div class="row">
+			      <div class="col-md-3 float-right">
+				    <div class="form-inline col-sm-3"> 
+                      <select name="unit" class="form-control"  id="unit" >
+                        <option value="全部">全部</option>
+                        <option value="教育部節點">教育部節點</option>
+                      </select>    
+                    </div>
+				  </div>
+				  <div class="col-md-6 float-left">
+			      <ul class="pagination pagination-sm">
+                    <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+					<li class="page-item"><a class="page-link" href="#">4</a></li>
+					<li class="page-item"><a class="page-link" href="#">5</a></li>
+                    <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+                  </ul>
+				  </div>
+				</div>
+			    <table class="table">
+                  <thead>
+                    <tr>
+                      <th style="width: 15%">節點/區網</th>
+                      <th style="width: 30%">設備</th>
+					  <th style="width: 55%">CPU/Memory</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>教育部節點</td>
+                      <td>TWAREN-TRCT-ASR9006-01 Gi0/1/7<br/><div style="font-size:14px">TWAREN-TRTC-ASR9006-01 to III Cisco-3650#1</div></td>
+					  <td>
+					    <div class="row">
+					      <div class="col-md-6">
+					      50% (4 Core x1.7 GHz) 
+					        <small class="text-success mr-1">
+                              <i class="fas fa-arrow-up"></i>
+                              1%　　
+                            </small>
+					        <div class="chart">
+                              <canvas id="areaChart1" style="min-height: 100px; height: 100px; max-height: 100px; max-width: 100%;"></canvas>
+                            </div>
+						  </div>
+						  <div class="col-md-6">
+					      10% (3.2GB/32GB)
+					        <small class="text-success mr-1">
+                              <i class="fas fa-arrow-up"></i>
+                              1%　　
+                            </small>
+					        <div class="chart">
+                              <canvas id="areaChart2" style="min-height: 100px; height: 100px; max-height: 100px; max-width: 100%;"></canvas>
+                            </div>
+						  </div>
+                        </div>
+					  </td>
+					</tr>
+					<tr>
+                      <td>教育部節點</td>
+                      <td>TWAREN-TRCT-ASR9006-02 Gi0/1/16<br/><div style="font-size:14px">TWAREN-TRTC-ASR9006-02 to III Cisco-3650#2</div></td>
+					  <td>
+					    <div class="row">
+					      <div class="col-md-6">
+					      25% (4 Core x 2.3 GHz)
+					        <small class="text-danger mr-1">
+                              <i class="fas fa-arrow-down"></i>
+                              8%　　
+                            </small>
+					        <div class="chart">
+                              <canvas id="areaChart3" style="min-height: 100px; height: 100px; max-height: 100px; max-width: 100%;"></canvas>
+                            </div>
+						  </div>
+						  <div class="col-md-6">
+					      34% (10.2GB/32GB)
+					        <small class="text-success mr-1">
+                              <i class="fas fa-arrow-up"></i>
+                              45%　　
+                            </small>
+					        <div class="chart">
+                              <canvas id="areaChart4" style="min-height: 100px; height: 100px; max-height: 100px; max-width: 100%;"></canvas>
+                            </div>
+						  </div>
+                        </div>
+					  </td>
+					</tr>
+					<tr>
+                      <td>教育部節點</td>
+                      <td>TWAREN-TRCT-ASR9006-01 Hun0/0/1.0<br/><div style="font-size:14px">TWAREN-TRCT-ASR9006-01 to III Cisco-3650#2</div></td>
+					  <td>
+					    <div class="row">
+					      <div class="col-md-6">
+					      35% (4 Core x 1.8 GHz)
+					        <small class="text-success mr-1">
+                              <i class="fas fa-arrow-up"></i>
+                              19%　　
+                            </small>
+					        <div class="chart">
+                              <canvas id="areaChart5" style="min-height: 100px; height: 100px; max-height: 100px; max-width: 100%;"></canvas>
+                            </div>
+						  </div>
+						  <div class="col-md-6">
+					      45% (30.4GB/64GB)
+					        <small class="text-success mr-1">
+                              <i class="fas fa-arrow-up"></i>
+                              7%　　
+                            </small>
+					        <div class="chart">
+                              <canvas id="areaChart6" style="min-height: 100px; height: 100px; max-height: 100px; max-width: 100%;"></canvas>
+                            </div>
+						  </div>
+                        </div>
+					  </td>
+					</tr>
+					<tr>
+                      <td>教育部節點</td>
+                      <td>TWAREN-TRCT-ASR9006-02 Eth1/20<br/><div style="font-size:14px">TWAREN-TRTC-ASR9006-02 to III Cisco-3650#2</div></td>
+					  <td>
+					    <div class="row">
+					      <div class="col-md-6">
+					      56% (4 Core x 3.2 GHz)
+					        <small class="text-danger mr-1">
+                              <i class="fas fa-arrow-down"></i>
+                              8%　　
+                            </small>
+					        <div class="chart">
+                              <canvas id="areaChart7" style="min-height: 100px; height: 100px; max-height: 100px; max-width: 100%;"></canvas>
+                            </div>
+						  </div>
+						  <div class="col-md-6">
+					      76% (50.1GB/64GB)
+					        <small class="text-success mr-1">
+                              <i class="fas fa-arrow-up"></i>
+                              7%　　
+                            </small>
+					        <div class="chart">
+                              <canvas id="areaChart8" style="min-height: 100px; height: 100px; max-height: 100px; max-width: 100%;"></canvas>
+                            </div>
+						  </div>
+                        </div>
+					  </td>
+					</tr>
+					<tr>
+                      <td>教育部節點<i class="icon fas fa-exclamation-circle" style="color:#dc3545"></i></td>
+                      <td>TWAREN-TRCT-ASR9006-02 Eth1/23<br/><div style="font-size:14px">TWAREN-TRTC-ASR9006-02 to III Cisco-3650#2</div></td>
+					  <td>
+					    <div class="row">
+					      <div class="col-md-6">
+					      <span style="background-color: rgba(241, 69, 69, 0.6);">87% (4 Core x 3.7 GHz)</span>
+					        <small class="text-danger mr-1">
+                              <i class="fas fa-arrow-down"></i>
+                              5%　　
+                            </small>
+					        <div class="chart">
+                              <canvas id="areaChart9" style="min-height: 100px; height: 100px; max-height: 100px; max-width: 100%;"></canvas>
+                            </div>
+						  </div>
+						  <div class="col-md-6">
+					      66% (23.1GB/32GB)
+					        <small class="text-success mr-1">
+                              <i class="fas fa-arrow-up"></i>
+                              10%　　
+                            </small>
+					        <div class="chart">
+                              <canvas id="areaChart10" style="min-height: 100px; height: 100px; max-height: 100px; max-width: 100%;"></canvas>
+                            </div>
+						  </div>
+                        </div>
+					  </td>
+					</tr>
+                  </tbody>
+                </table>
+			  </div>
+			</div>
+          </div>
+        </div>
+        <div class="row">		
+          <!-- /.col -->
+		  <div class="col-md-12 card-deck">
+            <!-- MAP & BOX PANE -->
+			<div class="card card-info" style="margin-bottom: 10px;">
               <div class="card-header">
                 <h3 class="card-title">設備存活狀態統計圖</h3>
 
@@ -879,7 +1825,7 @@
               <!-- /.card-header -->
               <div class="card-body p-0">
 			    <div class="chart">
-                  <canvas id="stackedBarChart" style="min-height: 200px; height: 200px; max-height: 200px; max-width: 100%;"></canvas>
+                  <canvas id="stackedBarChart" style="min-height: 300px; height: 300px; max-height: 300px; max-width: 100%;"></canvas>
                 </div>
 			  </div>
 			</div>
@@ -889,247 +1835,181 @@
         <!-- /.row -->
 		<div class="row">
           <!-- Left col -->
-          <div class="col-md-12">
+          <div class="col-md-6 card-deck">
 		    <!-- /.card 1 -->     
-            <div class="card card-info">
+            <div class="card card-info" style=" margin-bottom: 10px;">
               <div class="card-header">
                 <h3 class="card-title">截至今日尚未結案事件單</h3>
 
                 <div class="card-tools">
+				 <div class="row">
+				 
+				  <div class="input-group input-group-sm" style="width: 150px;">
+                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+                    <div class="input-group-append">
+                      <button type="submit" class="btn btn-default">
+                        <i class="fas fa-search"></i>
+                      </button>
+                    </div>
+				  </div>
+				 
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
                     <i class="fas fa-minus"></i>
                   </button>
                   <button type="button" class="btn btn-tool" data-card-widget="remove">
                     <i class="fas fa-times"></i>
                   </button>
-                </div>
+				  </div>
+				 </div>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
-                  <thead>
+			    <table class="table table-bordered table-striped">
+				  <thead>
                   <tr>
-                    <th>序號</th>
-                    <th>事件編號</th>
-                    <th>事件類別</th>
-					<th>等級</th>
-                    <th>事件開始時間</th>
-                    <th>介接設備/單位</th>
-					<th>描述</th>
+                    <th style="text-align: center"><i class="icon fas fa-exclamation-circle" style="font-size:20px;color:#dc3545"></i><span class="btn-tool">15</span></th>
+                    <th style="text-align: center"><i class="icon fas fa-exclamation-triangle" style="font-size:20px;color:#ffc107"><span class="btn-tool">56</span></th>
+                    <th style="text-align: center"><i class="icon fas fa-check" style="font-size:20px;color:#28a745"><span class="btn-tool">30</span></th>
                   </tr>
                   </thead>
+				</table>
+              <!-- /.card-header -->
+              <div class="card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                  <thead>
+                   
+                  </thead>
                   <tbody>
-                  <tr>
-                    <td style="background-color:#ffc107">1</td>
-                    <td style="background-color:#ffc107">1130101</td>
-                    <td style="background-color:#ffc107">Traffic</td>
-					<td style="background-color:#ffc107">
-					  <button type="button" class="btn btn-tool" title="warning" style="color:#ffff66">
-                        <i class="fas fa-flag-checkered"></i>
-                      </button>
-					</td>
-                    <td style="background-color:#ffc107">2024/06/14 10:05:01</td>
-                    <td style="background-color:#ffc107">TWAREN-TN-ASR001-01</td>
-					<td style="background-color:#ffc107">[to TWAREN-AC-AS002-01] in 0 Mbps, out 0Mbps</td>
-                  </tr>
-				  <tr>
-                    <td style="background-color:#ffc107">2</td>
-                    <td style="background-color:#ffc107">1130102</td>
-                    <td style="background-color:#ffc107">Traffic</td>
-					<td style="background-color:#ffc107">
-					  <button type="button" class="btn btn-tool" title="warning" style="color:#ffff66">
-                        <i class="fas fa-flag-checkered"></i>
-                      </button>
-					</td>
-                    <td style="background-color:#ffc107">2024/06/14 10:10:01</td>
-                    <td style="background-color:#ffc107">TWAREN-TN-ASR001-02</td>
-					<td style="background-color:#ffc107">[to TWAREN-AC-AS002-02] in 0 Mbps, out 0Mbps, in_high: 9000, in_low: 1e-05, in_avg:0</td>
-                  </tr>
-				  <tr>
-                    <td style="background-color:#ffc107">3</td>
-                    <td style="background-color:#ffc107">1130103</td>
-                    <td style="background-color:#ffc107">InterfacesPort</td>
-					<td style="background-color:#ffc107">
-					  <button type="button" class="btn btn-tool" title="warning" style="color:#ffff66">
-                        <i class="fas fa-flag-checkered"></i>
-                      </button>
-					</td>
-                    <td style="background-color:#ffc107">2024/06/14 10:15:01</td>
-                    <td style="background-color:#ffc107">TWAREN-TN-ASR001-02</td>
-					<td style="background-color:#ffc107">Backbone Circuit Interface(Bundle-Ether2) Abnormal (to TWAREN-NIU-ASR9010-01)</td>
-                  </tr>
-				  <tr>
-                    <td style="background-color:#ffc107">4</td>
-                    <td style="background-color:#ffc107">1130104</td>
-                    <td style="background-color:#ffc107">InterfacesPort</td>
-					<td style="background-color:#ffc107">
-					  <button type="button" class="btn btn-tool" title="warning" style="color:#ffff66">
-                        <i class="fas fa-flag-checkered"></i>
-                      </button>
-					</td>
-                    <td style="background-color:#ffc107">2024/06/14 10:20:01</td>
-                    <td style="background-color:#ffc107">TWAREN-TN-ASR001-02</td>
-					<td style="background-color:#ffc107">Backbone Circuit Interface(Bundle-Ether2-2) Abnormal (to TWAREN-NIU-ASR9010-01)</td>
-                  </tr>
-				  <tr>
-                    <td style="background-color:#ffc107">5</td>
-                    <td style="background-color:#ffc107">1130105</td>
-                    <td style="background-color:#ffc107">Traffic</td>
-					<td style="background-color:#ffc107">
-					  <button type="button" class="btn btn-tool" title="warning" style="color:#ffff66">
-                        <i class="fas fa-flag-checkered"></i>
-                      </button>
-					</td>
-                    <td style="background-color:#ffc107">2024/06/14 10:05:01</td>
-                    <td style="background-color:#ffc107">TWAREN-TN-ASR001-01</td>
-					<td style="background-color:#ffc107">[to TWAREN-AC-AS002-01] in 0 Mbps, out 0Mbps</td>
-                  </tr>
-				  <tr>
-                    <td style="background-color:#ffc107">6</td>
-                    <td style="background-color:#ffc107">1130106</td>
-                    <td style="background-color:#ffc107">Traffic</td>
-					<td style="background-color:#ffc107">
-					  <button type="button" class="btn btn-tool" title="warning" style="color:#ffff66">
-                        <i class="fas fa-flag-checkered"></i>
-                      </button>
-					</td>
-                    <td style="background-color:#ffc107">2024/06/14 10:10:01</td>
-                    <td style="background-color:#ffc107">TWAREN-TN-ASR001-02</td>
-					<td style="background-color:#ffc107">[to TWAREN-AC-AS002-02] in 0 Mbps, out 0Mbps, in_high: 9000, in_low: 1e-05, in_avg:0</td>
-                  </tr>
-				  <tr>
-                    <td style="background-color:#ffc107">7</td>
-                    <td style="background-color:#ffc107">1130107</td>
-                    <td style="background-color:#ffc107">InterfacesPort</td>
-					<td style="background-color:#ffc107">
-					  <button type="button" class="btn btn-tool" title="warning" style="color:#ffff66">
-                        <i class="fas fa-flag-checkered"></i>
-                      </button>
-					</td>
-                    <td style="background-color:#ffc107">2024/06/14 10:15:01</td>
-                    <td style="background-color:#ffc107">TWAREN-TN-ASR001-02</td>
-					<td style="background-color:#ffc107">Backbone Circuit Interface(Bundle-Ether2) Abnormal (to TWAREN-NIU-ASR9010-01)</td>
-                  </tr>
-				  <tr>
-                    <td style="background-color:#ffc107">8</td>
-                    <td style="background-color:#ffc107">1130108</td>
-                    <td style="background-color:#ffc107">InterfacesPort</td>
-					<td style="background-color:#ffc107">
-					  <button type="button" class="btn btn-tool" title="warning" style="color:#ffff66">
-                        <i class="fas fa-flag-checkered"></i>
-                      </button>
-					</td>
-                    <td style="background-color:#ffc107">2024/06/14 10:20:01</td>
-                    <td style="background-color:#ffc107">TWAREN-TN-ASR001-02</td>
-					<td style="background-color:#ffc107">Backbone Circuit Interface(Bundle-Ether2) Abnormal (to TWAREN-NIU-ASR9010-01)</td>
-                  </tr>
-				  <tr>
-                    <td style="background-color:#ffc107">9</td>
-                    <td style="background-color:#ffc107">1130109</td>
-                    <td style="background-color:#ffc107">Traffic</td>
-					<td style="background-color:#ffc107">
-					  <button type="button" class="btn btn-tool" title="warning" style="color:#ffff66">
-                        <i class="fas fa-flag-checkered"></i>
-                      </button>
-					</td>
-                    <td style="background-color:#ffc107">2024/06/14 10:05:01</td>
-                    <td style="background-color:#ffc107">TWAREN-TN-ASR001-01</td>
-					<td style="background-color:#ffc107">[to TWAREN-AC-AS002-01] in 0 Mbps, out 0Mbps</td>
-                  </tr>
-				  <tr>
-                    <td style="background-color:#ffc107">10</td>
-                    <td style="background-color:#ffc107">1130110</td>
-                    <td style="background-color:#ffc107">Traffic</td>
-					<td style="background-color:#ffc107">
-					  <button type="button" class="btn btn-tool" title="warning" style="color:#ffff66">
-                        <i class="fas fa-flag-checkered"></i>
-                      </button>
-					</td>
-                    <td style="background-color:#ffc107">2024/06/14 10:10:01</td>
-                    <td style="background-color:#ffc107">TWAREN-TN-ASR001-02</td>
-					<td style="background-color:#ffc107">[to TWAREN-AC-AS002-02] in 0 Mbps, out 0Mbps, in_high: 9000, in_low: 1e-05, in_avg:0</td>
-                  </tr>
-				  <tr>
-                    <td style="background-color:#ffc107">11</td>
-                    <td style="background-color:#ffc107">1130111</td>
-                    <td style="background-color:#ffc107">InterfacesPort</td>
-					<td style="background-color:#ffc107">
-					  <button type="button" class="btn btn-tool" title="warning" style="color:#ffff66">
-                        <i class="fas fa-flag-checkered"></i>
-                      </button>
-					</td>
-                    <td style="background-color:#ffc107">2024/06/14 10:15:01</td>
-                    <td style="background-color:#ffc107">TWAREN-TN-ASR001-02</td>
-					<td style="background-color:#ffc107">Backbone Circuit Interface(Bundle-Ether2) Abnormal (to TWAREN-NIU-ASR9010-01)</td>
-                  </tr>
-				  <tr>
-                    <td style="background-color:#ffc107">12</td>
-                    <td style="background-color:#ffc107">1130112</td>
-                    <td style="background-color:#ffc107">InterfacesPort</td>
-					<td style="background-color:#ffc107">
-					  <button type="button" class="btn btn-tool" title="warning" style="color:#ffff66">
-                        <i class="fas fa-flag-checkered"></i>
-                      </button>
-					</td>
-                    <td style="background-color:#ffc107">2024/06/14 10:20:01</td>
-                    <td style="background-color:#ffc107">TWAREN-TN-ASR001-02</td>
-					<td style="background-color:#ffc107">Backbone Circuit Interface(Bundle-Ether2) Abnormal (to TWAREN-NIU-ASR9010-01)</td>
-                  </tr>
+                    <tr>
+					  <td style="text-align: center; vertical-align: middle;padding-left: 0.75rem"><i class="icon fas fa-exclamation-circle" style="font-size:20px;color:#dc3545"></i></td>
+                      <!--td style="background-color: rgba(241, 69, 69, 0.6); text-align: center; vertical-align: middle;padding-left:-0.5 rem"><i class="icon fas fa-exclamation-circle" style="color:#dc3545"></i><br/></td-->
+					  <!--td style="background-color:#dc3545; text-align: center; vertical-align: middle;"><i class="icon fas fa-exclamation-circle" style="color:#fff"></i><br/></td-->
+                      <td>事件編號 <span style="color:dodgerblue">1130101-004</span><br/>
+					  類別 <span style="color:dodgerblue">Traffic </span>設備/單位 <span style="color:dodgerblue">TWAREN-TN-ASR001-01</span><br>
+					  <div style="font-size:14px">描述 <span style="color:dodgerblue">[to TWAREN-AC-AS002-01] in 0 Mbps, out 0Mbps</span></div></td>
+                      <td style="font-size:14px;float:right">2024/06/14 10:05:01<br/> <div style="font-size:14px;float:right">17hr 53min</div></td>
+                    </tr>
+                    <tr>
+					  <td style="text-align: center; vertical-align: middle;padding-left: 0.75rem"><i class="icon fas fa-exclamation-circle" style="font-size:20px;color:#dc3545"></i></td>
+                      <!--td style="background-color: rgba(241, 69, 69, 0.6); text-align: center; vertical-align: middle;padding-left:-0.5 rem"><i class="icon fas fa-exclamation-circle" style="color:#dc3545"></i><br/></td-->
+					  <!--td style="background-color:#dc3545; text-align: center; vertical-align: middle;"><i class="icon fas fa-exclamation-circle" style="color:#fff"></i><br/></td-->
+                      <td>事件編號 <span style="color:dodgerblue">1130101-003</span><br/>
+					  類別 <span style="color:dodgerblue">Traffic </span>設備/單位 <span style="color:dodgerblue">TWAREN-TN-ASR001-02</span><br>
+					  <div style="font-size:14px">描述 <span style="color:dodgerblue">[to TWAREN-AC-AS002-02] in 0 Mbps, out 0Mbps, in_high: 9000, in_low: 1e-05, in_avg:0</span></div></td>
+                      <td style="font-size:14px;float:right">2024/06/14 10:00:01<br/> <div style="font-size:14px;float:right">17hr 48min</div></td>
+                    </tr>
+                    <tr>
+					  <td style="text-align: center; vertical-align: middle;padding-left: 0.75rem"><i class="icon fas fa-exclamation-triangle" style="font-size:20px;color:#ffc107"></i></td>
+                      <!--td style="background-color: rgba(247, 207, 7, 0.6); text-align: center; vertical-align: middle;padding-left:-0.5 rem"><i class="icon fas fa-exclamation-triangle" style="color:#ffc107"></i><br/></td-->
+					  <!--td style="background-color:#ffc107; text-align: center; vertical-align: middle;padding-left:-0.5 rem"><i class="icon fas fa-exclamation-triangle" style="color:#fff"></i><br/></td-->
+                      <td>事件編號 <span style="color:dodgerblue">1130101-002</span><br/>
+					  類別 <span style="color:dodgerblue">InterfacesPort </span>設備/單位 <span style="color:dodgerblue">TWAREN-TN-ASR001-02</span><br>
+					  <div style="font-size:14px">描述 <span style="color:dodgerblue">Backbone Circuit Interface(Bundle-Ether2) Abnormal (to TWAREN-NIU-ASR9010-01)</span></div></td>
+                      <td style="font-size:14px;float:right">2024/06/14 09:55:01<br/> <div style="font-size:14px;float:right">17hr 43min</div></td>
+                    </tr>
+                    <tr>
+					  <td style="text-align: center; vertical-align: middle;padding-left: 0.75rem"><i class="icon fas fa-exclamation-circle" style="font-size:20px;color:#dc3545"></i></td>
+                      <!--td style="background-color: rgba(241, 69, 69, 0.6); text-align: center; vertical-align: middle;padding-left:-0.5 rem"><i class="icon fas fa-exclamation-circle" style="color:#dc3545"></i><br/></td-->
+					  <!--td style="background-color:#dc3545; text-align: center; vertical-align: middle;"><i class="icon fas fa-exclamation-circle" style="color:#fff"></i><br/></td-->
+                      <td>事件編號 <span style="color:dodgerblue">1130101-001</span><br/>
+					  類別 <span style="color:dodgerblue">Traffic </span>設備/單位 <span style="color:dodgerblue">TWAREN-TN-ASR001-01</span><br>
+					  <div style="font-size:14px">描述 <span style="color:dodgerblue">[to TWAREN-AC-AS002-01] in 0 Mbps, out 0Mbps</span></div></td>
+                      <td style="font-size:14px;float:right">2024/06/14 09:50:01<br/> <div style="font-size:14px;float:right">17hr 33min</div></td>
+                    </tr>
                   </tbody>
                 </table>
               </div>
               <!-- /.card-body -->
+              </div>
+              <!-- /.card-body -->
             </div>
 		  </div>
-		</div>
-		<!-- /.row -->
-		<div class="row">
-          <!-- Left col -->
-          <div class="col-md-12">
+		  <div class="col-md-6 card-deck">
 		    <!-- /.card 1 -->     
-            <div class="card card-info">
+            <div class="card card-info" style=" margin-bottom: 10px;">
               <div class="card-header">
                 <h3 class="card-title">外部監控事件告警列表</h3>
 
                 <div class="card-tools">
+				 <div class="row">
+				 
+				  <div class="input-group input-group-sm" style="width: 150px;">
+                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+                    <div class="input-group-append">
+                      <button type="submit" class="btn btn-default">
+                        <i class="fas fa-search"></i>
+                      </button>
+                    </div>
+				  </div>
+				 
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
                     <i class="fas fa-minus"></i>
                   </button>
                   <button type="button" class="btn btn-tool" data-card-widget="remove">
                     <i class="fas fa-times"></i>
                   </button>
-                </div>
+				  </div>
+				 </div>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="example2" class="table table-bordered table-striped">
-                  <thead>
+			    <table class="table table-bordered table-striped">
+				  <thead>
                   <tr>
-                    <th>序號</th>
-                    <th>事件編號</th>
-                    <th>事件類別</th>
-					<th>等級</th>
-                    <th>事件開始時間</th>
-                    <th>告警設備</th>
-					<th>描述</th>
+                    <th style="text-align: center"><i class="icon fas fa-exclamation-circle" style="font-size:20px;color:#dc3545"></i><span class="btn-tool">1</span></th>
+                    <th style="text-align: center"><i class="icon fas fa-exclamation-triangle" style="font-size:20px;color:#ffc107"><span class="btn-tool">3</span></th>
+                    <th style="text-align: center"><i class="icon fas fa-check" style="font-size:20px;color:#28a745"><span class="btn-tool">0</span></th>
                   </tr>
                   </thead>
+				</table>
+              <!-- /.card-header -->
+              <div class="card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                  <thead>
+                   
+                  </thead>
                   <tbody>
-                  <tr>
-                    <td style="background-color:#ffc107">1</td>
-                    <td style="background-color:#ffc107">1130101</td>
-                    <td style="background-color:#ffc107">Traffic</td>
-					<td style="background-color:#ffc107">
-					  <button type="button" class="btn btn-tool" title="warning" style="color:#ffff66">
-                        <i class="fas fa-flag-checkered"></i>
-                      </button>
-					</td>
-                    <td style="background-color:#ffc107">2024/06/14 12:05:01</td>
-                    <td style="background-color:#ffc107">Big Data PlantForm</td>
-					<td style="background-color:#ffc107">大數據資料平台連線Mail伺服器失敗</td>
-                  </tr>
+                    <tr>
+					  <td style="text-align: center; vertical-align: middle; padding-left: 0.75rem"><i class="icon fas fa-exclamation-triangle" style="font-size:20px; color:#ffc107"></i></td>
+                      <!--td style="background-color:#ffc107; text-align: center; vertical-align: middle;padding-left:-0.5 rem"><i class="icon fas fa-exclamation-triangle" style="color:#fff"></i><br/></td-->
+					  <!--td style="background-color: rgba(247, 207, 7, 0.6); text-align: center; vertical-align: middle;padding-left:-0.5 rem;"><i class="icon fas fa-exclamation-triangle" style="color:#ffc107"></i><br/></td-->
+                      <td>事件編號 <span style="color:dodgerblue">O1130104-001</span><br/>
+					  類別 <span style="color:dodgerblue">Traffic </span>設備/單位 <span style="color:dodgerblue">Big Data Platform</span><br>
+					  <div style="font-size:14px">描述 <span style="color:dodgerblue">大數據資料平台連線Mail伺服器失敗</span></div></td>
+                      <td style="font-size:14px;float:right">2024/06/14 22:05:01<br/> <div style="font-size:14px;float:right">10hr 53min</div></td>
+                    </tr>
+					<tr>
+					  <td style="text-align: center; vertical-align: middle;padding-left: 0.75rem"><i class="icon fas fa-exclamation-circle" style="font-size:20px;color:#dc3545"></i></td>
+                      <!--td style="background-color:#dc3545; text-align: center; vertical-align: middle;"><i class="icon fas fa-exclamation-circle" style="color:#fff"></i><br/></td-->
+					  <!--td style="background-color: rgba(241, 69, 69, 0.6); text-align: center; vertical-align: middle;padding-left:-0.5 rem;"><i class="icon fas fa-exclamation-circle" style="color:#dc3545"></i><br/></td-->
+                      <td>事件編號 <span style="color:dodgerblue">O1130104-002</span><br/>
+					  類別 <span style="color:dodgerblue">Traffic </span>設備/單位 <span style="color:dodgerblue">Big Data Platform</span><br>
+					  <div style="font-size:14px">描述 <span style="color:dodgerblue">大數據資料平台連線失敗</span></div></td>
+                      <td style="font-size:14px;float:right">2024/06/14 22:05:01<br/> <div style="font-size:14px;float:right">10hr 53min</div></td>
+                    </tr>
+					<tr>
+					  <td style="text-align: center; vertical-align: middle;padding-left: 0.75rem"><i class="icon fas fa-exclamation-triangle" style="font-size:20px;color:#ffc107"></i></td>
+                      <!--td style="background-color: rgba(247, 207, 7, 0.6); text-align: center; vertical-align: middle;"><i class="icon fas fa-exclamation-triangle" style="color:#fff"></i><br/></td-->
+					  <!--td style="background-color: rgba(247, 207, 7, 0.6); text-align: center; vertical-align: middle;padding-left:-0.5 rem;"><i class="icon fas fa-exclamation-triangle" style="color:#ffc107"></i><br/></td-->
+                      <td>事件編號 <span style="color:dodgerblue">O1130104-003</span><br/>
+					  類別 <span style="color:dodgerblue">Traffic </span>設備/單位 <span style="color:dodgerblue">Mail Server</span><br>
+					  <div style="font-size:14px">描述 <span style="color:dodgerblue">Ping Mail 伺服器失敗</span></div></td>
+                      <td style="font-size:14px;float:right">2024/06/14 22:05:01<br/> <div style="font-size:14px;float:right">10hr 53min</div></td>
+                    </tr>
+					<tr>
+                      <!--td style="background-color:#ffc107; text-align: center; vertical-align: middle;"><i class="icon fas fa-exclamation-triangle" style="color:#fff"></i><br/></td-->
+					  <!--td style="background-color: rgba(247, 207, 7, 0.6); text-align: center; vertical-align: middle;padding-left:-0.5 rem"><i class="icon fas fa-exclamation-triangle" style="color:#ffc107"></i><br/></td-->
+					  <td style="text-align: center; vertical-align: middle;padding-left: 0.75rem"><i class="icon fas fa-check" style="font-size:20px;color:#28a745"></i></td>
+                      <td>事件編號 <span style="color:dodgerblue">O1130104-004</span><br/>
+					  類別 <span style="color:dodgerblue">Traffic </span>設備/單位 <span style="color:dodgerblue">Mail Server</span><br>
+					  <div style="font-size:14px">描述 <span style="color:dodgerblue">Ping Mail 伺服器失敗 </span></div></td>
+                      <td style="font-size:14px;float:right">2024/06/14 22:05:01<br/> <div style="font-size:14px;float:right">10hr 53min</div></td>
+                    </tr>
+                    
                   </tbody>
                 </table>
+              </div>
+              <!-- /.card-body -->
               </div>
               <!-- /.card-body -->
             </div>
@@ -1150,8 +2030,8 @@
 
   <!-- Main Footer -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2024 <a href="https://www.cht.com.tw">www.cht.com.tw</a>.</strong>
-    All rights reserved.
+    <img width="30px" height="30px" src="dist/img/cht_logo.png"/><strong><a href="https://www.cht.com.tw">中華電信股份有限公司版權所有</a>&copy;</strong>
+    Chunghwa Telecom Co., Ltd. All Rights Reserved
     <div class="float-right d-none d-sm-inline-block">
       <b>Version</b> 2.0.0-rc
     </div>
@@ -1186,6 +2066,10 @@
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script-->	
 <!-- Bootstrap Switch -->
 <script src="plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+<!-- jQuery Knob -->
+<script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+<!-- Sparkline -->
+<script src="plugins/sparklines/sparkline.js"></script>
 <!-- DataTables  & Plugins -->
 <script src="plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
@@ -1202,7 +2086,7 @@
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard4.js"></script>
+<script src="dist/js/pages/dashboard7.js"></script>
 <script>
   $(function () {
     $("#example1").DataTable({
@@ -1219,7 +2103,390 @@
        },
 	   "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+	
+	
+	$('.knob').knob({
+      /*change : function (value) {
+       //console.log("change : " + value);
+       },
+       release : function (value) {
+       console.log("release : " + value);
+       },
+       cancel : function () {
+       console.log("cancel : " + this.value);
+       },*/
+      draw: function () {
+        $(this.i).css('transform', 'rotate(0deg)').css('font-size', '13pt');
+      
+        // "tron" case
+        if (this.$.data('skin') == 'tron') {
+
+          var a   = this.angle(this.cv)  // Angle
+            ,
+              sa  = this.startAngle          // Previous start angle
+            ,
+              sat = this.startAngle         // Start angle
+            ,
+              ea                            // Previous end angle
+            ,
+              eat = sat + a                 // End angle
+            ,
+              r   = true
+
+          this.g.lineWidth = this.lineWidth
+
+          this.o.cursor
+          && (sat = eat - 0.3)
+          && (eat = eat + 0.3)
+
+          if (this.o.displayPrevious) {
+            ea = this.startAngle + this.angle(this.value)
+            this.o.cursor
+            && (sa = ea - 0.3)
+            && (ea = ea + 0.3)
+            this.g.beginPath()
+            this.g.strokeStyle = this.previousColor
+            this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sa, ea, false)
+            this.g.stroke()
+          }
+
+          this.g.beginPath()
+          this.g.strokeStyle = r ? this.o.fgColor : this.fgColor
+          this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sat, eat, false)
+          this.g.stroke()
+
+          this.g.lineWidth = 2
+          this.g.beginPath()
+          this.g.strokeStyle = this.o.fgColor
+          this.g.arc(this.xy, this.xy, this.radius - this.lineWidth + 1 + this.lineWidth * 2 / 3, 0, 2 * Math.PI, false)
+          this.g.stroke()
+
+          return false
+        }
+      }
+    })
+    /* END JQUERY KNOB */
+	//INITIALIZE SPARKLINE CHARTS
+    var sparkline1 = new Sparkline($('#sparkline-1')[0], { width: 120, height: 40, lineColor: '#92c1dc', endColor: '#92c1dc', averageLine: true, tooltip: function(value, index, collection){ return value + ' Gbps';} })
+    var sparkline2 = new Sparkline($('#sparkline-2')[0], { width: 120, height: 40, lineColor: '#f56954', endColor: '#f56954', averageLine: true, tooltip: function(value, index, collection){ return value + ' Gbps';} })
+    var sparkline3 = new Sparkline($('#sparkline-3')[0], { width: 120, height: 40, lineColor: '#92c1dc', endColor: '#92c1dc', averageLine: true, tooltip: function(value, index, collection){ return value + ' Gbps';} })
+	var sparkline4 = new Sparkline($('#sparkline-4')[0], { width: 120, height: 40, lineColor: '#92c1dc', endColor: '#92c1dc', averageLine: true, tooltip: function(value, index, collection){ return value + ' Gbps';} })
+	var sparkline5 = new Sparkline($('#sparkline-5')[0], { width: 120, height: 40, lineColor: '#92c1dc', endColor: '#92c1dc', averageLine: true, tooltip: function(value, index, collection){ return value + ' Gbps';} })
+	var sparkline6 = new Sparkline($('#sparkline-6')[0], { width: 120, height: 40, lineColor: '#92c1dc', endColor: '#92c1dc', averageLine: true, tooltip: function(value, index, collection){ return value + ' Gbps';} })
+	var sparkline7 = new Sparkline($('#sparkline-7')[0], { width: 120, height: 40, lineColor: '#92c1dc', endColor: '#92c1dc', averageLine: true, tooltip: function(value, index, collection){ return value + ' Gbps';} })
+	var sparkline8 = new Sparkline($('#sparkline-8')[0], { width: 120, height: 40, lineColor: '#92c1dc', endColor: '#92c1dc', averageLine: true, tooltip: function(value, index, collection){ return value + ' Gbps';} })
+	var sparkline9 = new Sparkline($('#sparkline-9')[0], { width: 120, height: 40, lineColor: '#92c1dc', endColor: '#92c1dc', averageLine: true, tooltip: function(value, index, collection){ return value + ' Gbps';} })
+	var sparkline10 = new Sparkline($('#sparkline-10')[0], { width: 120, height: 40, lineColor: '#92c1dc', endColor: '#92c1dc', averageLine: true, tooltip: function(value, index, collection){ return value + ' Gbps';}})
+
+    sparkline1.draw([1000, 1200, 920, 927, 931, 1027, 819, 930, 1021,1000, 1200, 920, 927, 931, 1027, 819, 930, 1021,
+	1000, 1200, 920, 927, 931, 1027, 819, 930, 1021, 1000, 1200, 920, 927, 931, 1027, 819, 930, 1021,
+	515, 519, 520, 522, 652, 810, 370, 627, 319, 630, 921, 515, 519, 520, 522, 652, 810, 370, 627, 319, 630, 921])
+    sparkline2.draw([515, 519, 520, 522, 652, 810, 370, 627, 319, 630, 921, 515, 519, 520, 522, 652, 810, 370, 627, 319, 630, 921,
+	515, 519, 520, 522, 652, 810, 370, 627, 319, 630, 921, 515, 519, 520, 522, 652, 810, 370, 627, 319, 630, 921,
+	1000, 1200, 920, 927, 931, 1027, 819, 930, 1021,1000, 1200, 100])
+    sparkline3.draw([15, 19, 20, 22, 33, 27, 31, 27, 19, 30, 21])
+	sparkline4.draw([15, 19, 20, 22, 33, 27, 31, 27, 19, 30, 21])
+	sparkline5.draw([1000, 1200, 920, 927, 931, 1027, 819, 930, 1021,1000, 1200, 920, 927, 931, 1027, 819, 930, 1021,
+	1000, 1200, 920, 927, 931, 1027, 819, 930, 1021, 1000, 1200, 920, 927, 931, 1027, 819, 930, 1021,
+	515, 519, 520, 522, 652, 810, 370, 627, 319, 630, 921, 515, 519, 520, 522, 652, 810, 370, 627, 319, 630, 921])
+    sparkline6.draw([515, 519, 520, 522, 652, 810, 370, 627, 319, 630, 921, 515, 519, 520, 522, 652, 810, 370, 627, 319, 630, 921,
+	515, 519, 520, 522, 652, 810, 370, 627, 319, 630, 921, 515, 519, 520, 522, 652, 810, 370, 627, 319, 630, 921,
+	1000, 1200, 920, 927, 931, 1027, 819, 930, 1021,1000, 1200, 920])
+	sparkline7.draw([1000, 1200, 920, 927, 931, 1027, 819, 930, 1021,1000, 1200, 920, 927, 931, 1027, 819, 930, 1021,
+	1000, 1200, 920, 927, 931, 1027, 819, 930, 1021, 1000, 1200, 920, 927, 931, 1027, 819, 930, 1021,
+	515, 519, 520, 522, 652, 810, 370, 627, 319, 630, 921, 515, 519, 520, 522, 652, 810, 370, 627, 319, 630, 921])
+    sparkline8.draw([515, 519, 520, 522, 652, 810, 370, 627, 319, 630, 921, 515, 519, 520, 522, 652, 810, 370, 627, 319, 630, 921,
+	515, 519, 520, 522, 652, 810, 370, 627, 319, 630, 921, 515, 519, 520, 522, 652, 810, 370, 627, 319, 630, 921,
+	1000, 1200, 920, 927, 931, 1027, 819, 930, 1021,1000, 1200, 920])
+	sparkline9.draw([1000, 1200, 920, 927, 931, 1027, 819, 930, 1021,1000, 1200, 920, 927, 931, 1027, 819, 930, 1021,
+	1000, 1200, 920, 927, 931, 1027, 819, 930, 1021, 1000, 1200, 920, 927, 931, 1027, 819, 930, 1021,
+	515, 519, 520, 522, 652, 810, 370, 627, 319, 630, 921, 515, 519, 520, 522, 652, 810, 370, 627, 319, 630, 921])
+    sparkline10.draw([515, 519, 520, 522, 652, 810, 370, 627, 319, 630, 921, 515, 519, 520, 522, 652, 810, 370, 627, 319, 630, 921,
+	515, 519, 520, 522, 652, 810, 370, 627, 319, 630, 921, 515, 519, 520, 522, 652, 810, 370, 627, 319, 630, 921,
+	1000, 1200, 920, 927, 931, 1027, 819, 930, 1021,1000, 1200, 920])
+	
+	
+	/* ChartJS
+     * -------
+     * Here we will create a few charts using ChartJS
+     */
+
+    //--------------
+    //- AREA CHART -
+    //--------------
+
+    // Get context with jQuery - using jQuery's .get() method.
+    var areaChartCanvas1 = $('#areaChart1').get(0).getContext('2d')
+	var areaChartCanvas2 = $('#areaChart2').get(0).getContext('2d')
+	var areaChartCanvas3 = $('#areaChart3').get(0).getContext('2d')
+	var areaChartCanvas4 = $('#areaChart4').get(0).getContext('2d')
+	var areaChartCanvas5 = $('#areaChart5').get(0).getContext('2d')
+	var areaChartCanvas6 = $('#areaChart6').get(0).getContext('2d')
+	var areaChartCanvas7 = $('#areaChart7').get(0).getContext('2d')
+	var areaChartCanvas8 = $('#areaChart8').get(0).getContext('2d')
+	var areaChartCanvas9 = $('#areaChart9').get(0).getContext('2d')	
+	var areaChartCanvas10 = $('#areaChart10').get(0).getContext('2d')
+	
+    var areaChartData1 = {
+      labels  : ['10:05', '10:10', '10:15', '10:20', '10:25', '10:30', '10:35', '10:40', '10:45', '10:50', '10:55', '11:00'],
+      datasets: [
+        {
+          label               : 'CPU',
+          backgroundColor     : 'rgba(179, 176, 174, 0.3)', //'rgba(60,141,188,0.3)',
+          borderColor         : 'rgba(179, 176, 174, 0.6)', 
+		  borderWidth         : 1.5,
+          pointRadius         : false,
+          pointColor          : '#3b8bba',
+          pointStrokeColor    : 'rgba(60,141,188,1)',
+          pointHighlightFill  : '#fff',
+          pointHighlightStroke: 'rgba(60,141,188,1)',
+          data                : [28, 48, 40, 19, 86, 27, 90, 28, 48, 40, 45, 50]
+        },
+      ]
+    }
+	var areaChartData2 = {
+      labels  : ['10:05', '10:10', '10:15', '10:20', '10:25', '10:30', '10:35', '10:40', '10:45', '10:50', '10:55', '11:00'],
+      datasets: [
+        {
+          label               : 'Memory',
+          backgroundColor     : 'rgba(147,42,182,0.3)',
+          borderColor         : 'rgba(147,42,182,0.6)',          
+          borderWidth         : 1.5,
+          pointRadius         : false,
+          pointColor          : '#3b8bba',
+          pointStrokeColor    : 'rgba(60,141,188,1)',
+          pointHighlightFill  : '#fff',
+          pointHighlightStroke: 'rgba(60,141,188,1)',
+          data                : [28, 25, 40, 10, 86, 27, 27, 28, 48, 40, 7, 10]
+        },
+      ]
+    }
+	var areaChartData3 = {
+      labels  : ['10:05', '10:10', '10:15', '10:20', '10:25', '10:30', '10:35', '10:40', '10:45', '10:50', '10:55', '11:00'],
+      datasets: [
+        {
+          label               : 'CPU',
+          backgroundColor     : 'rgba(179, 176, 174, 0.3)', //'rgba(60,141,188,0.3)',
+          borderColor         : 'rgba(179, 176, 174, 0.6)', 
+          borderWidth         : 1.5,
+          pointRadius         : false,
+          pointColor          : '#3b8bba',
+          pointStrokeColor    : 'rgba(60,141,188,1)',
+          pointHighlightFill  : '#fff',
+          pointHighlightStroke: 'rgba(60,141,188,1)',
+          data                : [28, 25, 40, 10, 76, 27, 27, 28, 48, 40, 34, 25]
+        },
+      ]
+    }
+	var areaChartData4 = {
+      labels  : ['10:05', '10:10', '10:15', '10:20', '10:25', '10:30', '10:35', '10:40', '10:45', '10:50', '10:55', '11:00'],
+      datasets: [
+        {
+          label               : 'Memory',
+          backgroundColor     : 'rgba(147,42,182,0.3)',
+          borderColor         : 'rgba(147,42,182,0.6)',
+          borderWidth         : 1.5,
+          pointRadius         : false,
+          pointColor          : '#3b8bba',
+          pointStrokeColor    : 'rgba(60,141,188,1)',
+          pointHighlightFill  : '#fff',
+          pointHighlightStroke: 'rgba(60,141,188,1)',
+          data                : [28, 25, 40, 10, 86, 27, 27, 28, 48, 40, 17, 34]
+        },
+      ]
+    }
+	var areaChartData5 = {
+      labels  : ['10:05', '10:10', '10:15', '10:20', '10:25', '10:30', '10:35', '10:40', '10:45', '10:50', '10:55', '11:00'],
+      datasets: [
+        {
+          label               : 'CPU',
+          backgroundColor     : 'rgba(179, 176, 174, 0.3)', //'rgba(60,141,188,0.3)',
+          borderColor         : 'rgba(179, 176, 174, 0.6)', 
+          borderWidth         : 1.5,
+          pointRadius         : false,
+          pointColor          : '#3b8bba',
+          pointStrokeColor    : 'rgba(60,141,188,1)',
+          pointHighlightFill  : '#fff',
+          pointHighlightStroke: 'rgba(60,141,188,1)',
+          data                : [28, 25, 40, 10, 43, 27, 27, 28, 48, 40, 25, 35]
+        },
+      ]
+    }
+	var areaChartData6 = {
+      labels  : ['10:05', '10:10', '10:15', '10:20', '10:25', '10:30', '10:35', '10:40', '10:45', '10:50', '10:55', '11:00'],
+      datasets: [
+        {
+          label               : 'Memory',
+          backgroundColor     : 'rgba(147,42,182,0.3)',
+          borderColor         : 'rgba(147,42,182,0.6)',
+          borderWidth         : 1.5,
+          pointRadius         : false,
+          pointColor          : '#3b8bba',
+          pointStrokeColor    : 'rgba(60,141,188,1)',
+          pointHighlightFill  : '#fff',
+          pointHighlightStroke: 'rgba(60,141,188,1)',
+          data                : [28, 25, 40, 10, 56, 27, 27, 28, 48, 40, 40, 45]
+        },
+      ]
+    }
+	var areaChartData7 = {
+      labels  : ['10:05', '10:10', '10:15', '10:20', '10:25', '10:30', '10:35', '10:40', '10:45', '10:50', '10:55', '11:00'],
+      datasets: [
+        {
+          label               : 'CPU',
+          backgroundColor     : 'rgba(179, 176, 174, 0.3)', //'rgba(60,141,188,0.3)',
+          borderColor         : 'rgba(179, 176, 174, 0.6)', 
+          borderWidth         : 1.5,
+          pointRadius         : false,
+          pointColor          : '#3b8bba',
+          pointStrokeColor    : 'rgba(60,141,188,1)',
+          pointHighlightFill  : '#fff',
+          pointHighlightStroke: 'rgba(60,141,188,1)',
+          data                : [28, 25, 40, 10, 4, 27, 27, 28, 48, 40, 65, 56]
+        },
+      ]
+    }
+	var areaChartData8 = {
+      labels  : ['10:05', '10:10', '10:15', '10:20', '10:25', '10:30', '10:35', '10:40', '10:45', '10:50', '10:55', '11:00'],
+      datasets: [
+        {
+          label               : 'Memory',
+          backgroundColor     : 'rgba(147,42,182,0.3)',
+          borderColor         : 'rgba(147,42,182,0.6)',
+          borderWidth         : 1.5,
+          pointRadius         : false,
+          pointColor          : '#3b8bba',
+          pointStrokeColor    : 'rgba(60,141,188,1)',
+          pointHighlightFill  : '#fff',
+          pointHighlightStroke: 'rgba(60,141,188,1)',
+          data                : [28, 25, 40, 10, 66, 27, 27, 28, 48, 40, 19, 76]
+        },
+      ]
+    }
+	var areaChartData9 = {
+      labels  : ['10:05', '10:10', '10:15', '10:20', '10:25', '10:30', '10:35', '10:40', '10:45', '10:50', '10:55', '11:00'],
+      datasets: [
+        {
+          label               : 'CPU',
+          backgroundColor     : 'rgba(245,105,84,0.3)',
+          borderColor         : 'rgba(245,105,84,0.8)',
+          borderWidth         : 1.5,
+          pointRadius         : false,
+          pointColor          : '#3b8bba',
+          pointStrokeColor    : 'rgba(60,141,188,1)',
+          pointHighlightFill  : '#fff',
+          pointHighlightStroke: 'rgba(60,141,188,1)',
+          data                : [28, 25, 40, 10, 26, 27, 27, 28, 48, 40, 92, 87]
+        },
+      ]
+    }
+	var areaChartData10 = {
+      labels  : ['10:05', '10:10', '10:15', '10:20', '10:25', '10:30', '10:35', '10:40', '10:45', '10:50', '10:55', '11:00'],
+      datasets: [
+        {
+          label               : 'Memory',
+          backgroundColor     : 'rgba(147,42,182,0.3)',
+          borderColor         : 'rgba(147,42,182,0.6)',
+          borderWidth         : 1.5,
+          pointRadius         : false,
+          pointColor          : '#3b8bba',
+          pointStrokeColor    : 'rgba(60,141,188,1)',
+          pointHighlightFill  : '#fff',
+          pointHighlightStroke: 'rgba(60,141,188,1)',
+          data                : [28, 25, 40, 10, 45, 27, 27, 28, 48, 40, 50, 66]
+        },
+      ]
+    }
+
+    var areaChartOptions = {
+      maintainAspectRatio : false,
+      responsive : true,
+      legend: {
+        display: false
+      },
+      scales: {
+        xAxes: [{
+          gridLines : {
+            display : false,
+          },
+		  ticks:{
+		    display: false 
+		  }
+        }],
+        yAxes: [{
+          gridLines : {
+            display : true,
+          },
+		  ticks: {
+			   beginAtZero: true,
+			   stepValue: 5,
+			   steps: 10,
+			   max: 100
+		  }
+        }]
+      },
+	  elements: {
+        line: {
+            tension: 0, // no smooth
+        }
+      }
+    }
+
+    // This will get the first returned node in the jQuery collection.
+    new Chart(areaChartCanvas1, {
+      type: 'line',
+      data: areaChartData1,
+      options: areaChartOptions
+    })	
+    new Chart(areaChartCanvas2, {
+      type: 'line',
+      data: areaChartData2,
+      options: areaChartOptions
+    })	
+	new Chart(areaChartCanvas3, {
+      type: 'line',
+      data: areaChartData3,
+      options: areaChartOptions
+    })
+	new Chart(areaChartCanvas4, {
+      type: 'line',
+      data: areaChartData4,
+      options: areaChartOptions
+    })
+	new Chart(areaChartCanvas5, {
+      type: 'line',
+      data: areaChartData5,
+      options: areaChartOptions
+    })
+	new Chart(areaChartCanvas6, {
+      type: 'line',
+      data: areaChartData6,
+      options: areaChartOptions
+    })
+	new Chart(areaChartCanvas7, {
+      type: 'line',
+      data: areaChartData7,
+      options: areaChartOptions
+    })
+	new Chart(areaChartCanvas8, {
+      type: 'line',
+      data: areaChartData8,
+      options: areaChartOptions
+    })
+	new Chart(areaChartCanvas9, {
+      type: 'line',
+      data: areaChartData9,
+      options: areaChartOptions
+    })
+	new Chart(areaChartCanvas10, {
+      type: 'line',
+      data: areaChartData10,
+      options: areaChartOptions
+    })
   });
+  function mapclick() {
+    $('#mapclick').attr("src", "dist/img/eyesee_nw2.png");
+  }
 </script>
 </body>
 </html>
