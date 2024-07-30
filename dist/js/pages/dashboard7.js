@@ -3189,9 +3189,10 @@ var areaChartData2 = {
         }],
         yAxes: [{
           stacked: true,
-		  gridLines: {
-            display: false,
-          },
+		  scaleLabel: {
+            display: true,
+            labelString: '設備數'
+          }
         }]
       },
 	  title: {
