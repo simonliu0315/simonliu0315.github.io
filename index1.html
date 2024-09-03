@@ -875,7 +875,7 @@ body {
         <!-- /.row -->
 
         <!-- Main row -->
-        <div class="row">
+        <div class="row connectedSortable">
           <!-- Left col -->
           <div class="col-md-6 card-deck">
             <!-- MAP & BOX PANE -->
@@ -1411,7 +1411,7 @@ body {
 			</div>
           </div>	
         </div>		  
-		<div class="row">
+		<div class="row connectedSortable">
           <!-- /.col -->
 		  <div class="col-md-6 card-deck">
             <!-- MAP & BOX PANE -->
@@ -1797,7 +1797,7 @@ body {
 			</div>
           </div>
         </div>
-        <div class="row">		
+        <div class="row connectedSortable">		
           <!-- /.col -->
 		  <div class="col-md-12 card-deck">
             <!-- MAP & BOX PANE -->
@@ -1833,7 +1833,7 @@ body {
           <!-- /.col -->
         </div>
         <!-- /.row -->
-		<div class="row">
+		<div class="row connectedSortable">
           <!-- Left col -->
           <div class="col-md-6 card-deck">
 		    <!-- /.card 1 -->     
@@ -2042,6 +2042,8 @@ body {
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
 <!-- Bootstrap -->
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- overlayScrollbars -->
@@ -2487,6 +2489,15 @@ body {
   function mapclick() {
     $('#mapclick').attr("src", "dist/img/eyesee_nw2.png");
   }
+  
+      $('.connectedSortable').sortable({
+        placeholder: 'sort-highlight',
+        connectWith: '.connectedSortable',
+        handle: '.card-header, .nav-tabs',
+        forcePlaceholderSize: true,
+        zIndex: 999999
+    })
+    $('.connectedSortable .card-header').css('cursor', 'move')
 </script>
 </body>
 </html>

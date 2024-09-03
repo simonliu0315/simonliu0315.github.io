@@ -875,9 +875,9 @@ body {
         <!-- /.row -->
 
         <!-- Main row -->
-        <div class="row">
+        <div class="row connectedSortable">
           <!-- Left col -->
-          <div class="col-md-6 card-deck">
+          <div class="col-lg-6 col-md-12 card-deck">
             <!-- MAP & BOX PANE -->
             <!-- /.card 1 -->     
             <div class="card card-info" style=" margin-bottom: 10px;">
@@ -966,7 +966,7 @@ body {
           
             <!-- /.card -->
           </div>
-		  <div class="col-md-6 card-deck">
+		  <div class="col-lg-6 col-md-12 card-deck">
             <!-- MAP & BOX PANE -->
             <!-- /.card 1 -->     
             <div class="card card-info" style=" margin-bottom: 10px;">
@@ -1411,9 +1411,9 @@ body {
 			</div>
           </div>	
         </div>		  
-		<div class="row">
+		<div class="row connectedSortable">
           <!-- /.col -->
-		  <div class="col-md-6 card-deck">
+		  <div class="col-lg-6 col-md-6 card-deck">
             <!-- MAP & BOX PANE -->
             <!-- /.card 1 -->     
             <div class="card card-info" style=" margin-bottom: 10px;">
@@ -1595,7 +1595,7 @@ body {
 			</div>
           </div>			
           <!-- /.col -->
-		  <div class="col-md-6 card-deck">
+		  <div class="col-lg-6 col-md-6 card-deck">
             <!-- MAP & BOX PANE -->
             <!-- /.card 1 -->     
             <div class="card card-info" style=" margin-bottom: 10px;">
@@ -1797,9 +1797,9 @@ body {
 			</div>
           </div>
         </div>
-        <div class="row">		
+        <div class="row connectedSortable">		
           <!-- /.col -->
-		  <div class="col-md-12 card-deck">
+		  <div class="col-lg-12 col-md-12 card-deck">
             <!-- MAP & BOX PANE -->
 			<div class="card card-info" style="margin-bottom: 10px;">
               <div class="card-header">
@@ -1833,9 +1833,9 @@ body {
           <!-- /.col -->
         </div>
         <!-- /.row -->
-		<div class="row">
+		<div class="row connectedSortable">
           <!-- Left col -->
-          <div class="col-md-6 card-deck">
+          <div class="col-lg-6 col-md-6 card-deck">
 		    <!-- /.card 1 -->     
             <div class="card card-info" style=" margin-bottom: 10px;">
               <div class="card-header">
@@ -1924,7 +1924,7 @@ body {
               <!-- /.card-body -->
             </div>
 		  </div>
-		  <div class="col-md-6 card-deck">
+		  <div class="col-lg-6 col-md-6 card-deck">
 		    <!-- /.card 1 -->     
             <div class="card card-info" style=" margin-bottom: 10px;">
               <div class="card-header">
@@ -2042,6 +2042,8 @@ body {
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
 <!-- Bootstrap -->
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- overlayScrollbars -->
@@ -2487,6 +2489,14 @@ body {
   function mapclick() {
     $('#mapclick').attr("src", "dist/img/eyesee_nw2.png");
   }
+     $('.connectedSortable').sortable({
+        placeholder: 'sort-highlight',
+        connectWith: '.connectedSortable',
+        handle: '.card-header, .nav-tabs',
+        forcePlaceholderSize: true,
+        zIndex: 999999
+    })
+    $('.connectedSortable .card-header').css('cursor', 'move')
 </script>
 </body>
 </html>
