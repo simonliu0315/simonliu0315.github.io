@@ -9,8 +9,6 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
-  <!-- BS Stepper -->
-  <link rel="stylesheet" href="../../plugins/bs-stepper/css/bs-stepper.min.css">
   <!-- DataTables -->
   <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
@@ -80,7 +78,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="../../index3.html" class="brand-link">
+    <a href="../../index.html" class="brand-link">
       <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">整合式網管系統</span>
     </a>
@@ -105,7 +103,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 		  <li class="nav-item">
-            <a href="./index.html" class="nav-link">
+            <a href="../../index.html" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               Home
             </a>
@@ -742,14 +740,13 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>新增資通設備</h1>
+            <h1>設備資產資料管理</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-			  <li class="breadcrumb-item">設備資料</li>
-			  <li class="breadcrumb-item">設備資產資料管理</li>
-              <li class="breadcrumb-item active">新增</li>
+			  <li class="breadcrumb-item active">設備資料</li>
+              <li class="breadcrumb-item active">設備資產資料管理</li>
             </ol>
           </div>
         </div>
@@ -760,214 +757,168 @@
     <section class="content">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-md-12">
-            <div class="card card-default">
+          <div class="col-12">
+            <div class="card">
               <div class="card-header">
-                <h3 class="card-title">新增資通設備</h3>
+                <h3 class="card-title">設備資產資料管理</h3>
               </div>
-              <div class="card-body p-0">
-                <div class="bs-stepper">
-                  <div class="bs-stepper-header" role="tablist">
-                    <!-- your steps here -->
-                    <div class="step" data-target="#logins-part">
-                      <button type="button" class="step-trigger" role="tab" aria-controls="logins-part" id="logins-part-trigger">
-                        <span class="bs-stepper-circle">1</span>
-                        <span class="bs-stepper-label">基本設定</span>
-                      </button>
-                    </div>
-                    <div class="line"></div>
-                    <div class="step" data-target="#information-part">
-                      <button type="button" class="step-trigger" role="tab" aria-controls="information-part" id="information-part-trigger">
-                        <span class="bs-stepper-circle">2</span>
-                        <span class="bs-stepper-label">連線資訊</span>
-                      </button>
-                    </div>
-					<div class="line"></div>
-					<div class="step" data-target="#other-part">
-                      <button type="button" class="step-trigger" role="tab" aria-controls="other-part" id="other-part-trigger">
-                        <span class="bs-stepper-circle">3</span>
-                        <span class="bs-stepper-label">進階設定</span>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="bs-stepper-content">
-                    <!-- your steps content here -->
-                    <div id="logins-part" class="content" role="tabpanel" aria-labelledby="logins-part-trigger">
-                      <div class="form-group row">
-                        <label for="exampleInputEmail1" class="col-sm-2 col-form-label">資源名稱</label>
-						<div class="col-sm-10">
-                           <input type="text" class="form-control" id="exampleInputEmail1" placeholder="請輸入資源名稱">
-						</div>
-                      </div>
-                      <div class="form-group row">
-                        <label for="exampleInputPassword1" class="col-sm-2 col-form-label">管理IP</label>
-						<div class="col-sm-10">
-                          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="請輸入管理IP">
-						</div>
-                      </div>
-					  <div class="form-group row">
-                        <label for="exampleInputPassword1" class="col-sm-2 col-form-label">類別</label>
-						<div class="col-sm-10">
-                        <select class="form-control select2" style="width: 100%;">
-                          <option selected="selected">交換器</option>
-                          <option>路由器</option>
-                        </select>
-						</div>
-                      </div>
-					  <div class="form-group row">
-                        <label for="exampleInputPassword1" class="col-sm-2 col-form-label">廠牌</label>
-						<div class="col-sm-10">
-                        <select class="form-control select2" style="width: 100%;">
-                          <option selected="selected">CISCO</option>
-                          <option></option>
-                        </select>
-						</div>
-                      </div>
-					  <div class="form-group row">
-                        <label for="exampleInputPassword1" class="col-sm-2 col-form-label">型號</label>
-						<div class="col-sm-10">
-                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="請輸入型號">
-						</div>
-                      </div>
-					  <div class="form-group row">
-                        <label for="exampleInputPassword1" class="col-sm-2 col-form-label">機房</label>
-						<div class="col-sm-10">
-                        <select class="form-control select2" style="width: 100%;">
-                          <option selected="selected">科技大樓</option>
-                          <option>台北主節點</option>
-                        </select>
-						</div>
-                      </div>
-					  <div class="form-group row">
-                        <label for="exampleInputPassword1" class="col-sm-2 col-form-label">SNMP監控頻率</label>
-						<div class="col-sm-10">
-                        <select class="form-control select2" style="width: 100%;">
-                          <option selected="selected">5分鐘</option>
-                          <option>10分鐘</option>
-                        </select>
-						</div>
-                      </div>
-					  <div class="form-group row">
-                        <label for="exampleInputPassword1" class="col-sm-2 col-form-label">Ping監控頻率</label>
-						<div class="col-sm-10">
-                        <select class="form-control select2" style="width: 100%;">
-                          <option selected="selected">5分鐘</option>
-                          <option>10分鐘</option>
-                        </select>
-						</div>
-                      </div>
-                      <button class="btn btn-primary" onclick="stepper.next()">下一步</button>
-
-                    </div>
-                    <div id="information-part" class="content" role="tabpanel" aria-labelledby="information-part-trigger">
-					  <div class="form-group row">
-					  <label for="exampleInputEmail1" class="col-sm-2 col-form-label">ICMP Ping</label>
-					  </div>
-					  <div class="form-group row justify-content-center">
-					  IP　127.0.0.1　　　<button class="btn btn-info">測試連線</button>　　　<i class="fas fa-check" style="color:green"></i> 連線成功
-					  </div>
-					<hr/>
-  					  <div class="form-group row">
-	                      <input type="checkbox" name="my-checkbox"  data-on-text="ON" data-off-text="OFF" checked data-bootstrap-switch data-off-color="success" >
-	                  　SNMP通訊協定
-				      </div>
-                      <div class="form-group row">
-                        <label for="exampleInputEmail1" class="col-sm-2 col-form-label">IP</label>
-						<div class="col-sm-10">
-                           127.0.0.1
-						</div>
-                      </div>
-                      <div class="form-group row">
-                        <label for="exampleInputPassword1" class="col-sm-2 col-form-label">Port</label>
-						<div class="col-sm-10">
-                          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="" value="161">
-						</div>
-                      </div>
-					  <div class="form-group row">
-                        <label for="exampleInputPassword1" class="col-sm-2 col-form-label">SNMP版本</label>
-						<div class="col-sm-10">
-                         <input type="radio">v2c <input type="radio">v3
-						</div>
-                      </div>
-					  <div class="form-group row">
-                        <label for="exampleInputPassword1" class="col-sm-2 col-form-label">安全層級</label>
-						<div class="col-sm-10">
-                        <select class="form-control select2" style="width: 100%;">
-                          <option selected="selected">Privacy</option>
-                          <option></option>
-                        </select>
-						</div>
-                      </div>
-					  <div class="form-group row">
-                        <label for="exampleInputPassword1" class="col-sm-2 col-form-label">帳號</label>
-						<div class="col-sm-10">
-                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="請輸入型號">
-						</div>
-                      </div>
-					  <div class="form-group row">
-                        <label for="exampleInputPassword1" class="col-sm-2 col-form-label">Auth. Protocol</label>
-						<div class="col-sm-10">
-                        <select class="form-control select2" style="width: 100%;">
-                          <option selected="selected">Privacy</option>
-                          <option></option>
-                        </select>
-						</div>
-                      </div>
-					  <div class="form-group row">
-                        <label for="exampleInputPassword1" class="col-sm-2 col-form-label">Auth. Password</label>
-						<div class="col-sm-10">
-                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="請輸入密碼">
-						</div>
-                      </div>
-					  <div class="form-group row">
-                        <label for="exampleInputPassword1" class="col-sm-2 col-form-label">Privacy Protocol</label>
-						<div class="col-sm-10">
-                        <select class="form-control select2" style="width: 100%;">
-                          <option selected="selected">DES</option>
-                          <option></option>
-                        </select>
-						</div>
-                      </div>
-					  <div class="form-group row">
-                        <label for="exampleInputPassword1" class="col-sm-2 col-form-label">Privacy Password</label>
-						<div class="col-sm-10">
-                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="請輸入密碼">
-						</div>
-                      </div>
-					  <div class="form-group row">
-                        <label for="exampleInputPassword1" class="col-sm-2 col-form-label">Context Name</label>
-						<div class="col-sm-10">
-                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="請輸入Context Name">
-						</div>
-                      </div>
-                      <button class="btn btn-primary" onclick="stepper.previous()">上一步</button>
-                      <button class="btn btn-primary" onclick="stepper.next()">下一步</button>
-                    </div>
-					<div id="other-part" class="content" role="tabpanel" aria-labelledby="other-part-trigger">
-                      <div class="form-group">
-                        <label for="exampleInputFile">File input</label>
-                        <div class="input-group">
-                          <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="exampleInputFile">
-                            <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                          </div>
-                          <div class="input-group-append">
-                            <span class="input-group-text">Upload</span>
-                          </div>
-                        </div>
-                      </div>
-                      <button class="btn btn-primary" onclick="stepper.previous()">Previous</button>
-                      <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
-                  </div>
-                </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                    <th>資源名稱</th>
+                    <th>管理IP</th>
+                    <th>類別</th>
+                    <th>廠牌</th>
+                    <th>型號</th>
+					<th>機房</th>
+					<th>SNMP監控頻率</th>
+					<th>Ping監控頻率</th>
+					<th>功能<a href="./data8.html"class="btn btn-sm btn-success"><i class="fa fa-plus"></i>新增</a></th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>TWAREN-TRCT-ASR9006-01</td>
+                    <td>192.168.1.1</td>
+                    <td>Router</td>
+                    <td>JUNIPER</td>
+                    <td>MX960</td>
+					<td>教育部機房</td>
+					<td>5分鐘</td>
+					<td>5分鐘</td>
+					<td><button class="btn btn-sm btn-info"><i class="fa fa-bars"></i>修改</button><button class="btn btn-sm btn-danger"><i class="fa fa-minus"></i>刪除</button></td>
+                  </tr>
+				  <tr>
+                    <td>TWAREN-TRCT-ASR9006-02</td>
+                    <td>192.168.1.2</td>
+                    <td>Router</td>
+                    <td>JUNIPER</td>
+                    <td>MX960</td>
+					<td>教育部機房</td>
+					<td>5分鐘</td>
+					<td>5分鐘</td>
+					<td><button class="btn btn-sm btn-info"><i class="fa fa-bars"></i>修改</button><button class="btn btn-sm btn-danger"><i class="fa fa-minus"></i>刪除</button></td>
+                  </tr>
+				  <tr>
+                    <td>TWAREN-TRCT-ASR9006-03</td>
+                    <td>192.168.1.3</td>
+                    <td>Router</td>
+                    <td>JUNIPER</td>
+                    <td>MX960</td>
+					<td>教育部機房</td>
+					<td>5分鐘</td>
+					<td>5分鐘</td>
+					<td><button class="btn btn-sm btn-info"><i class="fa fa-bars"></i>修改</button><button class="btn btn-sm btn-danger"><i class="fa fa-minus"></i>刪除</button></td>
+                  </tr>
+				  <tr>
+                    <td>TWAREN-TRCT-ASR9006-04</td>
+                    <td>192.168.1.4</td>
+                    <td>Router</td>
+                    <td>JUNIPER</td>
+                    <td>MX960</td>
+					<td>教育部機房</td>
+					<td>5分鐘</td>
+					<td>5分鐘</td>
+					<td><button class="btn btn-sm btn-info"><i class="fa fa-bars"></i>修改</button><button class="btn btn-sm btn-danger"><i class="fa fa-minus"></i>刪除</button></td>
+                  </tr>
+				  <tr>
+                    <td>TWAREN-TRCT-ASR9006-05</td>
+                    <td>192.168.1.5</td>
+                    <td>Router</td>
+                    <td>JUNIPER</td>
+                    <td>MX960</td>
+					<td>教育部機房</td>
+					<td>5分鐘</td>
+					<td>5分鐘</td>
+					<td><button class="btn btn-sm btn-info"><i class="fa fa-bars"></i>修改</button><button class="btn btn-sm btn-danger"><i class="fa fa-minus"></i>刪除</button></td>
+                  </tr>
+				  <tr>
+                    <td>TWAREN-TRCT-ASR9006-06</td>
+                    <td>192.168.1.6</td>
+                    <td>Router</td>
+                    <td>JUNIPER</td>
+                    <td>MX960</td>
+					<td>教育部機房</td>
+					<td>5分鐘</td>
+					<td>5分鐘</td>
+					<td><button class="btn btn-sm btn-info"><i class="fa fa-bars"></i>修改</button><button class="btn btn-sm btn-danger"><i class="fa fa-minus"></i>刪除</button></td>
+                  </tr>
+				  <tr>
+                    <td>TWAREN-TRCT-ASR9006-07</td>
+                    <td>192.168.1.7</td>
+                    <td>Router</td>
+                    <td>JUNIPER</td>
+                    <td>MX960</td>
+					<td>教育部機房</td>
+					<td>5分鐘</td>
+					<td>5分鐘</td>
+					<td><button class="btn btn-sm btn-info"><i class="fa fa-bars"></i>修改</button><button class="btn btn-sm btn-danger"><i class="fa fa-minus"></i>刪除</button></td>
+                  </tr>
+				  <tr>
+                    <td>TWAREN-TRCT-ASR9006-08</td>
+                    <td>192.168.1.8</td>
+                    <td>Router</td>
+                    <td>JUNIPER</td>
+                    <td>MX960</td>
+					<td>教育部機房</td>
+					<td>5分鐘</td>
+					<td>5分鐘</td>
+					<td><button class="btn btn-sm btn-info"><i class="fa fa-bars"></i>修改</button><button class="btn btn-sm btn-danger"><i class="fa fa-minus"></i>刪除</button></td>
+                  </tr>
+				  <tr>
+                    <td>TWAREN-TRCT-ASR9006-09</td>
+                    <td>192.168.1.9</td>
+                    <td>Router</td>
+                    <td>JUNIPER</td>
+                    <td>MX960</td>
+					<td>教育部機房</td>
+					<td>5分鐘</td>
+					<td>5分鐘</td>
+					<td><button class="btn btn-sm btn-info"><i class="fa fa-bars"></i>修改</button><button class="btn btn-sm btn-danger"><i class="fa fa-minus"></i>刪除</button></td>
+                  </tr>
+				  <tr>
+                    <td>TWAREN-TRCT-ASR9006-10</td>
+                    <td>192.168.1.10</td>
+                    <td>Router</td>
+                    <td>JUNIPER</td>
+                    <td>MX960</td>
+					<td>教育部機房</td>
+					<td>5分鐘</td>
+					<td>5分鐘</td>
+					<td><button class="btn btn-sm btn-info"><i class="fa fa-bars"></i>修改</button><button class="btn btn-sm btn-danger"><i class="fa fa-minus"></i>刪除</button></td>
+                  </tr>
+				  <tr>
+                    <td>TWAREN-TRCT-ASR9006-11</td>
+                    <td>192.168.1.11</td>
+                    <td>Router</td>
+                    <td>JUNIPER</td>
+                    <td>MX960</td>
+					<td>教育部機房</td>
+					<td>5分鐘</td>
+					<td>5分鐘</td>
+					<td><button class="btn btn-sm btn-info"><i class="fa fa-bars"></i>修改</button><button class="btn btn-sm btn-danger"><i class="fa fa-minus"></i>刪除</button></td>
+                  </tr>
+				  <tr>
+                    <td>TWAREN-TRCT-ASR9006-12</td>
+                    <td>192.168.1.12</td>
+                    <td>Router</td>
+                    <td>JUNIPER</td>
+                    <td>MX960</td>
+					<td>教育部機房</td>
+					<td>5分鐘</td>
+					<td>5分鐘</td>
+					<td><button class="btn btn-sm btn-info"><i class="fa fa-bars"></i>修改</button><button class="btn btn-sm btn-danger"><i class="fa fa-minus"></i>刪除</button></td>
+                  </tr>
+                  </tbody>
+                </table>
               </div>
               <!-- /.card-body -->
-              <div class="card-footer">
-              </div>
             </div>
             <!-- /.card -->
           </div>
+          <!-- /.col -->
         </div>
         <!-- /.row -->
       </div>
@@ -996,12 +947,6 @@
 <script src="../../plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- ChartJS -->
-<script src="../../plugins/chart.js/Chart.min.js"></script>
-<!-- Sparkline -->
-<script src="../../plugins/sparklines/sparkline.js"></script>
-<!-- BS-Stepper -->
-<script src="../../plugins/bs-stepper/js/bs-stepper.min.js"></script>
 <!-- Bootstrap Switch -->
 <script src="../../plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
 <!-- DataTables  & Plugins -->
@@ -1025,17 +970,12 @@
 <script>
   $(function () {
     $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false, "searching": true,
+      "responsive": true, "lengthChange": false, "autoWidth": false,
 	  "language": {
         "url": 'https://cdn.datatables.net/plug-ins/2.0.8/i18n/zh-HANT.json'
        },
-	   "layout": {
-        "topStart": {
-            "buttons": ['copy', 'csv', 'excel', 'pdf', 'print']
-        }
-       }
-	   //"buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-    });
+	   "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     $('#example2').DataTable({
       "paging": true,
       "lengthChange": false,
@@ -1050,12 +990,7 @@
 	$("input[data-bootstrap-switch]").each(function(){
       $(this).bootstrapSwitch('state', $(this).prop('checked'));
     })
-	
   });
-  // BS-Stepper Init
-    document.addEventListener('DOMContentLoaded', function () {
-      window.stepper = new Stepper(document.querySelector('.bs-stepper'))
-    })
 </script>
 </body>
 </html>
